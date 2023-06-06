@@ -8,7 +8,7 @@ on:
     types:
       - completed
     branches-ignore:
-      - main
+      - "main"
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
