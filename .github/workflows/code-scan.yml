@@ -37,6 +37,8 @@ on:
     workflows: ["Lint Code Base"]
     types:
       - completed
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
