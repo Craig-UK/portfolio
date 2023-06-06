@@ -9,6 +9,8 @@ on:
     workflows: ["Lint Code Base"]
     types:
       - completed
+    branches-ignore:
+      - main
 
 jobs:
   Deploy-Preview:
