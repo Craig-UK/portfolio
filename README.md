@@ -1,4 +1,10 @@
+# Portfolio
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Description
+
+This is my personal portfolio site developed using [React](https://react.dev/), [NextJS 13](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) and [MongoDB](https://www.mongodb.com/).
 
 ## Getting Started
 

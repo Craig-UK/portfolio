@@ -5,10 +5,10 @@ env:
 on:
   workflow_run:
     workflows: ["SonarCloud analysis"]
-    types:
-      - completed
+    types: [completed]
     branches-ignore:
       - main
+
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
