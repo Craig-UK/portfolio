@@ -6,6 +6,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This is my personal portfolio site developed using [React](https://react.dev/), [NextJS 13](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) and [MongoDB](https://www.mongodb.com/).
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=Craig-UK_portfolio)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Craig-UK_portfolio)](https://sonarcloud.io/summary/new_code?id=Craig-UK_portfolio)
+
+[![Preview](https://github.com/Craig-UK/portfolio/actions/workflows/preview.yml/badge.svg)](https://github.com/Craig-UK/portfolio/actions/workflows/preview.yml)
+[![Production](https://github.com/Craig-UK/portfolio/actions/workflows/production.yml/badge.svg)](https://github.com/Craig-UK/portfolio/actions/workflows/production.yml)
+
 ## Getting Started
 
 First, run the development server:
