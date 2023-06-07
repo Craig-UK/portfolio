@@ -9,8 +9,8 @@ This is my personal portfolio site developed using [React](https://react.dev/), 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=Craig-UK_portfolio)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Craig-UK_portfolio)](https://sonarcloud.io/summary/new_code?id=Craig-UK_portfolio)
 
-[![Lint Code Base](https://github.com/Craig-UK/portfolio/actions/workflows/linter.yml/badge.svg?branch=main)](https://github.com/Craig-UK/portfolio/actions/workflows/linter.yml)
-[![SonarCloud analysis](https://github.com/Craig-UK/portfolio/actions/workflows/code-scan.yml/badge.svg?branch=main)](https://github.com/Craig-UK/portfolio/actions/workflows/code-scan.yml)
+[![Preview](https://github.com/Craig-UK/portfolio/actions/workflows/preview.yml/badge.svg)](https://github.com/Craig-UK/portfolio/actions/workflows/preview.yml)
+[![Production](https://github.com/Craig-UK/portfolio/actions/workflows/production.yml/badge.svg)](https://github.com/Craig-UK/portfolio/actions/workflows/production.yml)
 
 ## Getting Started
 
