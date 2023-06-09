@@ -13,28 +13,34 @@ const Nav = () => {
         {/* Desktop Navigation */}
         <div className='sm:flex gap-12 font-bold hidden'>
             <button className='nav_btn_link'>
-                <Link href='/' />
-                Home
+                <Link href='/'>
+                    Home
+                </Link>
             </button>
             <button className='nav_btn_link'>
-                <Link href='/projects' />
-                Projects
+                <Link href='/projects'>
+                    Projects
+                </Link>
             </button>
             <button className='nav_btn_link'>
-                <Link href='/about' />
-                About
+                <Link href='/about'>
+                    About
+                </Link>
             </button>
             <button className='nav_btn_link'>
-                <Link href='/devblog' />
-                Dev Blog
+                <Link href='/devblog'>
+                    Dev Blog
+                </Link>
             </button>
             <button className='nav_btn_link'>
-                <Link href='/travelblog' />
-                Travel Blog
+                <Link href='/travelblog'>
+                    Travel Blog
+                </Link>
             </button>
             <button className='nav_btn_link'>
-                <Link href='/contact' />
-                Contact
+                <Link href='/contact'>
+                    Contact
+                </Link>
             </button>
         </div>
     </nav>
