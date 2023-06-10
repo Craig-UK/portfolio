@@ -2,8 +2,7 @@
     "git": {
       "deploymentEnabled": {
         "main": false,
-        "readme-update": false,
-        "nonfeature-updates": false
+        "features/navbar": false
       }
     }
   }
