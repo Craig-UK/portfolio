@@ -1,17 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const Nav = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -47,15 +38,55 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         <div className="flex">
-          <Bars3Icon className="h-10 w-10" aria-hidden="true" onClick={() => setToggleDropdown((prev => !prev))}/>
+          <Bars3Icon
+            className="h-10 w-10"
+            aria-hidden="true"
+            onClick={() => setToggleDropdown((prev) => !prev)}
+          />
           {toggleDropdown && (
             <div className="dropdown">
-                <Link href="/" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Home</Link>
-                <Link href="/projects" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Projects</Link>
-                <Link href="/about" className='dropdown_link' onClick={() => setToggleDropdown(false)}>About</Link>
-                <Link href="/devblog" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Dev Blog</Link>
-                <Link href="/travelblog" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Travel Blog</Link>
-                <Link href="/contact" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Contact</Link>
+              <Link
+                href="/"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/projects"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                href="/about"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/devblog"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                Dev Blog
+              </Link>
+              <Link
+                href="/travelblog"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                Travel Blog
+              </Link>
+              <Link
+                href="/contact"
+                className="dropdown_link"
+                onClick={() => setToggleDropdown(false)}
+              >
+                Contact
+              </Link>
             </div>
           )}
         </div>
