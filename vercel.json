@@ -2,8 +2,8 @@
     "git": {
       "deploymentEnabled": {
         "main": false,
-        "features/**": false,
-        "pages/**": false
+        "features/navbar": false,
+        "pages/home": false
       }
     }
   }
