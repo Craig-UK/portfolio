@@ -3,6 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
+import {
+  ArrowPathIcon,
+  Bars3Icon,
+  ChartPieIcon,
+  CursorArrowRaysIcon,
+  FingerPrintIcon,
+  SquaresPlusIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 
 const Nav = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -38,13 +47,7 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         <div className="flex">
-          <Image 
-            src={"/next.svg"} 
-            width={60} 
-            height={60} 
-            alt="Dropdown"
-            onClick={() => setToggleDropdown((prev => !prev))}
-          />
+          <Bars3Icon className="h-10 w-10" aria-hidden="true" onClick={() => setToggleDropdown((prev => !prev))}/>
           {toggleDropdown && (
             <div className="dropdown">
                 <Link href="/" className='dropdown_link' onClick={() => setToggleDropdown(false)}>Home</Link>
