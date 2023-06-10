@@ -34,7 +34,7 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CSS: false
-          VALIDATE_COPY_PASTE_DETECTION: false
+          VALIDATE_JSCPD: false
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
