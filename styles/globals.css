@@ -146,9 +146,17 @@
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
 }
 
-/* PromptCard Component */
+/* ProfileCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 m-auto break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+}
+
+.border-between-items {
+  @apply w-full mt-0.5 mb-1 border-2 border-black;
+}
+
+.cta_btn {
+  @apply rounded-full border border-black bg-black ml-20 my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .flex-center {
