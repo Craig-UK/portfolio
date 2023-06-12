@@ -6,7 +6,7 @@ const ProfileCard = ({
   image,
   title,
   subtitle,
-  link,
+  links,
   aboutText,
   button,
 }) => {
@@ -22,11 +22,12 @@ const ProfileCard = ({
       </div>
       <div className="border-between-items"></div>
       {/* LINK */}
-      <div>
-        <Link href={"/projects"}>
-          <Image src={"/next.svg"} alt="Icon" height={40} width={40} />
-          Projects
-        </Link>
+      <div className="font-satoshi font-semibold">
+        {links.map((link, i) => (
+            <Link key={i} href={link.href} className="ml-5 hover:underline">
+              {link.name}
+            </Link>
+        ))}
       </div>
       {/* ABOUT PARAGRAPH */}
       <div className="border-between-items"></div>
@@ -38,9 +39,13 @@ const ProfileCard = ({
       <div className="border-between-items"></div>
       {/* BUTTON */}
       <div>
-        <button className="cta_btn">
-            {button}
-        </button>
+      {button.map((button, i) => (
+          <button key={i} className="cta_btn">
+            <Link key={i} href={button.href}>
+              {button.name}
+            </Link>
+          </button>
+        ))}
       </div>
     </div>
   );

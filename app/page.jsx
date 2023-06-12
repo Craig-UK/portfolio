@@ -1,8 +1,32 @@
+"use client";
+
 import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Home = () => {
+  const [links, setLinks] = useState([
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Dev Blog",
+      href: "/devblog"
+    },
+    {
+      name: "Travel Blog",
+      href: "/travelblog"
+    }
+  ]);
+
+  const [buttons, setButtons] = useState([
+    {
+      name: "Contact Me",
+      href: "/contact",
+    }
+  ]);
+
   return (
     <div>
       <section className="w-full flex-start flex-row">
@@ -25,11 +49,12 @@ const Home = () => {
         </p>
       </section>
       <section className="pt-10">
-        <ProfileCard 
-          image={'/assets/images/scenery-1.jpg'}
-          title={'Craig Climie'}
-          subtitle={'Software Developer, Web Developer'}
-          button={'Contact Me'}
+        <ProfileCard
+          image={"/assets/images/scenery-1.jpg"}
+          title={"Craig Climie"}
+          subtitle={"Software Developer, Web Developer"}
+          button={buttons}
+          links={links}
           aboutText="Hello there, I am Craig! I am currently proficient in React and Python
           with some understanding of C# and Java. I am currently learning the
           Next.js React framework, and expanding my knowledge of C#, Java and
