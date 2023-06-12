@@ -5,25 +5,29 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const Home = () => {
-  const [links, setLinks] = useState([
+  const [links] = useState([
     {
+      id: '1',
       name: "Projects",
       href: "/projects",
     },
     {
+      id: '2',
       name: "Dev Blog",
       href: "/devblog"
     },
     {
+      id: '3',
       name: "Travel Blog",
       href: "/travelblog"
     }
   ]);
 
-  const [buttons, setButtons] = useState([
+  const [buttons] = useState([
     {
+      id: '1',
       name: "Contact Me",
-      href: "/contact",
+      href: "/contact"
     }
   ]);
 

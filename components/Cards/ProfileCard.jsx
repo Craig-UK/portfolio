@@ -23,8 +23,8 @@ const ProfileCard = ({
       <div className="border-between-items"></div>
       {/* LINK */}
       <div className="font-satoshi font-semibold">
-        {links.map((link, i) => (
-            <Link key={i} href={link.href} className="ml-5 hover:underline">
+        {links.map((link) => (
+            <Link key={link.id} href={link.href} className="ml-5 hover:underline">
               {link.name}
             </Link>
         ))}
@@ -39,9 +39,9 @@ const ProfileCard = ({
       <div className="border-between-items"></div>
       {/* BUTTON */}
       <div>
-      {button.map((button, i) => (
-          <button key={i} className="cta_btn">
-            <Link key={i} href={button.href}>
+      {button.map((button) => (
+          <button key={button.id} className="cta_btn">
+            <Link href={button.href}>
               {button.name}
             </Link>
           </button>
