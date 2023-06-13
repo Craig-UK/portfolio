@@ -16,8 +16,7 @@ const OtherPagesCard = ({ pageTitle, cardTitle, cardText, button }) => {
       </div>
       {/* BUTTON */}
       <div>
-        {button &&
-          button.map((button) => (
+        {button?.map((button) => (
             <button key={button.id} className="other_pages_cta_btn">
               <Link href={button.href}>{button.name}</Link>
             </button>
