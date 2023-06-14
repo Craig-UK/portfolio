@@ -66,7 +66,7 @@ const Home = () => {
           image={"/assets/images/scenery-1.jpg"}
           title={"Craig Climie"}
           subtitle={"Software Developer, Web Developer"}
-          button={profileCardButtons}
+          button={profileCardButtons[0]}
           links={links}
           aboutText="Hello there, I am Craig! I am currently proficient in React and Python
           with some understanding of C# and Java. I am currently learning the
