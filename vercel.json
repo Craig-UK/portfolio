@@ -5,7 +5,8 @@
         "features/navbar": false,
         "features/profile-card-component": false,
         "features/other-pages-card-component": false,
-        "pages/home": false
+        "pages/home": false,
+        "pages/projects": false
       }
     }
   }
