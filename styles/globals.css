@@ -160,7 +160,7 @@
 }
 
 .cta_btn {
-  @apply rounded-full border border-black bg-black ml-20 my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full w-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .other_pages_cta_btn {

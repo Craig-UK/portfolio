@@ -39,13 +39,11 @@ const ProfileCard = ({
       <div className="border-between-items"></div>
       {/* BUTTON */}
       <div>
-      {button.map((button) => (
-          <button key={button.id} className="cta_btn">
+          <button className="cta_btn">
             <Link href={button.href}>
               {button.name}
             </Link>
           </button>
-        ))}
       </div>
     </div>
   );
