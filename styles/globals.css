@@ -164,7 +164,7 @@
 }
 
 .other_pages_cta_btn {
-  @apply rounded-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
 }
 
 .flex-center {

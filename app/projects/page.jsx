@@ -1,5 +1,6 @@
 "use client";
 
+import OtherPagesCard from "@components/Cards/OtherPagesCard";
 import ProfileCard from "@components/Cards/ProfileCard";
 import React from "react";
 
@@ -73,6 +74,24 @@ const Projects = () => {
     },
   ];
 
+  const githubButton = [
+    {
+      name: "My GitHub",
+      href: "https://github.com/Craig-UK"
+    }
+  ];
+
+  const DevTravelBlogButton = [
+    {
+      name: "Dev Blog",
+      href: "/devblog"
+    },
+    {
+      name: "Travel Blog",
+      href: "/travelblog"
+    }
+  ];
+
   return (
     <div>
       <section className="w-full flex-start flex-row justify-between gap-14">
@@ -102,6 +121,23 @@ const Projects = () => {
           I have developed. This includes projects developed
           using Flutter, C#, and more."
           button={profileCardButtons[2]}
+        />
+      </section>
+      <section className="w-full pt-10 flex-start flex-row justify-between gap-14">
+        <OtherPagesCard 
+          pageTitle="GitHub"
+          cardTitle="Check out my GitHub"
+          cardText="My GitHub contains all of the projects that I have made publicly viewable. You can also view some of the 
+          open-source projects and repositories that I have contributed to on my GitHub!"
+          button={githubButton}
+        />
+        <OtherPagesCard 
+          pageTitle="Dev Blog & Travel Blog"
+          cardTitle="Check out my Dev or Travel Blog"
+          cardText="You can view my Dev Blog where I discuss some of the projects that I’m currently working on, or have
+          previously worked on and more. My Travel Blog contains some of the adventures that I go on in my free
+          time."
+          button={DevTravelBlogButton}
         />
       </section>
     </div>
