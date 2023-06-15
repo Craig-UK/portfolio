@@ -1,10 +1,10 @@
 "use client";
 
 import ProfileCard from "@components/Cards/ProfileCard";
-import React, { useState } from "react";
+import React from "react";
 
 const Projects = () => {
-  const [webLinks] = useState([
+  const webLinks = [
     {
       id: "1",
       name: "Next.js",
@@ -20,9 +20,9 @@ const Projects = () => {
       name: "JavaScript",
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
-  ]);
+  ]
 
-  const [mobileLinks] = useState([
+  const mobileLinks = [
     {
       id: "1",
       name: "Flutter",
@@ -38,9 +38,9 @@ const Projects = () => {
       name: "Android SDK",
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
-  ]);
+  ];
 
-  const [desktopLinks] = useState([
+  const desktopLinks = [
     {
       id: "1",
       name: "Flutter",
@@ -56,9 +56,9 @@ const Projects = () => {
       name: "Java",
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
-  ]);
+  ];
 
-  const [profileCardButtons] = useState([
+  const profileCardButtons = [
     {
       name: "View Web Application Projects",
       href: "/projects/webapps",
@@ -71,7 +71,7 @@ const Projects = () => {
       name: "View Desktop Application Projects",
       href: "/projects/desktopapps",
     },
-  ]);
+  ];
 
   return (
     <div>

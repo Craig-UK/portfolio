@@ -3,10 +3,10 @@
 import OtherPagesCard from "@components/Cards/OtherPagesCard";
 import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 const Home = () => {
-  const [links] = useState([
+  const links = [
     {
       id: '1',
       name: "Projects",
@@ -22,23 +22,23 @@ const Home = () => {
       name: "Travel Blog",
       href: "/travelblog"
     }
-  ]);
+  ];
 
-  const [profileCardButtons] = useState([
+  const profileCardButtons = [
     {
       id: '1',
       name: "Contact Me",
       href: "/contact"
     }
-  ]);
+  ];
 
-  const [otherPagesCardButtons] = useState([
+  const otherPagesCardButtons = [
     {
       id: '1',
       name: "Projects",
       href: "/projects"
     }
-  ]);
+  ];
 
   return (
     <div>
