@@ -15,7 +15,7 @@ const OtherPagesCard = ({ pageTitle, cardTitle, cardText, button }) => {
         <p>{cardText}</p>
       </div>
       {/* BUTTON */}
-      <div>
+      <div className="flex justify-start gap-2">
         {button?.map((button) => (
             <button key={button.id} className="other_pages_cta_btn">
               <Link href={button.href}>{button.name}</Link>

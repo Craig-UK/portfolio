@@ -2,17 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProfileCard = ({
-  image,
-  title,
-  subtitle,
-  links,
-  aboutText,
-  button,
-}) => {
+const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
   return (
     <div className="prompt_card">
-      <Image src={image} height={200} width={250} alt="Cool Scenery Image" className="ml-7"/>
+      <Image
+        src={image}
+        height={200}
+        width={250}
+        alt="Cool Scenery Image"
+        className="ml-7"
+      />
       <div className="border-between-items"></div>
       <div className="font-satoshi font-semibold ml-1">
         <h4>{title}</h4>
@@ -22,30 +21,24 @@ const ProfileCard = ({
       </div>
       <div className="border-between-items"></div>
       {/* LINK */}
-      <div className="font-satoshi font-semibold">
-        {links.map((link) => (
-            <Link key={link.id} href={link.href} className="ml-5 hover:underline">
+        <div className="font-satoshi font-semibold">
+          {links.map((link) => (
+            <Link key={link.id} href={link.href} className="hover:underline">
               {link.name}
             </Link>
-        ))}
-      </div>
+          ))}
+        </div>
       {/* ABOUT PARAGRAPH */}
       <div className="border-between-items"></div>
       <div>
-        <p>
-          {aboutText}
-        </p>
+        <p>{aboutText}</p>
       </div>
       <div className="border-between-items"></div>
       {/* BUTTON */}
       <div>
-      {button.map((button) => (
-          <button key={button.id} className="cta_btn">
-            <Link href={button.href}>
-              {button.name}
-            </Link>
-          </button>
-        ))}
+        <button className="cta_btn">
+          <Link href={button.href}>{button.name}</Link>
+        </button>
       </div>
     </div>
   );
