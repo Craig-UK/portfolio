@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
   return (
-    <div className="prompt_card">
+    <div className="profile_card">
       <Image
         src={image}
         height={200}
