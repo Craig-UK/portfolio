@@ -155,7 +155,12 @@
   @apply flex-col break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter w-full h-fit;
 }
 
+
 .fact_card {
+  @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-3/6 h-fit;
+}
+
+.learn_more_card {
   @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-3/6 h-fit;
 }
 
@@ -169,6 +174,10 @@
 
 .other_pages_cta_btn {
   @apply rounded-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
+}
+
+.learn_more_cta_btn {
+  @apply rounded-full border border-black bg-black py-1 px-16 text-white transition-all hover:bg-white hover:text-black font-inter;
 }
 
 .flex-center {
