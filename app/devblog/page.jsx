@@ -1,5 +1,4 @@
 import BlogCard from "@components/Cards/BlogCard";
-import FactCard from "@components/Cards/FactCard";
 import React from "react";
 
 const DevBlog = () => {
