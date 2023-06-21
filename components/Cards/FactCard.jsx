@@ -4,12 +4,12 @@ import { LightBulbIcon } from "@heroicons/react/24/outline";
 const FactCard = ({ text }) => {
   return (
     <section className="fact_card">
-        <div className="m-2">
-            <LightBulbIcon className="border border-black rounded-full h-24 w-24" />
+        <div className="m-2 pt-3">
+            <LightBulbIcon className="border border-black rounded-full h-14 w-14" />
         </div>
         <div>
-            <h1 className="uppercase text-lg font-extrabold font-satoshi mt-3">Fun Fact</h1>
-            <p className="font-satoshi">{text}</p>
+            <h1 className="uppercase text-lg font-extrabold font-satoshi mt-1">Fun Fact</h1>
+            <p className="font-satoshi text-sm">{text}</p>
         </div>
     </section>
   );

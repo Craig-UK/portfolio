@@ -157,11 +157,11 @@
 
 
 .fact_card {
-  @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-3/6 h-fit;
+  @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit;
 }
 
 .learn_more_card {
-  @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-3/6 h-fit;
+  @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit;
 }
 
 .blog_post_card {
@@ -181,7 +181,7 @@
 }
 
 .learn_more_cta_btn {
-  @apply rounded-full border border-black bg-black py-1 px-16 text-white transition-all hover:bg-white hover:text-black font-inter;
+  @apply rounded-full border border-black bg-black mt-1 py-1 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
 }
 
 .blog_view_post_btn {
