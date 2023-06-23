@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import getFormattedDate from "@utils/getFormattedDate";
+import { usePathname, useRouter } from "next/navigation";
 
 const BlogCard = ({
   coverImage,
@@ -10,6 +14,17 @@ const BlogCard = ({
   summary,
   button,
 }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const formattedDate = getFormattedDate(createdDate);
+
+  const handleViewPostButtonClick = () => {
+    console.log(pathname);
+    console.log(button);
+    if(pathname === "/devblog") return router.push(`/devblog/${button}`);
+  };
+
   return (
     <section className="blog_post_card">
       <div className="border border-black rounded-md">
@@ -22,19 +37,15 @@ const BlogCard = ({
         />
       </div>
       <div className="mx-3">
-        <h1 className="font-extrabold font-satoshi mt-1">
-            {title}
-        </h1>
-        <p className="font-light font-satoshi">{createdDate}</p>
+        <h1 className="font-extrabold font-satoshi mt-1">{title}</h1>
+        <p className="font-light font-satoshi">{formattedDate}</p>
         <p className="font-light font-satoshi">{author}</p>
         <p className="font-light font-satoshi mt-2">{summary}</p>
         <div className="flex justify-start gap-2 my-3">
-        {button?.map((button) => (
-            <button key={button.id} className="blog_view_post_btn">
-              <Link href={button.href}>View Post</Link>
-            </button>
-          ))}
-      </div>
+          <button className="blog_view_post_btn" onClick={handleViewPostButtonClick}>
+            View Post
+          </button>
+        </div>
       </div>
     </section>
   );
