@@ -1,3 +1,4 @@
+import DevBlogPosts from "@components/Blog/DevBlogPosts";
 import BlogCard from "@components/Cards/BlogCard";
 import React from "react";
 
@@ -10,22 +11,7 @@ const DevBlog = () => {
 
   return (
     <div className="flex w-full gap-2">
-      <BlogCard
-        coverImage={"/assets/images/scenery-1.jpg"}
-        title="Blog Title"
-        createdDate="21/06/2023"
-        author="Craig Climie"
-        summary="This is a summary of the blog post."
-        button={devBlogButton}
-      />
-      <BlogCard
-        coverImage={"/assets/images/scenery-1.jpg"}
-        title="Blog Title"
-        createdDate="21/06/2023"
-        author="Craig Climie"
-        summary="This is a summary of the blog post."
-        button={devBlogButton}
-      />
+      <DevBlogPosts />
     </div>
   );
 };
