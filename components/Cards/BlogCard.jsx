@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
 import getFormattedDate from "@utils/getFormattedDate";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -20,8 +19,6 @@ const BlogCard = ({
   const formattedDate = getFormattedDate(createdDate);
 
   const handleViewPostButtonClick = () => {
-    console.log(pathname);
-    console.log(button);
     if(pathname === "/devblog") return router.push(`/devblog/${button}`);
   };
 
