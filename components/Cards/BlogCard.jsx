@@ -20,6 +20,7 @@ const BlogCard = ({
 
   const handleViewPostButtonClick = () => {
     if(pathname === "/devblog") return router.push(`/devblog/${button}`);
+    if(pathname === "/travelblog") return router.push(`/travelblog/${button}`);
   };
 
   return (
