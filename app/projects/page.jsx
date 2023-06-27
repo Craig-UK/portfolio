@@ -62,15 +62,15 @@ const Projects = () => {
   const profileCardButtons = [
     {
       name: "View Web Application Projects",
-      href: "/projects/webapps",
+      href: "/projects/applications/webapps",
     },
     {
       name: "View Mobile Application Projects",
-      href: "/projects/mobileapps",
+      href: "/projects/applications/mobileapps",
     },
     {
       name: "View Desktop Application Projects",
-      href: "/projects/desktopapps",
+      href: "/projects/applications/desktopapps",
     },
   ];
 
