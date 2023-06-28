@@ -1,9 +1,44 @@
-import React from 'react'
+import ProjectCard from "@components/Cards/ProjectCard";
 
 const WebApps = () => {
-  return (
-    <div>WebApps</div>
-  )
-}
+  const images = ["/next.svg", "/next.svg", "/next.svg"];
 
-export default WebApps
+  return (
+    <section className="grid grid-cols-2 gap-2">
+      <ProjectCard
+        title="Project Title"
+        githubLink="https://github.com/Craig-UK"
+        languagesLogos={images}
+        summary="Project Summary"
+        featured={true}
+        projectLink="/project"
+      />
+      <ProjectCard
+        title="Project Title"
+        githubLink="https://github.com/Craig-UK"
+        languagesLogos={images}
+        summary="Project Summary"
+        featured={false}
+        projectLink="/project"
+      />
+      <ProjectCard
+        title="Project Title"
+        githubLink="https://github.com/Craig-UK"
+        languagesLogos={images}
+        summary="Project Summary"
+        featured={false}
+        projectLink="/project"
+      />
+      <ProjectCard
+        title="Project Title"
+        githubLink="https://github.com/Craig-UK"
+        languagesLogos={images}
+        summary="Project Summary"
+        featured={false}
+        projectLink="/project"
+      />
+    </section>
+  );
+};
+
+export default WebApps;
