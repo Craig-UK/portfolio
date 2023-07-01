@@ -100,7 +100,7 @@
 }
 
 .desc {
-  @apply pl-3 text-gray-600 sm:text-lg;
+  @apply pl-3 sm:text-lg;
 }
 
 .search_input {

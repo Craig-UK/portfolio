@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 const Contact = () => {
@@ -24,8 +25,10 @@ const Contact = () => {
           Message<span className="text-red-600">*</span>
         </label>
         <textarea className="form-textarea rounded-xl"></textarea>
-        <div className="text-end">
-            <button className="rounded-lg border mt-5 border-red-600 w-24 hover:bg-blue-600 hover:text-white">Send</button>
+        <div className="flex justify-end">
+            <button className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white">
+              <span className="ml-4">Send</span> <ArrowRightIcon className="mt-1.5" width={15} height={15} />
+            </button>
         </div>
       </form>
 

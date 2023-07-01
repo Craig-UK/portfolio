@@ -54,11 +54,13 @@ const About = () => {
         </p>
       </section>
       <section className="pt-10 flex w-full justify-start flex-row">
-        <FactCard
-          text="This portfolio website was developed using
-          React, Next.js 13, Tailwind and MongoDB!"
-        />
-        <p className="pl-4">
+        <div className="w-full mt-5">
+          <FactCard
+            text="This portfolio website was developed using
+            React, Next.js 13, Tailwind and MongoDB!"
+          />
+        </div>
+        <p className="desc">
           Even though my interest is mostly within web development, I also
           really enjoy software development. I am currently knowledgeable of C#
           (ASP.NET) and Python which I have used to build a variety of
