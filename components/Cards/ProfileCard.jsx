@@ -21,13 +21,13 @@ const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
       </div>
       <div className="border-between-items"></div>
       {/* LINK */}
-        <div className="font-satoshi font-semibold">
+        <section className="flex justify-between gap-2 font-satoshi font-semibold">
           {links.map((link) => (
             <Link key={link.id} href={link.href} className="hover:underline">
               {link.name}
             </Link>
           ))}
-        </div>
+        </section>
       {/* ABOUT PARAGRAPH */}
       <div className="border-between-items"></div>
       <div>

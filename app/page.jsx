@@ -10,16 +10,19 @@ const Home = () => {
     {
       id: '1',
       name: "Projects",
+      image: "/assets/icons/file-solid.svg",
       href: "/projects",
     },
     {
       id: '2',
       name: "Dev Blog",
+      image: "/assets/icons/file-lines-solid.svg",
       href: "/devblog"
     },
     {
       id: '3',
       name: "Travel Blog",
+      image: "/assets/icons/file-image-solid.svg",
       href: "/travelblog"
     }
   ];
