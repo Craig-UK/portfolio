@@ -8,15 +8,15 @@ export const GET = async (request, { params }) => {
     console.log(`In /api/projects/${params.cat}`)
 
     const projects = await Project.find({
-        category: params.cat
+      category: params.cat
     })
 
-    return new Response(JSON.stringify(projects), { 
-        status: 200
+    return new Response(JSON.stringify(projects), {
+      status: 200
     })
 
   } catch (error) {
-      return new Response('Failed to fetch all projects', { status: 500 })
+    return new Response('Failed to fetch all projects', { status: 500 })
   }
 }
 
