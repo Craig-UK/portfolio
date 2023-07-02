@@ -29,8 +29,8 @@ const ProjectsSchema = new Schema({
     limitations: {
         type: String
     }
-});
+})
 
-const Project = models.Project || model('Project', ProjectsSchema);
+const Project = models.Project || model('Project', ProjectsSchema)
 
-export default Project;
+export default Project
