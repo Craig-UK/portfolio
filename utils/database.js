@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+
 import mongoose from 'mongoose'
 
 let isConnected = false // Track the connection
