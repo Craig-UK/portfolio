@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models } from 'mongoose';
 
 const ProjectsSchema = new Schema({
     title: {
