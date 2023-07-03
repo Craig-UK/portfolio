@@ -12,13 +12,11 @@ export const GET = async (request, { params }) => {
       link: params.link
     })
 
-    console.log(projects);
-
     return new Response(JSON.stringify(projects), {
       status: 200
     })
   } catch (error) {
-    return new Response("Failed to fetch all projects", { status: 500 })
+    return new Response('Failed to fetch all projects', { status: 500 })
   }
 }
 
