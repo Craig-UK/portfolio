@@ -1,10 +1,10 @@
 "use client";
 
-import SingleWebProject from "@components/Single-Project-Page/SingleWebProject";
+import SingleMobileProject from "@components/Single-Project-Page/SingleMobileProject";
 import { useEffect, useState } from "react";
 
-const SingleWebAppProject = ({ params }) => {
-  const cat = "WebApp";
+const SingleMobileAppProject = ({ params }) => {
+    const cat = "MobileApp";
   const [project, setProject] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const SingleWebAppProject = ({ params }) => {
   return (
     <div>
       {project.map((proj) => (
-        <SingleWebProject
+        <SingleMobileProject
           key={proj._id}
           title={proj.title}
           github={proj.github}
@@ -35,4 +35,4 @@ const SingleWebAppProject = ({ params }) => {
   );
 };
 
-export default SingleWebAppProject;
+export default SingleMobileAppProject
