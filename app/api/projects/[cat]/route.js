@@ -7,7 +7,7 @@ export const GET = async (request, { params }) => {
 
     console.log(`In /api/projects/${params.cat}`)
 
-    const projects = await Project.find({
+    const projects = Project.find({
       category: params.cat
     })
 

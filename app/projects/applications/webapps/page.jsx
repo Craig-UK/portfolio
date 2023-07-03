@@ -4,7 +4,6 @@ import ProjectCard from "@components/Cards/ProjectCard";
 import { useEffect, useState } from "react";
 
 const WebApps = () => {
-  const images = ["/next.svg", "/next.svg", "/next.svg"];
   const cat = "WebApp";
   const [projects, setProjects] = useState([]);
 

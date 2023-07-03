@@ -7,7 +7,7 @@ export const GET = async (request) => {
 
     console.log('In /api/projects/')
 
-    const projects = await Project.find({})
+    const projects = Project.find({})
 
     return new Response(JSON.stringify(projects), {
       status: 200
