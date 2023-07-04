@@ -1,7 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 
-import { footerLinks } from "@constants/footerLinks"
+import { footerLinks } from "@constants/Constants"
 
 const Footer = () => {
   return (
@@ -14,7 +13,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__links">
-        {footerLinks.map((item) => (
+        {FooterLinks.map((item) => (
           <div key={item.title} className="footer__link">
             <h3 className="font-bold">{item.title}</h3>
             <div className="flex flex-col gap-5">
