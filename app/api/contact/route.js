@@ -6,7 +6,6 @@ export async function POST (request) {
   const { name, email, phone, linkedin, message } = await request.json()
   const OAuth2 = google.auth.OAuth2
 
-
   const createTransporter = async () => {
     const oauth2Client = new OAuth2(
       process.env.CLIENT_ID,
@@ -18,7 +17,7 @@ export async function POST (request) {
         refresh_token: process.env.REFRESH_TOKEN
       })
     } catch (e) {
-      console.error("Error occurred while setting OAuth2 Credentials - In Contact API.", e)
+      console.error('Error occurred while setting OAuth2 Credentials - In Contact API.', e)
     }
 
     const accessToken = await oauth2Client.getAccessToken()
@@ -37,12 +36,11 @@ export async function POST (request) {
           refreshToken: process.env.REFRESH_TOKEN
         }
       })
-  
+
       return transporter
     } catch (e) {
-      console.error("Error creating transport - In Contact API.", e)
+      console.error('Error creating transport - In Contact API.', e)
     }
-    
   }
 
   const sendEmail = async (emailOptions) => {
@@ -58,8 +56,8 @@ export async function POST (request) {
       from: process.env.EMAIL
     })
   } catch (e) {
-    console.error("Error sending email - In Contact API.", e)
+    console.error('Error sending email - In Contact API.', e)
   }
-  
+
   return NextResponse.json({ sendEmail })
 }
