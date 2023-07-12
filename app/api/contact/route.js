@@ -49,7 +49,7 @@ export async function POST (request) {
   }
 
   try {
-    sendEmail({
+    await sendEmail({
       subject: 'From: ' + name + '\nEmail: ' + email,
       text: message + '\n' + phone + '\n' + linkedin,
       to: process.env.EMAIL,
