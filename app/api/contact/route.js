@@ -51,9 +51,9 @@ export async function POST (request) {
   try {
     await sendEmail({
       subject: 'From: ' + name + '\nEmail: ' + email,
-      text: message + '\n' + phone + '\n' + linkedin,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nLinkedIn: ${linkedin}\nMessage: ${message}`,
       to: process.env.EMAIL,
-      from: process.env.EMAIL
+      from: `${name} - Portfolio Contact <${process.env.EMAIL}>`
     })
   } catch (e) {
     console.error('Error sending email - In Contact API.', e)
