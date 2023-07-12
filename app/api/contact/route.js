@@ -6,40 +6,43 @@ export async function POST (request) {
   const { name, email, phone, linkedin, message } = await request.json()
   const OAuth2 = google.auth.OAuth2
 
+
   const createTransporter = async () => {
     const oauth2Client = new OAuth2(
       process.env.CLIENT_ID,
       process.env.CLIENT_SECRET,
       process.env.REQUEST_URI
     )
-    oauth2Client.setCredentials({
-      refresh_token: process.env.REFRESH_TOKEN
-    })
-
-    const accessToken = await new Promise((resolve, reject) => {
-      oauth2Client.getAccessToken((err, token) => {
-        if (err) {
-          reject(new Error('Failed to create access token'))
-        }
-        resolve(token)
+    try {
+      oauth2Client.setCredentials({
+        refresh_token: process.env.REFRESH_TOKEN
       })
-    })
+    } catch (e) {
+      console.error("Error occurred while setting OAuth2 Credentials - In Contact API.", e)
+    }
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {
-        type: 'OAuth2',
-        user: process.env.EMAIL,
-        accessToken,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN
-      }
-    })
+    const accessToken = await oauth2Client.getAccessToken()
 
-    return transporter
+    try {
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          type: 'OAuth2',
+          user: process.env.EMAIL,
+          accessToken,
+          clientId: process.env.CLIENT_ID,
+          clientSecret: process.env.CLIENT_SECRET,
+          refreshToken: process.env.REFRESH_TOKEN
+        }
+      })
+  
+      return transporter
+    } catch (e) {
+      console.error("Error creating transport - In Contact API.", e)
+    }
+    
   }
 
   const sendEmail = async (emailOptions) => {
@@ -47,11 +50,16 @@ export async function POST (request) {
     await emailTransporter.sendMail(emailOptions)
   }
 
-  sendEmail({
-    subject: 'From: ' + name + '\nEmail: ' + email,
-    text: message + '\n' + phone + '\n' + linkedin,
-    to: process.env.EMAIL,
-    from: process.env.EMAIL
-  })
+  try {
+    sendEmail({
+      subject: 'From: ' + name + '\nEmail: ' + email,
+      text: message + '\n' + phone + '\n' + linkedin,
+      to: process.env.EMAIL,
+      from: process.env.EMAIL
+    })
+  } catch (e) {
+    console.error("Error sending email - In Contact API.", e)
+  }
+  
   return NextResponse.json({ sendEmail })
 }
