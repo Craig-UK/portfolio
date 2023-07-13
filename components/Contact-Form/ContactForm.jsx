@@ -15,6 +15,7 @@ const ContactForm = () => {
   const initState = {values: initValues};
 
   const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isOk, setIsOk] = useState(true);
   const [state, setState] = useState(initState);
   const [isError, setIsError] = useState(false);
@@ -48,37 +49,55 @@ const ContactForm = () => {
 
     const validLinkedInRegex = /^https?:\/\/www\.linkedin\.com\/(?:in|pub|public-profile\/in|public-profile\/pub)\/(?:[\w]{6}-[\w]{1,}-[\w]+)*$/
     const validPhoneRegex = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
+    const validMessageRegex = /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.\/?]*$/
 
     if(values.phone !== "" && !values.phone.match(validPhoneRegex)) {
       setIsError(true)
+      setErrorMessage("Invalid Phone Number.")
+      throw new Error("Invalid Phone Number.")
     }
 
     if(values.linkedin !== "" && !values.linkedin.match(validLinkedInRegex)) {
       setIsError(true)
+      setErrorMessage("Invalid LinkedIn URL.")
+      throw new Error("Invalid LinkedIn URL.")
+    }
+
+    if(!values.message.match(validMessageRegex)) {
+      setIsError(true)
+      setErrorMessage("Invalid Message.")
+      throw new Error("Invalid Message.")
     }
 
     if(!values.name || !values.email || !values.message) {
       setIsRequiredError(true)
+      setErrorMessage("Name, email and message fields are required.")
+      throw new Error("Name, email and message fields are required.")
     }
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-    if (response.ok) {
-      setState({ values: initValues })
-      setMessage("Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible.")
-      setIsOk(true);
-      setIsError(false);
-    } else {
-      setMessage("Sorry, there was an issue sending your message. Please try again.")
-      setIsOk(false);
-      setState({ isLoading: false })
-      setIsError(false);
+      if (response.ok) {
+        setState({ values: initValues })
+        setMessage("Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible.")
+        setIsOk(true);
+        setIsError(false);
+      } else {
+        setMessage("Sorry, there was an issue sending your message. Please try again.")
+        setIsOk(false);
+        setState({ isLoading: false })
+        setIsError(false);
+      }
+    } catch (e) {
+      setIsError(true)
+      setIsOk(false)
     }
   };
 
@@ -113,11 +132,6 @@ const ContactForm = () => {
         onChange={handleChange}
         required
       ></input>
-      {isError ? (
-        <p className="font-bold font-satoshi text-red-600">Please enter a valid email.</p>
-      ): (
-        <></>
-      )}
       {isRequiredError ? (
         <p className="font-bold font-satoshi text-red-600">Email is required.</p>
       ): (
@@ -135,11 +149,6 @@ const ContactForm = () => {
         onChange={handleChange}
         className="form-input rounded-xl"
       ></input>
-      {isError ? (
-        <p className="font-bold font-satoshi text-red-600">Invalid Phone Number.</p>
-      ): (
-        <></>
-      )}
       <label htmlFor="linkedin" className="px-2 pt-2">
         LinkedIn URL
       </label>
@@ -151,11 +160,6 @@ const ContactForm = () => {
         onChange={handleChange}
         className="form-input rounded-xl"
       ></input>
-      {isError ? (
-        <p className="font-bold font-satoshi text-red-600">Invalid LinkedIn URL.</p>
-      ): (
-        <></>
-      )}
       <label htmlFor="message" className="px-2 pt-2">
         Message<span className="text-red-600">*</span>
       </label>
@@ -195,6 +199,11 @@ const ContactForm = () => {
           <p className="text-green-500">{message}</p>
         ): (
           <p className="text-red-500">{message}</p>
+        )}
+        {isError ? (
+          <p className="font-bold text-red-500">{errorMessage}</p>
+        ): (
+          <></>
         )}
       </div>
     </form>
