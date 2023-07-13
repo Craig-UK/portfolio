@@ -6,6 +6,10 @@ export async function POST (request) {
   const { name, email, phone, linkedin, message } = await request.json()
   const OAuth2 = google.auth.OAuth2
 
+  if(!name || !email || !message) {
+    return NextResponse.json({ status: 400, message: "No name, email or message provided."})
+  }
+
   const createTransporter = async () => {
     const oauth2Client = new OAuth2(
       process.env.CLIENT_ID,
