@@ -63,5 +63,5 @@ export async function POST (request) {
     return NextResponse.json({ status: 403, message: 'Something went wrong while sending the email.' })
   }
 
-  return NextResponse.json({ status: 200, message: 'Email successfully sent.'})
+  return NextResponse.json({ status: 200, message: 'Email successfully sent.' })
 }
