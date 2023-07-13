@@ -54,24 +54,40 @@ const ContactForm = () => {
     if(values.phone !== "" && !values.phone.match(validPhoneRegex)) {
       setIsError(true)
       setErrorMessage("Invalid Phone Number.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
       throw new Error("Invalid Phone Number.")
     }
 
     if(values.linkedin !== "" && !values.linkedin.match(validLinkedInRegex)) {
       setIsError(true)
       setErrorMessage("Invalid LinkedIn URL.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
       throw new Error("Invalid LinkedIn URL.")
     }
 
     if(!values.message.match(validMessageRegex)) {
       setIsError(true)
       setErrorMessage("Invalid Message.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
       throw new Error("Invalid Message.")
     }
 
     if(!values.name || !values.email || !values.message) {
       setIsRequiredError(true)
       setErrorMessage("Name, email and message fields are required.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
       throw new Error("Name, email and message fields are required.")
     }
 
@@ -92,7 +108,10 @@ const ContactForm = () => {
       } else {
         setMessage("Sorry, there was an issue sending your message. Please try again.")
         setIsOk(false);
-        setState({ isLoading: false })
+        setState((prev) => ({
+          ...prev,
+          isLoading: false
+        }))
         setIsError(false);
       }
     } catch (e) {
