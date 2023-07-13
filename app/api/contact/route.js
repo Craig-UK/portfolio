@@ -6,8 +6,8 @@ export async function POST (request) {
   const { name, email, phone, linkedin, message } = await request.json()
   const OAuth2 = google.auth.OAuth2
 
-  if(!name || !email || !message) {
-    return NextResponse.json({ status: 400, message: "No name, email or message provided."})
+  if (!name || !email || !message) {
+    return NextResponse.json({ status: 400, message: 'No name, email or message provided.' })
   }
 
   const createTransporter = async () => {
@@ -21,7 +21,7 @@ export async function POST (request) {
         refresh_token: process.env.REFRESH_TOKEN
       })
     } catch (e) {
-      console.error('Error occurred while setting OAuth2 Credentials - In Contact API.', e)
+      return NextResponse.json({ status: 401, message: 'Something went wrong while setting credentials.' })
     }
 
     const accessToken = await oauth2Client.getAccessToken()
@@ -43,7 +43,7 @@ export async function POST (request) {
 
       return transporter
     } catch (e) {
-      console.error('Error creating transport - In Contact API.', e)
+      return NextResponse.json({ status: 403, message: 'Something went wrong while creating the email.' })
     }
   }
 
@@ -60,8 +60,8 @@ export async function POST (request) {
       from: `${name} - Portfolio Contact <${process.env.EMAIL}>`
     })
   } catch (e) {
-    console.error('Error sending email - In Contact API.', e)
+    return NextResponse.json({ status: 403, message: 'Something went wrong while sending the email.' })
   }
 
-  return NextResponse.json({ sendEmail })
+  return NextResponse.json({ status: 200, message: 'Email successfully sent.'})
 }
