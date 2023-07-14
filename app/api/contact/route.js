@@ -7,19 +7,20 @@ export async function POST (request) {
   const OAuth2 = google.auth.OAuth2
 
   const CONTACT_MESSAGE_FIELDS = {
-    name: "Name",
-    email: "Email",
-    phone: "Phone",
-    linkedin: "LinkedIn",
-    message: "Message"
+    name: 'Name',
+    email: 'Email',
+    phone: 'Phone',
+    linkedin: 'LinkedIn',
+    message: 'Message'
   }
 
   const generateEmailContent = (data) => {
-    const stringData = Object.entries(data).reduce((str, [key, val]) => 
-      str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${val} \n \n`, "")
 
-    const htmlData = Object.entries(data).reduce((str, [key, val]) => 
-      str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`, "")
+    const stringData = Object.entries(data).reduce((str, [key, val]) =>
+      str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${val} \n \n`, '')
+
+    const htmlData = Object.entries(data).reduce((str, [key, val]) =>
+      str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`, '')
     
     return {
       text: stringData,

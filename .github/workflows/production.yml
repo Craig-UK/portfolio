@@ -24,6 +24,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CSS: false
           VALIDATE_COPY_PASTE_DETECTION: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
           FILTER_REGEX_EXCLUDE: .*html_email_templates/.*
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

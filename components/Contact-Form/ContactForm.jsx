@@ -45,7 +45,7 @@ const ContactForm = () => {
     const validLinkedInRegex = /^https?:\/\/www\.linkedin\.com\/(?:in|pub|public-profile\/in|public-profile\/pub)\/(?:[\w]{6}-[\w]{1,}-[\w]+)*$/
     const validPhoneRegex = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
     const validMessageRegex = /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.\/?]*$/
-    const validNameRegex = /[^a-zA-Z\s]*$/
+    const validNameRegex = /^[a-zA-Z \s]*$/
 
     if(!values.name.match(validNameRegex)) {
       setIsError(true)
