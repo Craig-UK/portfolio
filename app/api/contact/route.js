@@ -214,9 +214,9 @@ export async function POST (request) {
       to: process.env.EMAIL,
       from: `${data.name} - Portfolio Contact <${process.env.EMAIL}>`
     })
+
+    return NextResponse.json({ status: 200, message: 'Success', success: true })
   } catch (e) {
     return NextResponse.json({ status: 403, message: 'Something went wrong while sending the email.' })
   }
-
-  return NextResponse.json({ status: 200, message: 'Email successfully sent.' })
 }

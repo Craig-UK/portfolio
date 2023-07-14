@@ -42,15 +42,41 @@ const ContactForm = () => {
     }))
 
     const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-
-    if(!values.email.match(validEmailRegex)) {
-      setIsError(true)
-    }
-
     const validLinkedInRegex = /^https?:\/\/www\.linkedin\.com\/(?:in|pub|public-profile\/in|public-profile\/pub)\/(?:[\w]{6}-[\w]{1,}-[\w]+)*$/
     const validPhoneRegex = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
     const validMessageRegex = /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.\/?]*$/
+    const validNameRegex = /[^a-zA-Z\s]*$/
 
+    if(!values.name.match(validNameRegex)) {
+      setIsError(true)
+      setErrorMessage("Invalid Name.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
+      throw new Error("Invalid Name.")
+    }
+
+    if(!values.email.match(validEmailRegex)) {
+      setIsError(true)
+      setErrorMessage("Invalid Email.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
+      throw new Error("Invalid Email.")
+    }
+
+    if(!values.message.match(validMessageRegex)) {
+      setIsError(true)
+      setErrorMessage("Invalid Message.")
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
+      throw new Error("Invalid Message.")
+    }
+    
     if(values.phone !== "" && !values.phone.match(validPhoneRegex)) {
       setIsError(true)
       setErrorMessage("Invalid Phone Number.")
@@ -71,16 +97,6 @@ const ContactForm = () => {
       throw new Error("Invalid LinkedIn URL.")
     }
 
-    if(!values.message.match(validMessageRegex)) {
-      setIsError(true)
-      setErrorMessage("Invalid Message.")
-      setState((prev) => ({
-        ...prev,
-        isLoading: false
-      }))
-      throw new Error("Invalid Message.")
-    }
-
     if(!values.name || !values.email || !values.message) {
       setIsRequiredError(true)
       setErrorMessage("Name, email and message fields are required.")
@@ -97,7 +113,7 @@ const ContactForm = () => {
           headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(values)
       });
 
       if (response.ok) {
@@ -106,17 +122,17 @@ const ContactForm = () => {
         setIsOk(true);
         setIsError(false);
       } else {
-        setMessage("Sorry, there was an issue sending your message. Please try again.")
-        setIsOk(false);
-        setState((prev) => ({
-          ...prev,
-          isLoading: false
-        }))
-        setIsError(false);
+        throw new Error("Something went wrong while sending the message.")
       }
     } catch (e) {
       setIsError(true)
-      setIsOk(false)
+      setMessage("Sorry, there was an issue sending your message. Please try again.")
+      console.log(e.message)
+      setIsOk(false);
+      setState((prev) => ({
+        ...prev,
+        isLoading: false
+      }))
     }
   };
 
