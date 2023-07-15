@@ -3,6 +3,10 @@ import Image from "next/image";
 import FactCard from "@components/Cards/FactCard";
 import LearnMoreCard from "@components/Cards/LearnMoreCard";
 
+export const metadata = {
+  title: 'About'
+}
+
 const About = () => {
   const learnMoreButtons = [
     [

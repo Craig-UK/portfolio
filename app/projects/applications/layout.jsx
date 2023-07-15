@@ -1,5 +1,13 @@
 import OtherPagesCard from "@components/Cards/OtherPagesCard";
 
+export const metadata = {
+  title: {
+    template: 'Craig\'s Portfolio Projects - %s',
+    default: 'Craig\'s Portfolio Projects',
+  },
+  description: 'Hi, I\'m Craig. Welcome to my Portfolio! This website contains a list of my projects, dev blog posts, travel blog posts and more!'
+}
+
 const ProjectAppsLayout = ({ children }) => {
   const githubButton = [
     {

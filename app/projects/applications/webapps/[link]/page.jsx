@@ -1,36 +1,24 @@
-"use client";
+import WebAppsIndividualPageComponent from "@components/Projects-Applications/WebApps/link/WebAppsIndividualPageComponent";
 
-import SingleWebProject from "@components/Single-Project-Page/SingleWebProject";
-import { useEffect, useState } from "react";
+export async function generateMetadata(
+  { params }
+) {
+  // read route params
+  const id = params.link
+  const cat = "WebApp"
+ 
+  // fetch data
+  const project = await fetch(`https://justcraigdev.com/api/projects/${cat}/${id}`).then((res) => res.json())
+ 
+  return {
+    title: 'Web Application Projects - ' + id,
+  }
+}
 
 const SingleWebAppProject = ({ params }) => {
-  const cat = "WebApp";
-  const [project, setProject] = useState([]);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      const res = await fetch(`/api/projects/${cat}/${params.link}`);
-      const data = await res.json();
-
-      setProject(data);
-    };
-
-    fetchProject();
-  }, []);
-
   return (
     <div>
-      {project.map((proj) => (
-        <SingleWebProject
-          key={proj._id}
-          title={proj.title}
-          github={proj.github}
-          deployed={proj.deployed === "" ? "Not Deployed" : proj.deployed}
-          desc={proj.description}
-          limits={proj.limitations}
-          images={proj.images}
-        />
-      ))}
+      <WebAppsIndividualPageComponent params={params}/>
     </div>
   );
 };

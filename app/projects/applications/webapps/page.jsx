@@ -1,38 +1,12 @@
-"use client";
+import WebAppsPageComponent from "@components/Projects-Applications/WebApps/WebAppsPageComponent";
 
-import ProjectCard from "@components/Cards/ProjectCard";
-import { useEffect, useState } from "react";
+export const metadata = {
+  title: 'Web Application Projects'
+}
 
 const WebApps = () => {
-  const cat = "WebApp";
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const fetchProjects = async() => {
-      const res = await fetch(`/api/projects/${cat}`);
-      const data = await res.json();
-
-      setProjects(data);
-    }
-  
-    fetchProjects();
-  }, [])
-  
-
   return (
-    <section className="grid grid-cols-2 gap-2">
-      {projects.map(project => (
-        <ProjectCard 
-          key={project._id}
-          title={project.title}
-          githubLink={project.github}
-          languagesLogos={project.logo}
-          summary={project.summary}
-          featured={project.featured}
-          projectLink={project.link}
-        />
-      ))}
-    </section>
+    <WebAppsPageComponent />
   );
 };
 

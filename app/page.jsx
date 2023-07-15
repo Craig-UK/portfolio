@@ -1,9 +1,10 @@
-"use client";
-
 import OtherPagesCard from "@components/Cards/OtherPagesCard";
 import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
-import React from "react";
+
+export const metadata = {
+  title: 'Craig\'s Portfolio - Home'
+}
 
 const Home = () => {
   const links = [
