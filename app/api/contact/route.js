@@ -212,8 +212,9 @@ export async function POST (request) {
     await sendEmail({
       ...generateEmailContent(data),
       subject: 'From: ' + data.name + '\nEmail: ' + data.email,
+      replyTo: process.env.REPLY_TO_EMAIL,
       to: process.env.EMAIL,
-      from: `${data.name} - Portfolio Contact <${process.env.EMAIL}>`
+      from: `${data.name} - Portfolio Contact <${process.env.REPLY_TO_EMAIL}>`
     })
 
     return NextResponse.json({ status: 200, message: 'Success', success: true })
