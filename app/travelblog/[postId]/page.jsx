@@ -24,7 +24,7 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: post.title,
+    title: 'Travel Blog - ' + post.title,
   };
 }
 

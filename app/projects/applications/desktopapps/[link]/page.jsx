@@ -1,36 +1,24 @@
-"use client";
+import DesktopAppsIndividualPageComponent from "@components/Projects-Applications/DesktopApps/link/DesktopAppsIndividualPageComponent";
 
-import SingleDesktopProject from "@components/Single-Project-Page/SingleDesktopProject";
-import { useEffect, useState } from "react";
+export async function generateMetadata(
+  { params }
+) {
+  // read route params
+  const id = params.link
+  const cat = "DesktopApp"
+ 
+  // fetch data
+  const project = await fetch(`https://justcraigdev.com/api/projects/${cat}/${id}`).then((res) => res.json())
+ 
+  return {
+    title: 'Desktop Application Projects - ' + id,
+  }
+}
 
 const SingleDesktopAppProject = ({ params }) => {
-    const cat = "DesktopApp";
-  const [project, setProject] = useState([]);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      const res = await fetch(`/api/projects/${cat}/${params.link}`);
-      const data = await res.json();
-
-      setProject(data);
-    };
-
-    fetchProject();
-  }, []);
-
   return (
     <div>
-      {project.map((proj) => (
-        <SingleDesktopProject
-          key={proj._id}
-          title={proj.title}
-          github={proj.github}
-          deployed={proj.deployed === "" ? "Not Deployed" : proj.deployed}
-          desc={proj.description}
-          limits={proj.limitations}
-          images={proj.images}
-        />
-      ))}
+      <DesktopAppsIndividualPageComponent params={params} />
     </div>
   );
 };

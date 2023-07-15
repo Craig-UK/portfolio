@@ -1,36 +1,24 @@
-"use client";
+import MobileAppsIndividualPageComponent from "@components/Projects-Applications/MobileApps/link/MobileAppsIndividualPageComponent";
 
-import SingleMobileProject from "@components/Single-Project-Page/SingleMobileProject";
-import { useEffect, useState } from "react";
+export async function generateMetadata(
+  { params }
+) {
+  // read route params
+  const id = params.link
+  const cat = "MobileApp"
+ 
+  // fetch data
+  const project = await fetch(`https://justcraigdev.com/api/projects/${cat}/${id}`).then((res) => res.json())
+ 
+  return {
+    title: 'Mobile Application Projects - ' + id,
+  }
+}
 
 const SingleMobileAppProject = ({ params }) => {
-    const cat = "MobileApp";
-  const [project, setProject] = useState([]);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      const res = await fetch(`/api/projects/${cat}/${params.link}`);
-      const data = await res.json();
-
-      setProject(data);
-    };
-
-    fetchProject();
-  }, []);
-
   return (
     <div>
-      {project.map((proj) => (
-        <SingleMobileProject
-          key={proj._id}
-          title={proj.title}
-          github={proj.github}
-          deployed={proj.deployed === "" ? "Not Deployed" : proj.deployed}
-          desc={proj.description}
-          limits={proj.limitations}
-          images={proj.images}
-        />
-      ))}
+      <MobileAppsIndividualPageComponent params={params} />
     </div>
   );
 };

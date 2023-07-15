@@ -1,8 +1,10 @@
-"use client";
-
 import OtherPagesCard from "@components/Cards/OtherPagesCard";
 import ProfileCard from "@components/Cards/ProfileCard";
 import React from "react";
+
+export const metadata = {
+  title: 'Projects'
+}
 
 const Projects = () => {
   const webLinks = [
