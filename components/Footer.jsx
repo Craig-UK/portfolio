@@ -8,7 +8,10 @@ const Footer = () => {
     <div className='flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
       <div className='flex flex-col justify-start items-start gap-6'>
         <p className='text-base text-gray-700 font-bold'>
-          Craig Cimie - Developer
+          Craig Climie - Developer
+        </p>
+        <p className="font-semibold text-gray-700">
+          <a href='mailto:contact@justcraigdev.com' className="hover:underline">Contact Me through email by clicking here</a>
         </p>
       </div>
 
