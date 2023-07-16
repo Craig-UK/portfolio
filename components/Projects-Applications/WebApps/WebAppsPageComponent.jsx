@@ -20,19 +20,26 @@ const WebAppsPageComponent = () => {
     
   
     return (
-      <section className="grid grid-cols-2 gap-2">
-        {projects.map(project => (
-          <ProjectCard 
-            key={project._id}
-            title={project.title}
-            githubLink={project.github}
-            languagesLogos={project.logo}
-            summary={project.summary}
-            featured={project.featured}
-            projectLink={project.link}
-          />
-        ))}
-      </section>
+      <div>
+        {projects.length == 0 && (
+          <div className="flex items-center justify-center">
+            <p>No Web Application projects available. Please try again later.</p>
+          </div>
+        )}
+        <section className="grid grid-cols-2 gap-2">
+          {projects?.map(project => (
+            <ProjectCard 
+              key={project._id}
+              title={project.title}
+              githubLink={project.github}
+              languagesLogos={project.logo}
+              summary={project.summary}
+              featured={project.featured}
+              projectLink={project.link}
+            />
+          ))}
+        </section>
+      </div>
     )
 }
 
