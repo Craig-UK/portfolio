@@ -98,7 +98,6 @@ const Projects = () => {
     <div>
       <section className="w-full flex-start flex-row justify-between gap-14">
         <ProfileCard
-          image={"/assets/images/scenery-1.jpg"}
           title="Web Application Projects"
           links={webLinks}
           aboutText="These are some of the web application projects that I
@@ -107,7 +106,6 @@ const Projects = () => {
           button={profileCardButtons[0]}
         />
         <ProfileCard
-          image={"/assets/images/scenery-1.jpg"}
           title="Mobile Application Projects"
           links={mobileLinks}
           aboutText="These are some of the mobile application projects that I
@@ -116,7 +114,6 @@ const Projects = () => {
           button={profileCardButtons[1]}
         />
         <ProfileCard
-          image={"/assets/images/scenery-1.jpg"}
           title="Desktop Application Projects"
           links={desktopLinks}
           aboutText="These are some of the desktop application projects that

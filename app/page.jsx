@@ -67,7 +67,7 @@ const Home = () => {
       </section>
       <section className="pt-10">
         <ProfileCard
-          image={"/assets/images/scenery-1.jpg"}
+          image={"/assets/images/portrait.jpg"}
           title={"Craig Climie"}
           subtitle={"Software Developer, Web Developer"}
           button={profileCardButtons[0]}

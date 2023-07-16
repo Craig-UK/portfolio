@@ -5,14 +5,20 @@ import React from "react";
 const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
   return (
     <div className="profile_card">
-      <Image
-        src={image}
-        height={200}
-        width={250}
-        alt="Cool Scenery Image"
-        className="ml-7"
-      />
-      <div className="border-between-items"></div>
+      {image && (
+        <>
+          <div className="flex items-center justify-center">
+            <Image
+                src={image}
+                height={100}
+                width={150}
+                alt="Image"
+                className="rounded-full"
+              />
+          </div>
+          <div className="border-between-items"></div>
+        </>
+      )}
       <div className="font-satoshi font-semibold ml-1">
         <h4>{title}</h4>
       </div>
