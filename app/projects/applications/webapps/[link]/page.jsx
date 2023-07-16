@@ -5,10 +5,6 @@ export async function generateMetadata(
 ) {
   // read route params
   const id = params.link
-  const cat = "WebApp"
- 
-  // fetch data
-  const project = await fetch(`https://justcraigdev.com/api/projects/${cat}/${id}`).then((res) => res.json())
  
   return {
     title: 'Web Application Projects - ' + id,
