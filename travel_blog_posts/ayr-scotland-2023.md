@@ -17,9 +17,9 @@ Next, we decided to take a stroll up towards the shopping centre to have a look 
 
 [Plane video here]
 
-As we were going up to Ayr's shopping centre, we stopped into check out some of the stores along the main road (I think?) We went into CeX (mostly a Tech store and as you can probably guess, I'm an absolute Tech nerd). I saw a nice camera in CeX that was around £150, so not bad (I think it was a Canon D3100 or something, is that good?). 
+As we were going up to Ayr's shopping centre, we stopped into check out some of the stores along the main road (I think?) We went into CeX (mostly a Tech store and as you can probably guess, I'm an absolute Tech nerd). I saw a nice camera in CeX that was around £150, so not bad (I think it was a Canon D3100 or something, is that good?).
 
-Next we went into a cool gift store that sold all things from cool gifts for weddings, graduations, birthdays, and more. It even sold cards for alot of the occasions that you would need a card for! Lastly, we decided to go into Waterstones... because who doesn't love to read books and look at board games... right? Waterstones is amazing! 
+Next we went into a cool gift store that sold all things from cool gifts for weddings, graduations, birthdays, and more. It even sold cards for alot of the occasions that you would need a card for! Lastly, we decided to go into Waterstones... because who doesn't love to read books and look at board games... right? Waterstones is amazing!
 
 We then walked up to the shopping centre where we pretty much just chilled out in the nice cool breeze... because it was like 26°C almost all day! That's summer for you in Scotland haha!
 

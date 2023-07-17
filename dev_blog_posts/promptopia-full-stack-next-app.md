@@ -8,7 +8,7 @@ summary: 'An application developed using Next.js 13 that allows user to post AI 
 
 ***PLEASE NOTE: PLEASE DO NOT ATTEMPT TO LOGIN TO THIS WEB APPLICATION WITH YOUR GOOGLE ACCOUNT***
 
-This is a NextJS React website developed using the "Next.js 13 Full Course 2023 | Build and Deploy a Full Stack App Using the Official React Framework" tutorial by JavaScript Mastery.
+This is a NextJS React web application developed using the "Next.js 13 Full Course 2023 | Build and Deploy a Full Stack App Using the Official React Framework" tutorial by JavaScript Mastery.
 
 I've built a project that allows users to share useful prompts that other users can use when using AI tools such as ChatGPT, etc.
 
