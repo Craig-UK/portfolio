@@ -6,7 +6,7 @@ const DevBlogPosts = () => {
   const posts = getSortedPostsData();
 
   return (
-    <div>
+    <div className="grid grid-cols-2 gap-2">
       {posts.map(post => (
         <BlogCard 
           key={post.id}
