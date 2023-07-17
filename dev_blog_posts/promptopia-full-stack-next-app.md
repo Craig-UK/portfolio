@@ -16,9 +16,11 @@ This project makes use of Next.js 13, TailwindCSS, MongoDB, and more.
 
 Thanks to JavaScript Mastery for this project (find the links below)
 
-After using Next.js since around version 12, I finally saw this tutorial by JavaScript Mastery that used Next.js version 13 along with the new App router. Aswell as Next.js 13, I finally got to try out TailwindCSS which I have been really eager to try out. This tutorial also made use of MongoDB and demonstrated how to integrate MongoDB with Next.js 13 and the App router along with API routes within the App router.
+After using Next.js since around version 12, I finally saw this tutorial by JavaScript Mastery that used Next.js version 13 along with the new App router. Aswell as Next.js 13, I finally got to try out TailwindCSS which I have been really eager to try out. This tutorial also made use of MongoDB and demonstrated how to integrate MongoDB with Next.js 13 and the App router.
 
-So, all in all, from this tutorial, I learned alot about how to integrate multiple systems and frameworks (mostly CSS frameworks) with the new Next.js 13 App router and API routes. Along with learning how to integrate Next.js 13 with TailwindCSS and MongoDB, this tutorial also demonstrated how to use Google's OAuth authentication to allow users to sign in to their Google account's and post their recommended AI prompts that they've created and found through systems such as ChatGPT, etc. ***!!!PLEASE DO NOT ATTEMPT TO LOGIN TO YOUR GOOGLE ACCOUNT, I AM GOING TO DISABLE THIS FEATURE. IT WAS MAINLY FOR TESTING OUT GOOGLE'S OAUTH AUTHENTICATION INTEGRATION!!!***
+So, all in all, from this tutorial, I learned alot about how to integrate multiple systems and frameworks (mostly CSS frameworks) with the new Next.js 13 App router and API routes. This tutorial also demonstrated how to use Google's OAuth authentication to allow users to sign in to their Google account's and post their recommended AI prompts found through systems such as ChatGPT, etc.
+
+***!!!PLEASE DO NOT ATTEMPT TO LOGIN TO YOUR GOOGLE ACCOUNT, I AM GOING TO DISABLE THIS FEATURE. IT WAS MAINLY FOR TESTING OUT GOOGLE'S OAUTH AUTHENTICATION INTEGRATION!!!***
 
 Overall, this tutorial taught me alot about how to integrate multiple systems and frameworks, such as TailwindCSS, to build a fully functional and full-stack application using Next.js 13's newest features while also getting to learn how to integrate Google's OAuth Authentication and creating profiles for each individual user.
 
