@@ -67,11 +67,10 @@ POSSIBLE!!!***
 
 ![Profile page which shows Posts created by a user](</assets/images/2023/may/promptopia/Profile Page - Edited.png>)
 
-As with the feed on the Home page, and as can be seen in the images above, to the right
-of the 'Prompt' box, there is an icon. This icon can be clicked by the user and when it
-is clicked the text of the 'prompt' will be copied to the users clipboard and will also
-display a 'checkmark' icon if the prompt text has been successfully copied to the users
-clipboard.
+As with the feed on the Home Page, and as can be seen in the image above. There is an
+icon. This icon can be clicked by a user to allow them to copy the text of the prompt
+to the user's clipboard. This icon will change to a 'checkmark' icon when the user has
+successfully copied the text of the prompt to their clipboard.
 
 ## Create Post Page
 
