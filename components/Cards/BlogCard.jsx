@@ -28,10 +28,10 @@ const BlogCard = ({
       <div className="border border-black rounded-md">
         <Image
           src={coverImage}
-          height={50}
-          width={50}
+          height={150}
+          width={150}
           alt="Blog Cover Image"
-          className="w-full h-full m-0 p-0"
+          className="w-full h-full m-0 p-0 object-fill"
         />
       </div>
       <div className="mx-3">
