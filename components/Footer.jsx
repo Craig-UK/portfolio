@@ -25,6 +25,7 @@ const Footer = () => {
                   key={link.title}
                   href={link.url}
                   className="text-gray-500"
+                  target={link.target !== "" ? link.target : link.url}
                 >
                   {link.title}
                 </Link>

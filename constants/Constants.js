@@ -11,9 +11,9 @@ export const footerLinks = [
   {
     title: 'Socials',
     links: [
-      { title: 'Twitter', url: 'https://twitter.com/CraigDevUK' },
-      { title: 'Instagram', url: 'https://instagram.com/CraigDevUK' },
-      { title: 'GitHub', url: 'https://github.com/Craig-UK' }
+      { title: 'Twitter', url: 'https://twitter.com/CraigDevUK', target: '_blank' },
+      { title: 'Instagram', url: 'https://instagram.com/CraigDevUK', target: '_blank' },
+      { title: 'GitHub', url: 'https://github.com/Craig-UK', target: '_blank' }
     ]
   }
 ]
