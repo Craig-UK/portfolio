@@ -29,17 +29,17 @@ const Projects = () => {
     {
       id: "1",
       name: "Flutter",
-      href: "https://nextjs.org/",
+      href: "https://flutter.dev/",
     },
     {
       id: "2",
       name: "React Native",
-      href: "https://react.dev/",
+      href: "https://reactnative.dev/",
     },
     {
       id: "3",
       name: "Android SDK",
-      href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      href: "https://developer.android.com",
     },
   ];
 
@@ -47,17 +47,17 @@ const Projects = () => {
     {
       id: "1",
       name: "Flutter",
-      href: "https://nextjs.org/",
+      href: "https://flutter.dev/",
     },
     {
       id: "2",
       name: "C#",
-      href: "https://react.dev/",
+      href: "https://learn.microsoft.com/en-us/dotnet/csharp/",
     },
     {
       id: "3",
       name: "Java",
-      href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      href: "https://www.java.com/",
     },
   ];
 
