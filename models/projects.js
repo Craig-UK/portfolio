@@ -24,7 +24,7 @@ const ProjectsSchema = new Schema({
     type: String
   },
   description: {
-    type: String
+    type: Array
   },
   limitations: {
     type: String

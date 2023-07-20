@@ -17,6 +17,8 @@ const WebAppsIndividualPageComponent = ({ params }) => {
   
       fetchProject();
     }, []);
+
+    console.log(project)
   
     return (
       <div>
@@ -26,7 +28,7 @@ const WebAppsIndividualPageComponent = ({ params }) => {
             title={proj.title}
             github={proj.github}
             deployed={proj.deployed === "" ? "Not Deployed" : proj.deployed}
-            desc={proj.description}
+            desc={proj.description?.map((projDesc) => projDesc)}
             limits={proj.limitations}
             images={proj.images}
           />
