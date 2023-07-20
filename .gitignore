@@ -38,4 +38,4 @@ next-env.d.ts
 .vercel
 *.txt
 ENV BACKUP
-/public/assets/images
+/public/assets/images/Ignore
