@@ -12,6 +12,8 @@ export async function generateMetadata(
 }
 
 const SingleWebAppProject = ({ params }) => {
+  console.log(params);
+
   return (
     <div>
       <WebAppsIndividualPageComponent params={params}/>

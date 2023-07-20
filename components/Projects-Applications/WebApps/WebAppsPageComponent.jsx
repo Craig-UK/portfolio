@@ -30,6 +30,7 @@ const WebAppsPageComponent = () => {
           {projects?.map(project => (
             <ProjectCard 
               key={project._id}
+              id={project._id}
               title={project.title}
               githubLink={project.github}
               languagesLogos={project.logo}

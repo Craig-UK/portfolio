@@ -8,14 +8,14 @@ const MobileAppsPageComponent = () => {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchProjects = async() => {
       const res = await fetch(`/api/projects/${cat}`);
       const data = await res.json();
 
       setProjects(data);
     }
-
-    fetchProjects()
+  
+    fetchProjects();
   }, [])
 
   return (

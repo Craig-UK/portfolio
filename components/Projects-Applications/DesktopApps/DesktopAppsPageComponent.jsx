@@ -14,7 +14,7 @@ const DesktopAppsPageComponent = () => {
 
       setProjects(data);
     }
-
+  
     fetchProjects();
   }, [])
 

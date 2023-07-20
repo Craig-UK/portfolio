@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 const FeatureCard = ({
+  id,
   title,
   featured,
   githubLink,
@@ -17,11 +18,11 @@ const FeatureCard = ({
 
   const handleViewProjectButtonClick = () => {
     if (pathname === "/projects/applications/webapps")
-      return router.push(`/projects/applications/webapps/${projectLink}`);
+      return router.push(`/projects/applications/webapps/${id}/${projectLink}`);
     if (pathname === "/projects/applications/mobileapps")
-      return router.push(`/projects/applications/mobileapps/${projectLink}`);
+      return router.push(`/projects/applications/mobileapps/${id}/${projectLink}`);
     if (pathname === "/projects/applications/desktopapps")
-      return router.push(`/projects/applications/desktopapps/${projectLink}`);
+      return router.push(`/projects/applications/desktopapps/${id}/${projectLink}`);
   };
 
   return (

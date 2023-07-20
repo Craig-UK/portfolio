@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const SingleWebProject = ({ title, github, deployed, images, desc, limits }) => {
-  console.log(desc);
   return (
     <div className='font-satoshi'>
        <h1 className='text-4xl font-bold'>{title}</h1>

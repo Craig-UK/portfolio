@@ -5,10 +5,11 @@ export const GET = async (request, { params }) => {
   try {
     await connectToDB()
 
-    console.log(`In /api/projects/${params.cat}/${params.link}`)
+    console.log(`In /api/projects/${params.cat}/${params.id}/${params.link}`)
 
     const projects = await Project.find({
       category: params.cat,
+      _id: params.id,
       link: params.link
     })
 

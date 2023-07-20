@@ -9,7 +9,7 @@ const WebAppsIndividualPageComponent = ({ params }) => {
   
     useEffect(() => {
       const fetchProject = async () => {
-        const res = await fetch(`/api/projects/${cat}/${params.link}`);
+        const res = await fetch(`/api/projects/${cat}/${params.id}/${params.link}`);
         const data = await res.json();
   
         setProject(data);
@@ -17,8 +17,6 @@ const WebAppsIndividualPageComponent = ({ params }) => {
   
       fetchProject();
     }, []);
-
-    console.log(project)
   
     return (
       <div>
