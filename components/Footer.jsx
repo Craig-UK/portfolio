@@ -8,7 +8,10 @@ const Footer = () => {
     <div className='flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
       <div className='flex flex-col justify-start items-start gap-6'>
         <p className='text-base text-gray-700 font-bold'>
-          Craig Climie - Developer
+          2023 Craig Climie - Developer <br />
+          All rights reserved &copy; <br />
+          <Link href={'/'}>Just Craig Development 2023</Link> <br />
+          All rights reserved &copy;
         </p>
         <p className="font-semibold text-gray-700">
           <a href='mailto:contact@justcraigdev.com' className="hover:underline">Contact Me through email by clicking here</a>
@@ -33,6 +36,16 @@ const Footer = () => {
             </div>
           </div>
         ))}
+      </div>
+    </div>
+
+    <div className="flex justify-between items-center flex-wrap mt-10 border-t border gray-100 sm:px-16 px-6 py-10">
+      <p>&copy; 2023 Just Craig Development. All rights reserved.</p>
+
+      <div className="footer__copyrights-link">
+        <Link href='/' className="text-gray-500">
+          Privacy Policy
+        </Link>
       </div>
     </div>
   </footer>
