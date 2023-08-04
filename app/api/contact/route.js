@@ -168,9 +168,15 @@ export async function POST(request) {
   };
 
   const generateNoReplyEmailContent = (data) => {
-    const stringData = `Thank you for contacting me, ${data.email}. I will get back to you about your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my projects, github or have a read of one of my blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`;
+    const stringData = `Thank you for contacting me, ${data.name}. I will get back to you about your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my projects, github or have a read of one of my blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`;
 
-    const htmlData = `Thank you for contacting me, ${data.email}. I will get back to you about your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my projects, github or have a read of one of my blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`
+    const htmlDetailsData = Object.entries(data).reduce(
+      (str, [key, val]) =>
+        (str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`),
+      ""
+    );
+
+    const htmlData = `Thank you for contacting me, ${data.name}. I will reply to your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my <a href="https://justcraigdev.com/projects">projects</a>, <a href="https://github.com/Craig-UK">github</a> or have a read of one of my <a href="https://justcraigdev.com/travelblog">Travel</a> or <a href="https://justcraigdev.com/devblog">Dev</a> blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`
 
     return {
       text: stringData,
@@ -256,8 +262,61 @@ export async function POST(request) {
               overflow: hidden;
             "
           ></div>
-            <h2>Thank you for contacting me</h2>
-            <div class="form-container">${htmlData}</div>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td
+                bgcolor="#ffffff"
+                align="center"
+                style="padding: 10px 15px 30px 15px"
+                class="section-padding"
+              >
+                <table
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  style="max-width: 500px"
+                  class="responsive-table"
+                >
+                  <tr>
+                    <td>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>
+                            <table
+                              width="100%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tr>
+                                <td
+                                  style="
+                                    padding: 0 0 0 0;
+                                    font-size: 16px;
+                                    line-height: 25px;
+                                    color: #232323;
+                                  "
+                                  class="padding message-content"
+                                >
+                                  <h2>Thank you for contacting me</h2>
+                                  <div class="form-container">
+                                      <h2>The Details You Entered into the Contact Form</h2>
+                                      ${htmlDetailsData}
+                                  </div>
+                                  <div class="form-container">${htmlData}</div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </body>
       </html>`,
     };
