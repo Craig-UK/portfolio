@@ -37,11 +37,12 @@ const FeatureCard = ({
       </section>
       <Link
         href={githubLink}
-        className="font-light text-sm font-satoshi m-0 p-0 ml-2"
+        className="font-light text-sm font-satoshi m-0 p-0 ml-2 hover:underline"
       >
-        {githubLink}
+        Projects GitHub Repository can be viewed here
       </Link>
-      <section className="flex">
+      <section className="flex ml-2">
+        Programming Languages/Frameworks used:
         {languagesLogos?.map((logo) => (
             <Image
                 key={logo}
