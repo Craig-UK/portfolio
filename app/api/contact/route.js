@@ -329,10 +329,10 @@ export async function POST(request) {
 
     await sendEmail({
       ...generateNoReplyEmailContent(data),
-      subject: "From: " + data.name + "\nEmail: " + data.email,
+      subject: "Thank you for your message!",
       replyTo: process.env.REPLY_TO_EMAIL,
       to: data.email,
-      from: `${data.name} - Portfolio Contact <${process.env.NOREPLY_EMAIL}>`,
+      from: `JustCraigDev <${process.env.NOREPLY_EMAIL}>`,
     });
 
     return NextResponse.json({
