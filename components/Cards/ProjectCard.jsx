@@ -1,5 +1,6 @@
 "use client";
 
+import FeaturedBadge from "@components/Badges/FeaturedBadge";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -30,9 +31,7 @@ const FeatureCard = ({
       <section className="flex">
         <h1 className="font-bold font-satoshi text-lg m-1 ml-2">{title}</h1>
         {featured && (
-          <div className="bg-purple-500 rounded-full px-2 py-0 my-1">
-            <p className="text-gray-200 font-semibold">Featured</p>
-          </div>
+          <FeaturedBadge />
         )}
       </section>
       <Link
