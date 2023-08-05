@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-const FeatureCard = ({
+const ProjectCard = ({
   id,
   title,
   featured,
@@ -66,4 +66,4 @@ const FeatureCard = ({
   );
 };
 
-export default FeatureCard;
+export default ProjectCard;
