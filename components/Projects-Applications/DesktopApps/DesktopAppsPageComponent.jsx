@@ -35,6 +35,7 @@ const DesktopAppsPageComponent = () => {
             summary={project.summary}
             featured={project.featured}
             projectLink={project.link}
+            badges={project.badges}
           />
         ))}
       </section>

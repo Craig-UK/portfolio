@@ -11,7 +11,7 @@ const WebAppsPageComponent = () => {
       const fetchProjects = async() => {
         const res = await fetch(`/api/projects/${cat}`);
         const data = await res.json();
-  
+
         setProjects(data);
       }
     
@@ -37,6 +37,8 @@ const WebAppsPageComponent = () => {
               summary={project.summary}
               featured={project.featured}
               projectLink={project.link}
+              badges={project.badges}
+              courseOrTutorialLink={project?.courseOrTutorialLink}
             />
           ))}
         </section>
