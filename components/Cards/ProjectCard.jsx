@@ -21,7 +21,7 @@ const ProjectCard = ({
   courseOrTutorialLink
 }) => {
   const pathname = usePathname();
-  const router = useRouter()
+  const router = useRouter();
 
   const handleViewProjectButtonClick = () => {
     if (pathname === "/projects/applications/webapps")
@@ -39,18 +39,18 @@ const ProjectCard = ({
         {/* {featured && (
           <FeaturedBadge />
         )} */}
-        {Object.entries(badges).map && badges.featured && (
+        {Object.entries(badges)[0].map && badges[0].featured && (
           <FeaturedBadge />
         )}
       </section>
       <section className="flex ml-2 justify-start gap-2">
-        {Object.entries(badges).map && badges.course && courseOrTutorialLink && (
+        {Object.entries(badges)[0].map && badges[0].course && courseOrTutorialLink && (
             <CourseBadge link={courseOrTutorialLink} />
         )}
-        {Object.entries(badges).map && badges.tutorial && courseOrTutorialLink && (
+        {Object.entries(badges)[0].map && badges[0].tutorial && courseOrTutorialLink && (
             <TutorialBadge link={courseOrTutorialLink} />
         )}
-        {Object.entries(badges).map && badges.personal && (
+        {Object.entries(badges)[0].map && badges[0].personal && (
             <PersonalBadge />
         )}
       </section>
