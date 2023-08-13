@@ -42,11 +42,18 @@ const SingleDesktopProject = ({
           ))}
         </Carousel>
       </div>
-      <div className="mt-5">
-        <p>{desc}</p>
-        <p>{limits}</p>
-      </div>
-      {Object.entries(badges)[0]?.map && badges[0].tutorial && courseOrTutorialLink && (
+      <div>
+        <h1 className="text-3xl font-bold font-satoshi">Project Description</h1>
+        {desc?.map((description, i) => (
+          <p key={description} className="mt-5 font-satoshi">
+            {description}
+          </p>
+        ))}
+        <h1 className="text-3xl font-bold font-satoshi mt-10">
+          Project Limitations
+        </h1>
+        <p className="mt-5">{limits}</p>
+        {Object.entries(badges)[0]?.map && badges[0].tutorial && courseOrTutorialLink && (
           <div className="mt-5">
             <h1 className="text-3xl font-bold font-satoshi">Tutorial Used</h1>
             <p>A tutorial was used to develop this project. The tutorial used to develop this project can be seen <Link href={courseOrTutorialLink} className="hover:underline">here</Link>.</p>
@@ -58,6 +65,7 @@ const SingleDesktopProject = ({
             <p>This project was developed while following and completing a course. The course being completed that was used to develop this project can be seen <Link href={courseOrTutorialLink} className="hover:underline">here</Link>.</p>
           </div>
         )}
+      </div>
     </div>
   );
 };
