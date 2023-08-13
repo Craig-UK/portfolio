@@ -12,6 +12,8 @@ const WebAppsIndividualPageComponent = ({ params }) => {
         const res = await fetch(`/api/projects/${cat}/${params.id}/${params.link}`);
         const data = await res.json();
   
+      console.log(data);
+
         setProject(data);
       };
   
@@ -29,6 +31,8 @@ const WebAppsIndividualPageComponent = ({ params }) => {
             desc={proj.description?.map((projDesc) => projDesc)}
             limits={proj.limitations}
             images={proj.images}
+            badges={proj.badges}
+            courseOrTutorialLink={proj.courseOrTutorialLink}
           />
         ))}
       </div>
