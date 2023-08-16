@@ -15,18 +15,16 @@ export async function POST(request) {
     message: "Message",
   };
 
-  const generateEmailContent = (data) => {
-    const stringData = Object.entries(data).reduce(
-      (str, [key, val]) =>
-        (str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${val} \n \n`),
-      ""
-    );
+  const generateNoReplyEmailContent = (data) => {
+    const stringData = `Thank you for contacting me, ${data.name}. I will get back to you about your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my projects, github or have a read of one of my blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`;
 
-    const htmlData = Object.entries(data).reduce(
+    const htmlDetailsData = Object.entries(data).reduce(
       (str, [key, val]) =>
         (str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`),
       ""
     );
+
+    const htmlData = `Thank you for contacting me, ${data.name}. I will reply to your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my <a href="https://justcraigdev.com/projects">projects</a>, <a href="https://github.com/Craig-UK">github</a> or have a read of one of my <a href="https://justcraigdev.com/travelblog">Travel</a> or <a href="https://justcraigdev.com/devblog">Dev</a> blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`
 
     return {
       text: stringData,
@@ -149,7 +147,11 @@ export async function POST(request) {
                                   "
                                   class="padding message-content"
                                 >
-                                  <h2>New Contact Message</h2>
+                                  <h2>Thank you for contacting me</h2>
+                                  <div class="form-container">
+                                      <h2>The Details You Entered into the Contact Form</h2>
+                                      ${htmlDetailsData}
+                                  </div>
                                   <div class="form-container">${htmlData}</div>
                                 </td>
                               </tr>
@@ -167,13 +169,6 @@ export async function POST(request) {
       </html>`,
     };
   };
-
-  if (!data.name || !data.email || !data.message) {
-    return NextResponse.json({
-      status: 400,
-      message: "No name, email or message provided.",
-    });
-  }
 
   const createTransporter = async () => {
     const oauth2Client = new OAuth2(
@@ -225,11 +220,11 @@ export async function POST(request) {
 
   try {
     await sendEmail({
-      ...generateEmailContent(data),
-      subject: data.subject,
+      ...generateNoReplyEmailContent(data),
+      subject: "Thank you for your message!",
       replyTo: process.env.REPLY_TO_EMAIL,
-      to: process.env.EMAIL,
-      from: `${data.name} - Portfolio Contact <${process.env.REPLY_TO_EMAIL}>`,
+      to: data.email,
+      from: `JustCraigDev <${process.env.NOREPLY_EMAIL}>`,
     });
 
     return NextResponse.json({

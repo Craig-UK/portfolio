@@ -141,6 +141,13 @@ const ContactForm = () => {
         setMessage("Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible.")
         setIsOk(true);
         setIsError(false);
+        const response = await fetch("/api/contact/thankyou", {
+          method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values)
+        });
       } else {
         throw new Error("Something went wrong while sending the message.")
       }
