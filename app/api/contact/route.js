@@ -11,6 +11,7 @@ export async function POST(request) {
     email: "Email",
     phone: "Phone",
     linkedin: "LinkedIn",
+    subject: "Subject",
     message: "Message",
   };
 
@@ -380,7 +381,7 @@ export async function POST(request) {
   try {
     await sendEmail({
       ...generateEmailContent(data),
-      subject: "From: " + data.name + "\nEmail: " + data.email,
+      subject: data.subject,
       replyTo: process.env.REPLY_TO_EMAIL,
       to: process.env.EMAIL,
       from: `${data.name} - Portfolio Contact <${process.env.REPLY_TO_EMAIL}>`,
