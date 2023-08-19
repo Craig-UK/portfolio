@@ -13,6 +13,7 @@ export async function POST(request) {
     linkedin: "LinkedIn",
     subject: "Subject",
     message: "Message",
+    agreedToPrivacyPolicy: "Agreed to privacy policy"
   };
 
   const generateEmailContent = (data) => {
