@@ -50,6 +50,9 @@ const Footer = () => {
           <Link href="/" className="text-gray-500">
             Privacy Policy
           </Link>
+          <Link href="/" className="text-gray-500">
+            Terms & Conditions
+          </Link>
         </div>
       </div>
     </footer>
