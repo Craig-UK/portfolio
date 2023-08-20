@@ -6,6 +6,7 @@ import SubjectList from "./SubjectList";
 import { Switch } from "@headlessui/react";
 import Link from "next/link";
 import PrivacyPolicySwitch from "./PrivacyPolicySwitch";
+import FAQAccordion from "./FAQAccordion";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -30,7 +31,7 @@ const ContactForm = () => {
     linkedin: "",
     subject: "",
     message: "",
-    agreedToPrivacyPolicy: ""
+    agreedToPrivacyPolicy: "",
   };
 
   const initState = { values: initValues };
@@ -197,126 +198,137 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col" onSubmit={handleSubmit}>
-      <label htmlFor="name" className="px-2">
-        Name<span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        className="form-input rounded-xl"
-        value={values.name}
-        onChange={handleChange}
-        required
-      ></input>
-      {isRequiredError ? (
-        <p className="font-bold font-satoshi text-red-600">Name is required.</p>
-      ) : (
-        <></>
-      )}
-      <label htmlFor="email" className="px-2 pt-2">
-        Email<span className="text-red-600">*</span>
-      </label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        className="form-input rounded-xl"
-        value={values.email}
-        onChange={handleChange}
-        required
-      ></input>
-      {isRequiredError ? (
-        <p className="font-bold font-satoshi text-red-600">
-          Email is required.
-        </p>
-      ) : (
-        <></>
-      )}
-      <label htmlFor="phone" className="px-2 pt-2">
-        Phone Number
-      </label>
-      <input
-        maxLength={16}
-        type="tel"
-        name="phone"
-        id="phone"
-        value={values.phone}
-        onChange={handleChange}
-        className="form-input rounded-xl"
-      ></input>
-      <label htmlFor="linkedin" className="px-2 pt-2">
-        LinkedIn URL
-      </label>
-      <input
-        type="url"
-        name="linkedin"
-        id="linkedin"
-        value={values.linkedin}
-        onChange={handleChange}
-        className="form-input rounded-xl"
-      ></input>
-      <label htmlFor="subject" className="px-2 pt-2">
-        Subject<span className="text-red-600">*</span>
-      </label>
-      <SubjectList
-        value={selected}
-        onChange={setSelected}
-        subjects={subjects}
-      />
-      <label htmlFor="message" className="px-2 pt-2">
-        Message<span className="text-red-600">*</span>
-      </label>
-      <textarea
-        minLength={15}
-        maxLength={400}
-        name="message"
-        value={values.message}
-        onChange={handleChange}
-        className="form-textarea rounded-xl"
-      ></textarea>
-      {isRequiredError ? (
-        <p className="font-bold font-satoshi text-red-600">
-          Message is required.
-        </p>
-      ) : (
-        <></>
-      )}
-      <PrivacyPolicySwitch checked={agreed} onChange={setAgreed} />
-      <div className="flex justify-end">
-        <button
-          type="submit"
-          className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
-          disabled={
-            !values.name || !values.email || !values.message || agreed == false
-          }
-        >
-          {isLoading ? (
-            <>
-              <span className="ml-2">Sending...</span>{" "}
-            </>
-          ) : (
-            <>
-              <span className="ml-4">Send</span>{" "}
-              <ArrowRightIcon className="mt-1.5" width={15} height={15} />
-            </>
-          )}
-        </button>
-      </div>
-      <div>
-        {isOk ? (
-          <p className="text-green-500">{message}</p>
-        ) : (
-          <p className="text-red-500">{message}</p>
-        )}
-        {errorMessage ? (
-          <p className="font-bold text-red-500">{errorMessage}</p>
+    <>
+      <form className="flex flex-col" onSubmit={handleSubmit}>
+        <label htmlFor="name" className="px-2">
+          Name<span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          className="form-input rounded-xl"
+          value={values.name}
+          onChange={handleChange}
+          required
+        ></input>
+        {isRequiredError ? (
+          <p className="font-bold font-satoshi text-red-600">
+            Name is required.
+          </p>
         ) : (
           <></>
         )}
-      </div>
-    </form>
+        <label htmlFor="email" className="px-2 pt-2">
+          Email<span className="text-red-600">*</span>
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          className="form-input rounded-xl"
+          value={values.email}
+          onChange={handleChange}
+          required
+        ></input>
+        {isRequiredError ? (
+          <p className="font-bold font-satoshi text-red-600">
+            Email is required.
+          </p>
+        ) : (
+          <></>
+        )}
+        <label htmlFor="phone" className="px-2 pt-2">
+          Phone Number
+        </label>
+        <input
+          maxLength={16}
+          type="tel"
+          name="phone"
+          id="phone"
+          value={values.phone}
+          onChange={handleChange}
+          className="form-input rounded-xl"
+        ></input>
+        <label htmlFor="linkedin" className="px-2 pt-2">
+          LinkedIn URL
+        </label>
+        <input
+          type="url"
+          name="linkedin"
+          id="linkedin"
+          value={values.linkedin}
+          onChange={handleChange}
+          className="form-input rounded-xl"
+        ></input>
+        <label htmlFor="subject" className="px-2 pt-2">
+          Subject<span className="text-red-600">*</span>
+        </label>
+        <SubjectList
+          value={selected}
+          onChange={setSelected}
+          subjects={subjects}
+        />
+        <label htmlFor="message" className="px-2 pt-2">
+          Message<span className="text-red-600">*</span>
+        </label>
+        <textarea
+          minLength={15}
+          maxLength={400}
+          name="message"
+          value={values.message}
+          onChange={handleChange}
+          className="form-textarea rounded-xl"
+        ></textarea>
+        {isRequiredError ? (
+          <p className="font-bold font-satoshi text-red-600">
+            Message is required.
+          </p>
+        ) : (
+          <></>
+        )}
+        <PrivacyPolicySwitch checked={agreed} onChange={setAgreed} />
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
+            disabled={
+              !values.name ||
+              !values.email ||
+              !values.message ||
+              agreed == false
+            }
+          >
+            {isLoading ? (
+              <>
+                <span className="ml-2">Sending...</span>{" "}
+              </>
+            ) : (
+              <>
+                <span className="ml-4">Send</span>{" "}
+                <ArrowRightIcon className="mt-1.5" width={15} height={15} />
+              </>
+            )}
+          </button>
+        </div>
+        <div>
+          {isOk ? (
+            <p className="text-green-500">{message}</p>
+          ) : (
+            <p className="text-red-500">{message}</p>
+          )}
+          {errorMessage ? (
+            <p className="font-bold text-red-500">{errorMessage}</p>
+          ) : (
+            <></>
+          )}
+        </div>
+      </form>
+      <section className="mt-5">
+        <h1 className="flex justify-center text-6xl font-bold font-satoshi">FAQ</h1>
+        <FAQAccordion />
+      </section>
+    </>
   );
 };
 
