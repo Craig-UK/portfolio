@@ -35,13 +35,13 @@ const ProjectCard = ({
   return (
     <section className="break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit">
       <section className="flex">
-        <h1 className="font-bold font-satoshi text-lg m-1 ml-2">{title}</h1>
+        <h1 className="font-bold font-satoshi text-lg m-1 ml-2 sm:ml-2">{title}</h1>
         {/* {featured && (
           <FeaturedBadge />
         )} */}
-        {Object.entries(badges)[0].map && badges[0].featured && (
-          <FeaturedBadge />
-        )}
+          {Object.entries(badges)[0].map && badges[0].featured && (
+            <FeaturedBadge />
+          )}
       </section>
       <section className="flex ml-2 justify-start gap-2">
         {Object.entries(badges)[0].map && badges[0].course && courseOrTutorialLink && (
@@ -60,7 +60,7 @@ const ProjectCard = ({
       >
         Projects GitHub Repository can be viewed here
       </Link>
-      <section className="flex ml-2">
+      <section className="sm:flex sm:ml-2 ml-2 pt-2">
         Programming Languages/Frameworks used:
         {languagesLogos?.map((logo) => (
             <Image
@@ -69,11 +69,11 @@ const ProjectCard = ({
                 alt="Programming Language/Framework Logo"
                 width={50}
                 height={50}
-                className="m-1 ml-2"
+                className="sm:m-1 sm:ml-2 m-1 pt-1"
             />
         ))}
       </section>
-      <p className="mt-5 ml-2">{summary}</p>
+      <p className="sm:mt-5 sm:ml-2 pb-2 ml-2">{summary}</p>
       <section className="flex justify-center">
         <button
           className="blog_view_post_btn"

@@ -96,7 +96,7 @@ const Projects = () => {
 
   return (
     <div>
-      <section className="w-full flex-start flex-row justify-between gap-14">
+      <section className="w-full flex-start sm:flex-row justify-between gap-14 flex-col">
         <ProfileCard
           title="Web Application Projects"
           links={webLinks}
@@ -122,7 +122,7 @@ const Projects = () => {
           button={profileCardButtons[2]}
         />
       </section>
-      <section className="w-full pt-10 flex-start flex-row justify-between gap-14">
+      <section className="w-full pt-10 flex-start sm:flex-row justify-between gap-14 flex-col">
         <OtherPagesCard 
           pageTitle="GitHub"
           cardTitle="Check out my GitHub"

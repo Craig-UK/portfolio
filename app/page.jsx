@@ -3,50 +3,50 @@ import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'Craig\'s Portfolio - Home'
-}
+  title: "Craig's Portfolio - Home",
+};
 
 const Home = () => {
   const links = [
     {
-      id: '1',
+      id: "1",
       name: "Projects",
       image: "/assets/icons/file-solid.svg",
       href: "/projects",
     },
     {
-      id: '2',
+      id: "2",
       name: "Dev Blog",
       image: "/assets/icons/file-lines-solid.svg",
-      href: "/devblog"
+      href: "/devblog",
     },
     {
-      id: '3',
+      id: "3",
       name: "Travel Blog",
       image: "/assets/icons/file-image-solid.svg",
-      href: "/travelblog"
-    }
+      href: "/travelblog",
+    },
   ];
 
   const profileCardButtons = [
     {
-      id: '1',
+      id: "1",
       name: "Contact Me",
-      href: "/contact"
-    }
+      href: "/contact",
+    },
   ];
 
   const otherPagesCardButtons = [
     {
-      id: '1',
+      id: "1",
       name: "Projects",
-      href: "/projects"
-    }
+      href: "/projects",
+    },
   ];
 
   return (
     <div>
-      <section className="w-full flex-start flex-row">
+      <section className="w-full flex-start sm:flex-row flex-col">
         <Image
           src={"/assets/images/portrait.jpg"}
           alt="Portrait"
@@ -80,8 +80,8 @@ const Home = () => {
       </section>
       <section className="pt-10">
         <OtherPagesCard
-          pageTitle='Projects'
-          cardTitle='Check out some of my projects!'
+          pageTitle="Projects"
+          cardTitle="Check out some of my projects!"
           cardText="Currently proficient in React and Python with some understanding of C# and Java. Also, currently learning the Next.js React framework along with expanding my understanding of C#, Java and Python! Check out some of the projects that I have completed in my personal free-time or
           University projects that I completed for University classes!"
           button={otherPagesCardButtons}
