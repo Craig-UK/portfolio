@@ -324,6 +324,7 @@ const ContactForm = () => {
           )}
         </div>
       </form>
+      <p className="text-lg font-bold"><span className="text-red-600">*</span> Required</p>
       <section className="mt-5">
         <h1 className="flex justify-center text-6xl font-bold font-satoshi">FAQ</h1>
         <FAQAccordion />

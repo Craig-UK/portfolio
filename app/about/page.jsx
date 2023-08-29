@@ -29,7 +29,7 @@ const About = () => {
 
   return (
     <div>
-      <section className="w-full flex-start flex-row">
+      <section className="w-full flex-start sm:flex-row flex-col">
         <Image
           src={"/assets/images/portrait.jpg"}
           alt="Portrait"
@@ -57,7 +57,7 @@ const About = () => {
           Framework because it allows for easy integration of APIs.
         </p>
       </section>
-      <section className="pt-10 flex w-full justify-start flex-row">
+      <section className="pt-10 flex w-full justify-start sm:flex-row flex-col">
         <div className="w-full mt-5">
           <FactCard
             text="This portfolio website was developed using
@@ -87,7 +87,7 @@ const About = () => {
           uses Material Design which is owned by Google.
         </p>
       </section>
-      <section className="pt-10 flex w-full justify-start flex-row gap-2">
+      <section className="pt-10 flex w-full justify-start sm:flex-row flex-col gap-2">
         <LearnMoreCard
           text="The source code for this website is available on
             my GitHub aswell as many of my other projects!"

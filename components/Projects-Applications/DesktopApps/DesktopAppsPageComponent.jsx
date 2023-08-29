@@ -25,7 +25,7 @@ const DesktopAppsPageComponent = () => {
           <p>No Desktop Application projects available. Please try again later.</p>
         </div>
       )}
-      <section className="grid grid-cols-2 gap-2">
+      <section className="grid sm:grid-cols-2 gap-2">
         {projects?.map((project) => (
           <ProjectCard
             key={project._id}

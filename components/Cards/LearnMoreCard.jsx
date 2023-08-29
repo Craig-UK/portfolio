@@ -13,7 +13,7 @@ const LearnMoreCard = ({ text, button }) => {
           Learn More
         </h1>
         <p className="font-satoshi">{text}</p>
-        <div className="flex justify-start gap-2">
+        <div className="flex justify-start gap-2 mx-1">
           {button?.map((button) => (
             <button key={button.id} className="learn_more_cta_btn">
               <Link href={button.href}>{button.name}</Link>
