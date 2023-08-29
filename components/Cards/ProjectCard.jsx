@@ -2,7 +2,7 @@
 
 import CourseBadge from "@components/Badges/CourseBadge";
 import FeaturedBadge from "@components/Badges/FeaturedBadge";
-import PersonalBadge from "@components/Badges/PersonalBadge";
+import PersonalBadge from "@components/Badges/PersonalProjectBadge";
 import TutorialBadge from "@components/Badges/TutorialBadge";
 import Image from "next/image";
 import Link from "next/link";

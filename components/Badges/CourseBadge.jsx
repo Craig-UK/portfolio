@@ -3,11 +3,9 @@ import React from "react";
 
 const CourseBadge = ({ link }) => {
   return (
-    <div className="bg-green-600 rounded-full px-2 py-0 my-1">
-      <p className="text-gray-200 font-semibold">
-        <Link href={link}>Course</Link>
-      </p>
-    </div>
+    <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+      <Link href={link}>Course</Link>
+    </span>
   );
 };
 

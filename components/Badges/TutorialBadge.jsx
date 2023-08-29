@@ -2,11 +2,9 @@ import Link from "next/link"
 
 const TutorialBadge = ({ link }) => {
   return (
-    <div className="bg-orange-600 rounded-full px-2 py-0 my-1">
-      <p className="text-gray-200 font-semibold">
-        <Link href={link}>Tutorial</Link>
-      </p>
-    </div>
+    <span className="inline-flex items-center rounded-md bg-orange-100 px-2 py-1 text-xs font-medium text-orange-800 ring-1 ring-inset ring-orange-500/20">
+      <Link href={link}>Tutorial</Link>
+    </span>
   )
 }
 
