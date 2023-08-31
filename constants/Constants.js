@@ -13,7 +13,8 @@ export const footerLinks = [
     links: [
       { title: 'Follow me on Twitter', url: 'https://twitter.com/CraigDevUK', target: '_blank' },
       { title: 'Follow me on Instagram', url: 'https://instagram.com/CraigDevUK', target: '_blank' },
-      { title: 'Take a look at my GitHub profile', url: 'https://github.com/Craig-UK', target: '_blank' }
+      { title: 'Take a look at my GitHub profile', url: 'https://github.com/Craig-UK', target: '_blank' },
+      { title: 'Join my Discord Server (Coming Soon)', url: 'https://discord.com', target: '_blank' },
     ]
   }
 ]
