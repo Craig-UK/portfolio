@@ -1,4 +1,4 @@
-import React from "react";
+import FreelancePage from "@components/Freelance-Page/FreelancePage";
 
 export const metadata = {
   title: 'Freelance',
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const Freelance = () => {
-  return <div>Freelance</div>;
+  return <FreelancePage />;
 };
 
 export default Freelance;

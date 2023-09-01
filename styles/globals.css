@@ -151,10 +151,17 @@
   @apply flex-row m-auto break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
+.price_card {
+  @apply flex-row m-auto break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+}
+
+.price_card_recommended {
+  @apply flex-row m-auto break-inside-avoid rounded-lg border border-pink-600 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+}
+
 .other_pages_card {
   @apply flex-col break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter w-full h-fit;
 }
-
 
 .fact_card {
   @apply flex break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit;
@@ -185,6 +192,10 @@
 }
 
 .blog_view_post_btn {
+  @apply rounded-full border border-black bg-black py-1 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
+}
+
+.price_card_btn {
   @apply rounded-full border border-black bg-black py-1 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
 }
 
