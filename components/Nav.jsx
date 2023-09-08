@@ -32,7 +32,7 @@ const Nav = () => {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 text-white">
-                      Craig Climie - Developer
+                      <Link href={'/'}>Just Craig Development</Link>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex justify-end space-x-4">

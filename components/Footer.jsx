@@ -8,9 +8,7 @@ const Footer = () => {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
         <div className="flex flex-col justify-start items-start gap-6">
           <p className="text-base text-gray-700 font-bold">
-            &copy; 2023 Craig Climie - Developer. All rights reserved. <br />
-            <Link href={"/"}>&copy; 2023 Just Craig Development.</Link> All
-            rights reserved.
+            &copy; 2023 Just Craig Development. All rights reserved.
           </p>
           <p className="font-semibold text-gray-700">
             <a
@@ -49,6 +47,9 @@ const Footer = () => {
         <div className="footer__copyrights-link">
           <Link href="/" className="text-gray-500">
             Privacy Policy
+          </Link>
+          <Link href="/" className="text-gray-500">
+            Cookie Policy
           </Link>
           <Link href="/" className="text-gray-500">
             Terms of Use
