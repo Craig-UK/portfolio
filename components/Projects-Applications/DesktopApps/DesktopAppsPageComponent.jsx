@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 const DesktopAppsPageComponent = () => {
   const cat = "DesktopApp";
   const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchProjects = async() => {
@@ -18,29 +20,48 @@ const DesktopAppsPageComponent = () => {
     fetchProjects();
   }, [])
 
-  return (
-    <div>
-      {projects.length == 0 && (
-        <div className="flex items-center justify-center">
-          <p>No Desktop Application projects available. Please try again later.</p>
-        </div>
-      )}
-      <section className="grid sm:grid-cols-2 gap-2">
-        {projects?.map((project) => (
-          <ProjectCard
-            key={project._id}
-            title={project.title}
-            githubLink={project.github}
-            languagesLogos={project.logo}
-            summary={project.summary}
-            featured={project.featured}
-            projectLink={project.link}
-            badges={project.badges}
-          />
-        ))}
-      </section>
-    </div>
-  );
+  useEffect(() => {
+      if(projects.length > 0) {
+        setIsLoading(false);
+      } else {
+        setTimeout(() => {
+          setMessage("There may be no Desktop Application projects available. Please try again later.")
+        }, 5000)
+        setIsLoading(true);
+        setMessage("Loading Desktop Application projects. Please wait...")
+      }
+    }, [projects.length])
+
+    return (
+      <div>
+        {projects.length == 0 && (
+          <div className="flex items-center justify-center">
+            <p>.</p>
+          </div>
+        )}
+        {isLoading && (
+          <div className="flex items-center justify-center">
+            <p>{message}</p>
+          </div>
+        )}
+        <section className="grid sm:grid-cols-2 gap-2">
+          {projects?.map(project => (
+            <ProjectCard 
+              key={project._id}
+              id={project._id}
+              title={project.title}
+              githubLink={project.github}
+              languagesLogos={project.logo}
+              summary={project.summary}
+              featured={project.featured}
+              projectLink={project.link}
+              badges={project.badges}
+              courseOrTutorialLink={project?.courseOrTutorialLink}
+            />
+          ))}
+        </section>
+      </div>
+    )
 }
 
 export default DesktopAppsPageComponent
