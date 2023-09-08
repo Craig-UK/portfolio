@@ -1,10 +1,10 @@
+import { CheckBadgeIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React from "react";
 
 const PriceCard = ({ planName, price, description, features, recommended }) => {
   return (
     <>
-      {planName !== "Enterprise" ? (
         <div
           className={`${recommended ? "price_card_recommended" : "price_card"}`}
         >
@@ -14,16 +14,31 @@ const PriceCard = ({ planName, price, description, features, recommended }) => {
             </div>
           )}
           <div className="text-center py-3">
-            <h1 className="uppercase">{planName}</h1>
-            <h4>
-              £{price}
-              <span>/hr</span>
-            </h4>
+            <h1 className="uppercase font-extrabold text-2xl">{planName}</h1>
+            {planName !== "Enterprise" ? (
+              <p className="flex justify-center text-[27px] font-bold">
+                £{price}
+                <span className="self-end text-[14px] font-medium mb-4 ml-1">
+                  /hr
+                </span>
+              </p>
+            ): (
+              <p className="flex justify-center text-[27px] font-bold uppercase">
+                {price}
+              </p>
+            )}
             <p className="text-sm my-2">{description}</p>
             <div className="py-3">
               <p>What&apos;s Included?</p>
               {features.map((feature) => (
-                <div key={feature}>
+                <div key={feature} className="flex justify-center">
+                  <p
+                    className={`pt-0.5 mr-2 -ml-5 ${
+                      recommended ? "text-green-700" : "text-green-600"
+                    }`}
+                  >
+                    <CheckCircleIcon height={20} width={20} />
+                  </p>
                   <p>{feature}</p>
                 </div>
               ))}
@@ -32,37 +47,22 @@ const PriceCard = ({ planName, price, description, features, recommended }) => {
               <p>
                 <Link href={"/"}>Terms & Conditions </Link>apply.
               </p>
-              <div className="flex justify-center items-center py-3">
-                <button className="price_card_btn">Enquire Now</button>
-              </div>
+              {planName !== "Enterprise" ? (
+                <div className="flex justify-center items-center py-3">
+                  <button className="price_card_btn uppercase">
+                    Enquire Now
+                  </button>
+                </div>
+              ): (
+                <div className="flex justify-center items-center py-3">
+                  <button className="price_card_btn uppercase">
+                    Contact Sales
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      ) : (
-        <div className="price_card text-center">
-          <h1 className="uppercase">{planName}</h1>
-            <h4 className="uppercase">
-              {price}
-            </h4>
-            <p className="text-sm my-2">{description}</p>
-            <div className="py-3">
-              <p>What&apos;s Included?</p>
-              {features.map((feature) => (
-                <div key={feature}>
-                  <p>{feature}</p>
-                </div>
-              ))}
-            </div>
-            <div className="pt-20">
-              <p>
-                <Link href={"/"}>Terms & Conditions </Link>apply.
-              </p>
-              <div className="flex justify-center items-center py-3">
-                <button className="price_card_btn">Enquire Now</button>
-              </div>
-            </div>
-        </div>
-      )}
     </>
   );
 };

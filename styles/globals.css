@@ -152,11 +152,11 @@
 }
 
 .price_card {
-  @apply flex-row m-auto break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-row m-auto break-inside-avoid rounded-lg border border-gray-500 bg-gray-200 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] h-[27rem] w-full;
 }
 
 .price_card_recommended {
-  @apply flex-row m-auto break-inside-avoid rounded-lg border border-pink-600 bg-white/20 bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-row m-auto break-inside-avoid rounded-lg border border-pink-700 bg-pink-400 text-white bg-clip-padding p-6 pb-1 pt-2 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
 .other_pages_card {
