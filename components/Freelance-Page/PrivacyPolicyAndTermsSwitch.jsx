@@ -5,7 +5,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const PrivacyPolicySwitch = ({ checked, onChange }) => {
+const PrivacyPolicyAndTermsSwitch = ({ checked, onChange }) => {
   if (checked) {
     checked = "Agreed";
   }
@@ -36,10 +36,13 @@ const PrivacyPolicySwitch = ({ checked, onChange }) => {
         <Link href="#" className="font-semibold text-indigo-600">
           privacy&nbsp;policy
         </Link>
-        . <span className="text-red-600">*</span>
+        {" "}and{" "}
+        <Link href="#" className="font-semibold text-indigo-600">
+          terms&nbsp;and&nbsp;conditions
+        </Link>. <span className="text-red-600">*</span>
       </Switch.Label>
     </Switch.Group>
   );
 };
 
-export default PrivacyPolicySwitch;
+export default PrivacyPolicyAndTermsSwitch;

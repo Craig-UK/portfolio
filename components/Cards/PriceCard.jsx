@@ -1,8 +1,23 @@
+"use client";
+
 import { CheckBadgeIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const PriceCard = ({ planName, price, description, features, recommended }) => {
+  const router = useRouter();
+  
+  const handleClick = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    searchParams.set('plan', planName);
+
+    const newPathname = `${window.location.pathname}/application?${searchParams.toString().toLowerCase()}`;
+
+    router.push(newPathname);
+  }
+
   return (
     <>
         <div
@@ -49,13 +64,13 @@ const PriceCard = ({ planName, price, description, features, recommended }) => {
               </p>
               {planName !== "Enterprise" ? (
                 <div className="flex justify-center items-center py-3">
-                  <button className="price_card_btn uppercase">
+                  <button className="price_card_btn uppercase" onClick={handleClick}>
                     Enquire Now
                   </button>
                 </div>
               ): (
                 <div className="flex justify-center items-center py-3">
-                  <button className="price_card_btn uppercase">
+                  <button className="price_card_btn uppercase" onClick={handleClick}>
                     Contact Sales
                   </button>
                 </div>
