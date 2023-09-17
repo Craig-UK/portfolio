@@ -18,18 +18,38 @@ const FreelanceApplicationPage = () => {
 
   const initState = { values: initValues };
 
-  const subjects = ["Basic","Premium","Advanced"];
+  const initEnterprisePlanValues = {
+    name: "",
+    email: "",
+    businessName: "",
+    businessEmail: "",
+    businessLinkedIn: "",
+    commissionPlan: "",
+    message: "",
+    agreedToPrivacyPolicy: "",
+  };
+
+  const initEnterprisePlanState = {
+    enterprisePlanValues: initEnterprisePlanValues,
+  };
+
+  const subjects = ["Basic", "Premium", "Advanced"];
 
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isOk, setIsOk] = useState(true);
   const [state, setState] = useState(initState);
+  const [enterprisePlanState, setEnterprisePlanState] = useState(
+    initEnterprisePlanState
+  );
   const [isError, setIsError] = useState(false);
   const [isRequiredError, setIsRequiredError] = useState(false);
   const [selected, setSelected] = useState(subjects[0]);
   const [agreed, setAgreed] = useState(false);
 
   const { values, isLoading } = state;
+  const { enterprisePlanValues, enterprisePlanIsLoading } = enterprisePlanState;
+  let isEnterprisePlan = false;
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -38,14 +58,28 @@ const FreelanceApplicationPage = () => {
     setSelected(plan);
   }, []);
 
+  if (selected.toLowerCase() === "enterprise") {
+    isEnterprisePlan = true;
+  }
+
   const handleChange = ({ target }) => {
-    setState((prev) => ({
-      ...prev,
-      values: {
-        ...prev.values,
-        [target.name]: target.value,
-      },
-    }));
+    if (isEnterprisePlan) {
+      setEnterprisePlanState((prev) => ({
+        ...prev,
+        enterprisePlanValues: {
+          ...prev.enterprisePlanValues,
+          [target.name]: target.value,
+        },
+      }));
+    } else {
+      setState((prev) => ({
+        ...prev,
+        values: {
+          ...prev.values,
+          [target.name]: target.value,
+        },
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -58,61 +92,132 @@ const FreelanceApplicationPage = () => {
 
     const validEmailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const validLinkedInRegex =
+      /^(http(s)?:\/\/)?([\w]+\.)?linkedin.com\/(pub|in|profile)\/([a-zA-Z0-9_-])*$/;
     const validMessageRegex =
       /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.\/?]*$/;
     const validNameRegex = /^[a-zA-Z \s]*$/;
 
-    if (!values.name.match(validNameRegex)) {
-      setIsError(true);
-      setErrorMessage("Invalid Name.");
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-      }));
-      throw new Error("Invalid Name.");
-    }
+    if (selected.toLowerCase() !== "enterprise") {
+      if (!values.name.match(validNameRegex)) {
+        setIsError(true);
+        setErrorMessage("Invalid Name.");
+        setState((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+        throw new Error("Invalid Name.");
+      }
 
-    if (!values.email.match(validEmailRegex)) {
-      setIsError(true);
-      setErrorMessage("Invalid Email.");
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-      }));
-      throw new Error("Invalid Email.");
-    }
+      if (!values.email.match(validEmailRegex)) {
+        setIsError(true);
+        setErrorMessage("Invalid Email.");
+        setState((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+        throw new Error("Invalid Email.");
+      }
 
-    if (!values.message.match(validMessageRegex)) {
-      setIsError(true);
-      setErrorMessage("Invalid Message.");
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-      }));
-      throw new Error("Invalid Message.");
-    }
+      if (!values.message.match(validMessageRegex)) {
+        setIsError(true);
+        setErrorMessage("Invalid Message.");
+        setState((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+        throw new Error("Invalid Message.");
+      }
 
-    if (!values.name || !values.email || !values.message) {
-      setIsRequiredError(true);
-      setErrorMessage("Name, email and message fields are required.");
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-      }));
-      throw new Error("Name, email and message fields are required.");
+      if (!values.name || !values.email || !values.message) {
+        setIsRequiredError(true);
+        setErrorMessage("Name, email and message fields are required.");
+        setState((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+        throw new Error("Name, email and message fields are required.");
+      }
+    } else {
+      if (
+        !enterprisePlanValues.name.match(validNameRegex) ||
+        !enterprisePlanValues.businessName.match(validNameRegex)
+      ) {
+        setIsError(true);
+        setErrorMessage("Invalid Name or invalid Business name.");
+        setEnterprisePlanState((prev) => ({
+          ...prev,
+          enterprisePlanIsLoading: false,
+        }));
+        throw new Error("Invalid Name or invalid Business name.");
+      }
+
+      if (
+        !enterprisePlanValues.email.match(validEmailRegex) ||
+        !enterprisePlanValues.businessEmail.match(validEmailRegex)
+      ) {
+        setIsError(true);
+        setErrorMessage("Invalid Email or invalid Business email.");
+        setEnterprisePlanState((prev) => ({
+          ...prev,
+          enterprisePlanIsLoading: false,
+        }));
+        throw new Error("Invalid Email or invalid Business email.");
+      }
+
+      if (!enterprisePlanValues.message.match(validMessageRegex)) {
+        setIsError(true);
+        setErrorMessage("Invalid Message.");
+        setEnterprisePlanState((prev) => ({
+          ...prev,
+          enterprisePlanIsLoading: false,
+        }));
+        throw new Error("Invalid Message.");
+      }
+
+      if (!enterprisePlanValues.businessLinkedIn.match(validLinkedInRegex)) {
+        setIsError(true);
+        setErrorMessage("Invalid LinkedIn URL.");
+        setEnterprisePlanState((prev) => ({
+          ...prev,
+          enterprisePlanIsLoading: false,
+        }));
+        throw new Error("Invalid LinkedIn URL.");
+      }
+
+      if (
+        !enterprisePlanValues.name ||
+        !enterprisePlanValues.email ||
+        !enterprisePlanValues.message ||
+        !enterprisePlanValues.businessName ||
+        !enterprisePlanValues.businessEmail ||
+        !enterprisePlanValues.businessLinkedIn
+      ) {
+        setIsRequiredError(true);
+        setErrorMessage("All fields are required.");
+        setEnterprisePlanState((prev) => ({
+          ...prev,
+          enterprisePlanIsLoading: false,
+        }));
+        throw new Error("All fields are required.");
+      }
     }
 
     if (agreed == false) {
       setIsRequiredError(true);
       setErrorMessage(
-        "Please accept the privacy policy before submitting this contact form."
+        "Please accept the privacy policy and terms and conditions for commissions before submitting this application form."
       );
       setState((prev) => ({
         ...prev,
         isLoading: false,
       }));
+      setEnterprisePlanState((prev) => ({
+        ...prev,
+        enterprisePlanIsLoading: false,
+      }));
       throw new Error(
-        "Please accept the privacy policy before submitting this contact form."
+        "Please accept the privacy policy and terms and conditions for commissions before submitting this application form."
       );
     }
 
@@ -125,22 +230,8 @@ const FreelanceApplicationPage = () => {
         values.agreedToPrivacyPolicy = "Disagreed";
       }
 
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        setState({ values: initValues });
-        setMessage(
-          "Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible."
-        );
-        setIsOk(true);
-        setIsError(false);
-        const response = await fetch("/api/contact/thankyou", {
+      if (selected.toLowerCase() !== "enterprise") {
+        const response = await fetch("/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -148,12 +239,51 @@ const FreelanceApplicationPage = () => {
           body: JSON.stringify(values),
         });
       } else {
-        throw new Error("Something went wrong while sending the message.");
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(enterprisePlanValues),
+        });
+      }
+
+      if (response.ok) {
+        setState({ values: initValues });
+        setEnterprisePlanState({
+          enterprisePlanValues: initEnterprisePlanValues,
+        });
+        setMessage(
+          "Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible."
+        );
+        setIsOk(true);
+        setIsError(false);
+        if (selected.toLowerCase() !== "enterprise") {
+          const response = await fetch("/api/contact/thankyou", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          });
+        } else {
+          const response = await fetch("/api/contact/thankyou", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(enterprisePlanValues),
+          });
+        }
+      } else {
+        throw new Error(
+          "Something went wrong while sending your commission application."
+        );
       }
     } catch (e) {
       setIsError(true);
       setMessage(
-        "Sorry, there was an issue sending your message. Please try again."
+        "Sorry, there was an issue sending your commission application. Please try again."
       );
       console.log(e.message);
       setIsOk(false);
@@ -161,112 +291,293 @@ const FreelanceApplicationPage = () => {
         ...prev,
         isLoading: false,
       }));
+      setEnterprisePlanState((prev) => ({
+        ...prev,
+        enterprisePlanIsLoading: false,
+      }));
     }
   };
 
   return (
     <>
       <form className="flex flex-col" onSubmit={handleSubmit}>
-        <label htmlFor="name" className="px-2">
-          Name<span className="text-red-600">*</span>
-        </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          className="form-input rounded-xl"
-          value={values.name}
-          onChange={handleChange}
-          required
-        ></input>
-        {isRequiredError ? (
-          <p className="font-bold font-satoshi text-red-600">
-            Name is required.
-          </p>
-        ) : (
-          <></>
-        )}
-        <label htmlFor="email" className="px-2 pt-2">
-          Email<span className="text-red-600">*</span>
-        </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          className="form-input rounded-xl"
-          value={values.email}
-          onChange={handleChange}
-          required
-        ></input>
-        {isRequiredError ? (
-          <p className="font-bold font-satoshi text-red-600">
-            Email is required.
-          </p>
-        ) : (
-          <></>
-        )}
-        <label htmlFor="subject" className="px-2 pt-2">
-          Commission Plan<span className="text-red-600">*</span>
-        </label>
-        <PlanName 
-            value={selected} 
-            plans={subjects} 
-            onChange={setSelected} 
-        />
-        <label htmlFor="message" className="px-2 pt-2">
-          What is your website going to be used for? Why do you need a website?<span className="text-red-600">*</span>
-        </label>
-        <textarea
-          minLength={15}
-          maxLength={400}
-          name="message"
-          value={values.message}
-          onChange={handleChange}
-          className="form-textarea rounded-xl"
-        ></textarea>
-        {isRequiredError ? (
-          <p className="font-bold font-satoshi text-red-600">
-            Message is required.
-          </p>
-        ) : (
-          <></>
-        )}
-        <PrivacyPolicyAndTermsSwitch checked={agreed} onChange={setAgreed} />
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
-            disabled={
-              !values.name ||
-              !values.email ||
-              !values.message ||
-              agreed == false
-            }
-          >
-            {isLoading ? (
-              <>
-                <span className="ml-2">Sending...</span>{" "}
-              </>
+        {!isEnterprisePlan ? (
+          <>
+            <label htmlFor="name" className="px-2">
+              Name<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="form-input rounded-xl"
+              value={values.name}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Name is required.
+              </p>
             ) : (
-              <>
-                <span className="ml-4">Send</span>{" "}
-                <ArrowRightIcon className="mt-1.5" width={15} height={15} />
-              </>
+              <></>
             )}
-          </button>
-        </div>
-        <div>
-          {isOk ? (
-            <p className="text-green-500">{message}</p>
-          ) : (
-            <p className="text-red-500">{message}</p>
-          )}
-          {errorMessage ? (
-            <p className="font-bold text-red-500">{errorMessage}</p>
-          ) : (
-            <></>
-          )}
-        </div>
+            <label htmlFor="email" className="px-2 pt-2">
+              Email<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="form-input rounded-xl"
+              value={values.email}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Email is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="commission-plan" className="px-2 pt-2">
+              Commission Plan<span className="text-red-600">*</span>
+            </label>
+            <PlanName
+              value={selected}
+              plans={subjects}
+              onChange={setSelected}
+            />
+            <label htmlFor="message" className="px-2 pt-2">
+              What is your website going to be used for? Why do you need a
+              website?
+              <span className="text-red-600">*</span>
+            </label>
+            <textarea
+              minLength={15}
+              maxLength={400}
+              name="message"
+              value={values.message}
+              onChange={handleChange}
+              className="form-textarea rounded-xl"
+            ></textarea>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Message is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <PrivacyPolicyAndTermsSwitch
+              checked={agreed}
+              onChange={setAgreed}
+            />
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
+                disabled={
+                  !values.name ||
+                  !values.email ||
+                  !values.message ||
+                  agreed == false
+                }
+              >
+                {isLoading ? (
+                  <>
+                    <span className="ml-2">Sending...</span>{" "}
+                  </>
+                ) : (
+                  <>
+                    <span className="ml-4">Send</span>{" "}
+                    <ArrowRightIcon className="mt-1.5" width={15} height={15} />
+                  </>
+                )}
+              </button>
+            </div>
+            <div>
+              {isOk ? (
+                <p className="text-green-500">{message}</p>
+              ) : (
+                <p className="text-red-500">{message}</p>
+              )}
+              {errorMessage ? (
+                <p className="font-bold text-red-500">{errorMessage}</p>
+              ) : (
+                <></>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <label htmlFor="name" className="px-2">
+              Name<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="form-input rounded-xl"
+              value={enterprisePlanValues.name}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Name is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="businessName" className="px-2">
+              Business Name<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              name="businessName"
+              id="businessName"
+              className="form-input rounded-xl"
+              value={enterprisePlanValues.businessName}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Name is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="email" className="px-2 pt-2">
+              Personal Email<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="form-input rounded-xl"
+              value={enterprisePlanValues.email}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Email is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="businessEmail" className="px-2 pt-2">
+              Business Email<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="email"
+              name="businessEmail"
+              id="businessEmail"
+              className="form-input rounded-xl"
+              value={enterprisePlanValues.businessEmail}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Email is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="businessLinkedIn" className="px-2 pt-2">
+              Business LinkedIn<span className="text-red-600">*</span>
+            </label>
+            <input
+              type="url"
+              name="businessLinkedIn"
+              id="businessLinkedIn"
+              className="form-input rounded-xl"
+              value={enterprisePlanValues.businessLinkedIn}
+              onChange={handleChange}
+              required
+            ></input>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                LinkedIn is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <label htmlFor="commission-plan" className="px-2 pt-2">
+              Commission Plan<span className="text-red-600">*</span>
+            </label>
+            <PlanName
+              value={selected}
+              plans={subjects}
+              onChange={setSelected}
+            />
+            <label htmlFor="message" className="px-2 pt-2">
+              What is your website going to be used for? Why do you need a
+              website?
+              <span className="text-red-600">*</span>
+            </label>
+            <textarea
+              minLength={15}
+              maxLength={400}
+              name="message"
+              value={enterprisePlanValues.message}
+              onChange={handleChange}
+              className="form-textarea rounded-xl"
+            ></textarea>
+            {isRequiredError ? (
+              <p className="font-bold font-satoshi text-red-600">
+                Message is required.
+              </p>
+            ) : (
+              <></>
+            )}
+            <PrivacyPolicyAndTermsSwitch
+              checked={agreed}
+              onChange={setAgreed}
+            />
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
+                disabled={
+                  !enterprisePlanValues.name ||
+                  !enterprisePlanValues.email ||
+                  !enterprisePlanValues.message ||
+                  !enterprisePlanValues.businessName ||
+                  !enterprisePlanValues.businessEmail ||
+                  !enterprisePlanValues.businessLinkedIn ||
+                  agreed == false
+                }
+              >
+                {enterprisePlanIsLoading ? (
+                  <>
+                    <span className="ml-2">Sending...</span>{" "}
+                  </>
+                ) : (
+                  <>
+                    <span className="ml-4">Send</span>{" "}
+                    <ArrowRightIcon className="mt-1.5" width={15} height={15} />
+                  </>
+                )}
+              </button>
+            </div>
+            <div>
+              {isOk ? (
+                <p className="text-green-500">{message}</p>
+              ) : (
+                <p className="text-red-500">{message}</p>
+              )}
+              {errorMessage ? (
+                <p className="font-bold text-red-500">{errorMessage}</p>
+              ) : (
+                <></>
+              )}
+            </div>
+          </>
+        )}
       </form>
       <p className="text-lg font-bold">
         <span className="text-red-600">*</span> Required
