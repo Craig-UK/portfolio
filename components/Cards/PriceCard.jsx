@@ -13,7 +13,7 @@ const PriceCard = ({ planName, price, description, features, recommended }) => {
 
     searchParams.set('plan', planName);
 
-    const newPathname = `${window.location.pathname}/application?${searchParams.toString().toLowerCase()}`;
+    const newPathname = `${window.location.pathname}/application?${searchParams.toString()}`;
 
     router.push(newPathname);
   }

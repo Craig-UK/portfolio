@@ -2,23 +2,23 @@
 
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import SubjectList from "../Contact-Form/SubjectList";
-import PrivacyPolicySwitch from "../Contact-Form/PrivacyPolicySwitch";
 import PlanName from "./PlanName";
 import PrivacyPolicyAndTermsSwitch from "./PrivacyPolicyAndTermsSwitch";
 
 const FreelanceApplicationPage = () => {
   const initValues = {
+    uniqueNumber: "",
     name: "",
     email: "",
     commissionPlan: "",
     message: "",
-    agreedToPrivacyPolicy: "",
+    agreedToPrivacyPolicyAndTerms: "",
   };
 
   const initState = { values: initValues };
 
   const initEnterprisePlanValues = {
+    uniqueNumber: "",
     name: "",
     email: "",
     businessName: "",
@@ -26,7 +26,7 @@ const FreelanceApplicationPage = () => {
     businessLinkedIn: "",
     commissionPlan: "",
     message: "",
-    agreedToPrivacyPolicy: "",
+    agreedToPrivacyPolicyAndTerms: "",
   };
 
   const initEnterprisePlanState = {
@@ -223,15 +223,21 @@ const FreelanceApplicationPage = () => {
 
     try {
       values.commissionPlan = selected;
+      enterprisePlanValues.commissionPlan = selected;
+
+      values.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${Math.floor(Math.random() * 1000)}`;
+      enterprisePlanValues.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${Math.floor(Math.random() * 1000)}`
+
+      let response;
 
       if (agreed == true) {
-        values.agreedToPrivacyPolicy = "Agreed";
+        values.agreedToPrivacyPolicyAndTerms = "Agreed";
       } else {
-        values.agreedToPrivacyPolicy = "Disagreed";
+        values.agreedToPrivacyPolicyAndTerms = "Disagreed";
       }
 
       if (selected.toLowerCase() !== "enterprise") {
-        const response = await fetch("/api/contact", {
+        response = await fetch("/api/commissions/regular", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -239,7 +245,7 @@ const FreelanceApplicationPage = () => {
           body: JSON.stringify(values),
         });
       } else {
-        const response = await fetch("/api/contact", {
+        response = await fetch("/api/commissions/enterprise", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -254,12 +260,13 @@ const FreelanceApplicationPage = () => {
           enterprisePlanValues: initEnterprisePlanValues,
         });
         setMessage(
-          "Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible."
+          `Application sent successfully. Thank you for your commission application for the ${selected} plan, I will get back to you as soon as possible.`
         );
         setIsOk(true);
         setIsError(false);
         if (selected.toLowerCase() !== "enterprise") {
-          const response = await fetch("/api/contact/thankyou", {
+          console.log("Sending thank you");
+          const response = await fetch("/api/commissions/regular/thankyou", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -267,7 +274,7 @@ const FreelanceApplicationPage = () => {
             body: JSON.stringify(values),
           });
         } else {
-          const response = await fetch("/api/contact/thankyou", {
+          const response = await fetch("/api/commissions/enterprise/thankyou", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -341,7 +348,7 @@ const FreelanceApplicationPage = () => {
             ) : (
               <></>
             )}
-            <label htmlFor="commission-plan" className="px-2 pt-2">
+            <label htmlFor="commissionPlan" className="px-2 pt-2">
               Commission Plan<span className="text-red-600">*</span>
             </label>
             <PlanName
