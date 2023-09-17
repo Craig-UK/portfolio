@@ -230,10 +230,18 @@ const FreelanceApplicationPage = () => {
 
       let response;
 
-      if (agreed == true) {
-        values.agreedToPrivacyPolicyAndTerms = "Agreed";
+      if(selected.toLowerCase() !== "enterprise") {
+        if (agreed == true) {
+          values.agreedToPrivacyPolicyAndTerms = "Agreed";
+        } else {
+          values.agreedToPrivacyPolicyAndTerms = "Disagreed";
+        }
       } else {
-        values.agreedToPrivacyPolicyAndTerms = "Disagreed";
+        if (agreed == true) {
+          enterprisePlanValues.agreedToPrivacyPolicyAndTerms = "Agreed";
+        } else {
+          enterprisePlanValues.agreedToPrivacyPolicyAndTerms = "Disagreed";
+        }
       }
 
       if (selected.toLowerCase() !== "enterprise") {

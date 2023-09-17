@@ -14,7 +14,6 @@ export async function POST(request) {
     message: "Message",
     agreedToPrivacyPolicyAndTerms: "Agreed to privacy policy and terms and conditions",
   };
-  console.log(data);
 
   const generateEmailContent = (data) => {
     const stringData = Object.entries(data).reduce(
