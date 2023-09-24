@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckBadgeIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
+import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";

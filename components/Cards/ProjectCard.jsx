@@ -7,7 +7,6 @@ import TutorialBadge from "@components/Badges/TutorialBadge";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 
 const ProjectCard = ({
   id,
@@ -36,9 +35,6 @@ const ProjectCard = ({
     <section className="break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit">
       <section className="flex">
         <h1 className="font-bold font-satoshi text-lg m-1 ml-2 sm:ml-2">{title}</h1>
-        {/* {featured && (
-          <FeaturedBadge />
-        )} */}
           {Object.entries(badges)[0].map && badges[0].featured && (
             <FeaturedBadge />
           )}

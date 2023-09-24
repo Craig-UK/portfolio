@@ -3,8 +3,6 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import SubjectList from "./SubjectList";
-import { Switch } from "@headlessui/react";
-import Link from "next/link";
 import PrivacyPolicySwitch from "./PrivacyPolicySwitch";
 import FAQAccordion from "./FAQAccordion";
 
@@ -40,7 +38,6 @@ const ContactForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isOk, setIsOk] = useState(true);
   const [state, setState] = useState(initState);
-  const [isError, setIsError] = useState(false);
   const [isRequiredError, setIsRequiredError] = useState(false);
   const [selected, setSelected] = useState(subjects[0]);
   const [agreed, setAgreed] = useState(false);
@@ -76,7 +73,6 @@ const ContactForm = () => {
     const validNameRegex = /^[a-zA-Z \s]*$/;
 
     if (!values.name.match(validNameRegex)) {
-      setIsError(true);
       setErrorMessage("Invalid Name.");
       setState((prev) => ({
         ...prev,
@@ -86,7 +82,6 @@ const ContactForm = () => {
     }
 
     if (!values.email.match(validEmailRegex)) {
-      setIsError(true);
       setErrorMessage("Invalid Email.");
       setState((prev) => ({
         ...prev,
@@ -96,7 +91,6 @@ const ContactForm = () => {
     }
 
     if (!values.message.match(validMessageRegex)) {
-      setIsError(true);
       setErrorMessage("Invalid Message.");
       setState((prev) => ({
         ...prev,
@@ -106,7 +100,6 @@ const ContactForm = () => {
     }
 
     if (values.phone !== "" && !values.phone.match(validPhoneRegex)) {
-      setIsError(true);
       setErrorMessage("Invalid Phone Number.");
       setState((prev) => ({
         ...prev,
@@ -116,7 +109,6 @@ const ContactForm = () => {
     }
 
     if (values.linkedin !== "" && !values.linkedin.match(validLinkedInRegex)) {
-      setIsError(true);
       setErrorMessage("Invalid LinkedIn URL.");
       setState((prev) => ({
         ...prev,
@@ -135,7 +127,7 @@ const ContactForm = () => {
       throw new Error("Name, email and message fields are required.");
     }
 
-    if (agreed == false) {
+    if (!agreed) {
       setIsRequiredError(true);
       setErrorMessage(
         "Please accept the privacy policy before submitting this contact form."
@@ -152,7 +144,7 @@ const ContactForm = () => {
     try {
       values.subject = selected.name;
 
-      if (agreed == true) {
+      if (agreed) {
         values.agreedToPrivacyPolicy = "Agreed";
       } else {
         values.agreedToPrivacyPolicy = "Disagreed";
@@ -172,8 +164,7 @@ const ContactForm = () => {
           "Message sent successfully. Thank you for contacting me, I will get back to you as soon as possible."
         );
         setIsOk(true);
-        setIsError(false);
-        const response = await fetch("/api/contact/thankyou", {
+        await fetch("/api/contact/thankyou", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -184,7 +175,6 @@ const ContactForm = () => {
         throw new Error("Something went wrong while sending the message.");
       }
     } catch (e) {
-      setIsError(true);
       setMessage(
         "Sorry, there was an issue sending your message. Please try again."
       );
@@ -296,7 +286,7 @@ const ContactForm = () => {
               !values.name ||
               !values.email ||
               !values.message ||
-              agreed == false
+              !agreed
             }
           >
             {isLoading ? (
