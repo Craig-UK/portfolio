@@ -50,6 +50,7 @@ const FreelanceApplicationPage = () => {
   const { values, isLoading } = state;
   const { enterprisePlanValues, enterprisePlanIsLoading } = enterprisePlanState;
   let isEnterprisePlan = false;
+  let uniqueID;
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -225,8 +226,11 @@ const FreelanceApplicationPage = () => {
       values.commissionPlan = selected;
       enterprisePlanValues.commissionPlan = selected;
 
-      values.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${Math.floor(Math.random() * 1000)}`;
-      enterprisePlanValues.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${Math.floor(Math.random() * 1000)}`
+      const crypto = window.crypto || window.msCrypto;
+      var array = new Uint32Array(1);
+
+      values.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${crypto.getRandomValues(array)}`;
+      enterprisePlanValues.uniqueNumber = `${values.commissionPlan.substring(0,1).toUpperCase()}${crypto.getRandomValues(array)}`
 
       let response;
 
