@@ -56,17 +56,10 @@ const ProjectCard = ({
       >
         Projects GitHub Repository can be viewed here
       </Link>
-      <section className="sm:flex sm:ml-2 ml-2 pt-2">
+      <section className="sm:ml-2 ml-2 pt-2">
         Programming Languages/Frameworks used:
         {languagesLogos?.map((logo) => (
-            <Image
-                key={logo}
-                src={logo}
-                alt="Programming Language/Framework Logo"
-                width={50}
-                height={50}
-                className="sm:m-1 sm:ml-2 m-1 pt-1"
-            />
+            <p key={logo}>{logo}</p>
         ))}
       </section>
       <p className="sm:mt-5 sm:ml-2 pb-2 ml-2">{summary}</p>
