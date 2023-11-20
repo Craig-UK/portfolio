@@ -176,11 +176,11 @@
 }
 
 .border-between-items {
-  @apply w-full mt-0.5 mb-1 border-2 border-black;
+  @apply w-full bg-gradient-to-r p-[2px] from-[#7928ca] to-[#ff0080];
 }
 
 .cta_btn {
-  @apply rounded-full w-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full w-full bg-gradient-to-r from-blue-500 to-purple-500 font-semibold uppercase hover:from-black hover:to-green-500 my-4 py-1.5 px-10 text-white transition-all text-center text-sm font-inter flex items-center justify-center;
 }
 
 .other_pages_cta_btn {

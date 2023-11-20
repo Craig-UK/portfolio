@@ -46,26 +46,28 @@ const Home = () => {
 
   return (
     <div>
-      <section className="w-full flex-start sm:flex-row flex-col">
+      <section className="uppercase flex w-full h-40 text-center justify-center items-center sm:flex-row flex-col bg-gradient-to-r from-green-400 to-blue-500">
+        <p className="pl-3 mt-5 text-4xl font-bold text-white">
+          Craig - <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-900">Passionately Coding</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-900">Constantly Learning</span>.
+        </p>
+      </section>
+      <section className="w-full mt-2 flex-start sm:flex-row flex-col bg-gradient-to-r from-green-400 to-green-700 text-white font-semibold">
         <Image
           src={"/assets/images/portrait.jpg"}
           alt="Portrait"
           width={120}
           height={120}
-          className="rounded-full pt-4"
+          className="rounded-full pt-4 pl-2"
         />
         <p className="desc">
-          Hello there! My name is Craig and I aspire to be a software/web
-          developer! My favourite coding languages include JavaScript
-          (specifically React), Python and Java. I am really passionate about
-          Technology and have been passionate about the Tech industry since I
-          first played the Xbox 360 around a decade ago. My favourite games
-          include God of War, Minecraft, and more! Thank you for visiting my
-          portfolio, please feel free to contact me if you have any issues with
-          my website or if you would like to learn more about me!
+          Hi, I&apos;m Craig - Aspiring to Shape the Future with Code.<br /><br />
+
+          Fueled by a decade-long passion for technology, starting from the days of Xbox 360, I&apos;m now deeply immersed in JavaScript (React), Python, and Java. This site is my digital canvas, where I blend my love for gaming and tech into innovative software and web solutions. <br /><br />
+
+          Explore my work, share your thoughts, or just say hello. Together, let&apos;s make tech engaging and accessible. <br /><br />
         </p>
       </section>
-      <section className="pt-10">
+      <section className="pt-2 pb-2 mt-2 bg-gradient-to-r from-black to-green-500">
         <ProfileCard
           image={"/assets/images/portrait.jpg"}
           title={"Craig Climie"}

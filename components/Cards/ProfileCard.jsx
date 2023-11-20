@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
   return (
-    <div className="profile_card">
+    <div className="profile_card text-white">
       {image && (
         <>
           <div className="flex items-center justify-center">

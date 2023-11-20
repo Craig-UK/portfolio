@@ -4,8 +4,8 @@ import FactCard from "@components/Cards/FactCard";
 import LearnMoreCard from "@components/Cards/LearnMoreCard";
 
 export const metadata = {
-  title: 'About'
-}
+  title: "About",
+};
 
 const About = () => {
   const learnMoreButtons = [
@@ -38,14 +38,28 @@ const About = () => {
           className="rounded-full pt-4"
         />
         <p className="desc">
-          Hello there! My name is Craig and I aspire to be a software/web
-          developer! My favourite coding languages include JavaScript
-          (specifically React), Python and Java. I am really passionate about
-          Technology and have been passionate about the Tech industry since I
-          first played the Xbox 360 around a decade ago. My favourite games
-          include God of War, Minecraft, and more! Thank you for visiting my
-          portfolio, please feel free to contact me if you have any issues with
-          my website or if you would like to learn more about me!
+          Hi, I&apos;m Craig - Aspiring to Shape the Future with Code. <br />
+          <br />
+          It&apos;s great to have you here. My passion for technology started
+          with the good old Xbox 360 and has grown ever since. Today, I find
+          myself deeply engaged in the world of software development, with a
+          particular fondness for JavaScript (React), Python, and Java.
+        </p>
+      </section>
+      <section className="pt-10 w-full flex-start">
+        <p className="desc">
+          This website is a showcase of my journey and skills in tech. It&apos;s
+          a place where I blend my love for coding with the practical needs of
+          the digital world. From gaming favourites like God of War and
+          Minecraft to the intricacies of web development, technology has been a
+          constant source of inspiration for me.
+        </p>
+      </section>
+      <section className="pt-10 w-full flex-start">
+        <p className="desc">
+          Feel free to explore my portfolio and get in touch if you have any
+          feedback or questions about my work. Your insights are invaluable in
+          helping me improve.
         </p>
       </section>
       <section className="pt-10 w-full flex-start">
