@@ -46,11 +46,6 @@ const Home = () => {
 
   return (
     <div>
-      <section className="uppercase flex w-full h-40 text-center justify-center items-center sm:flex-row flex-col bg-gradient-to-r from-green-400 to-blue-500">
-        <p className="pl-3 mt-5 text-4xl font-bold text-white">
-          Craig - <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-900">Passionately Coding</span>, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-900">Constantly Learning</span>.
-        </p>
-      </section>
       <section className="w-full mt-2 flex-start sm:flex-row flex-col bg-gradient-to-r from-green-400 to-green-700 text-white font-semibold">
         <Image
           src={"/assets/images/portrait.jpg"}
@@ -67,7 +62,7 @@ const Home = () => {
           Explore my work, share your thoughts, or just say hello. Together, let&apos;s make tech engaging and accessible. <br /><br />
         </p>
       </section>
-      <section className="pt-2 pb-2 mt-2 bg-gradient-to-r from-black to-green-500">
+      <section className="pt-2 pb-2 mt-2">
         <ProfileCard
           image={"/assets/images/portrait.jpg"}
           title={"Craig Climie"}

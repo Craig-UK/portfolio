@@ -24,7 +24,7 @@ const BlogCard = ({
   };
 
   return (
-    <section className="blog_post_card">
+    <section className="blog_post_card bg-gradient-to-r from-blue-500 to-purple-500 text-white">
       <div className="border border-black rounded-md">
         <Image
           src={coverImage}

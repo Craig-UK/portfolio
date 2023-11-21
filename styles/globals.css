@@ -180,19 +180,19 @@
 }
 
 .cta_btn {
-  @apply rounded-full w-full bg-gradient-to-r from-blue-500 to-purple-500 font-semibold uppercase hover:from-black hover:to-green-500 my-4 py-1.5 px-10 text-white transition-all text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full w-full bg-gradient-to-r from-blue-500 to-purple-500 font-semibold uppercase hover:from-red-500 hover:to-red-900 my-4 py-1.5 px-10 text-white transition-all text-center text-sm font-inter flex items-center justify-center;
 }
 
 .other_pages_cta_btn {
-  @apply rounded-full border border-black bg-black my-4 py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
+  @apply rounded-full bg-gradient-to-r from-blue-500 to-purple-500 my-4 py-1.5 px-10 text-white transition-all font-semibold uppercase hover:from-red-500 hover:to-red-900 font-inter;
 }
 
 .learn_more_cta_btn {
-  @apply rounded-full border border-black bg-black mt-1 py-1 sm:px-10 px-6 text-white transition-all hover:bg-white hover:text-black font-inter;
+  @apply rounded-full bg-gradient-to-r from-black to-green-500 bg-black mt-1 py-1 sm:px-10 px-6 text-white transition-all hover:from-red-500 hover:to-red-900 font-inter;
 }
 
 .blog_view_post_btn {
-  @apply rounded-full border border-black bg-black py-1 px-10 text-white transition-all hover:bg-white hover:text-black font-inter;
+  @apply rounded-full bg-gradient-to-r from-black to-green-500 py-1 px-10 text-white transition-all hover:from-red-500 hover:to-red-900 font-inter;
 }
 
 .price_card_btn {

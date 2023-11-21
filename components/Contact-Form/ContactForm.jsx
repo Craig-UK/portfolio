@@ -281,7 +281,7 @@ const ContactForm = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="rounded-lg flex border mt-5 border-gray-600 w-20 hover:bg-gray-900 hover:text-white"
+            className="rounded-full flex bg-gradient-to-r from-blue-500 to-purple-500 mt-5 w-20 font-semibold uppercase hover:from-red-500 hover:to-red-900 my-2 py-1 px-0.5 text-white transition-all"
             disabled={
               !values.name ||
               !values.email ||

@@ -4,9 +4,9 @@ import React from "react";
 
 const LearnMoreCard = ({ text, button }) => {
   return (
-    <section className="learn_more_card">
+    <section className="learn_more_card text-white bg-gradient-to-r from-blue-500 to-purple-500">
       <div className="m-2">
-        <ExclamationCircleIcon className="border border-black rounded-full h-24 w-24" />
+        <ExclamationCircleIcon className="border border-white rounded-full h-24 w-24" />
       </div>
       <div>
         <h1 className="uppercase text-lg font-extrabold font-satoshi mt-3">

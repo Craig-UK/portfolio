@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const OtherPagesCard = ({ pageTitle, cardTitle, cardText, button }) => {
   return (
-    <div className="other_pages_card">
+    <div className="other_pages_card text-white bg-gradient-to-r from-green-500 to-black">
       <div className="font-satoshi">
         <h4>{pageTitle}</h4>
       </div>

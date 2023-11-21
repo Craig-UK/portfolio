@@ -96,7 +96,7 @@ const Projects = () => {
 
   return (
     <div>
-      <section className="w-full h-80 flex-start sm:flex-row justify-between gap-14 flex-col bg-gradient-to-r from-black to-green-500">
+      <section className="w-full h-80 flex-start sm:flex-row justify-between gap-14 flex-col">
         <ProfileCard
           title="Web Application Projects"
           links={webLinks}
