@@ -34,7 +34,7 @@ const PrivacyPolicyPage = () => {
           <p>General Contact E-mail: contact@justcraigdev.com</p>
           <p>Privacy Complaint E-mail: privacy@justcraigdev.com</p>
           <p>Created: 22nd November 2023</p>
-          <p>Last Updated: 22nd November 2023</p>
+          <p>Last Updated: 23rd November 2023</p>
         </div>
         <div id="respect-your-privacy" className="mt-5">
           <h1 className="font-bold text-xl">2. How I Respect Your Privacy</h1>
@@ -206,7 +206,7 @@ const PrivacyPolicyPage = () => {
         </div>
         <div id="complaints" className="mt-5">
           <h1 className="font-bold text-xl">10. How To Complain</h1>
-          <p>If you have any concerns about our use of your personal information, you can make a complaint to us at privacy@justcraigdev.com.</p>
+          <p>If you have any concerns about my use of your personal information, you can make a complaint to me at privacy@justcraigdev.com.</p>
           <p className="mt-5">You can also complain to the ICO if you are unhappy with how I have used your data.</p>
           <p className="mt-5">The ICO&apos;s address:</p>
           <p>Information Commissioner&apos;s Office<br />
