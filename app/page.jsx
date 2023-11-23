@@ -46,33 +46,16 @@ const Home = () => {
 
   return (
     <div>
-      <section className="w-full mt-2 flex-start sm:flex-row flex-col bg-gradient-to-r from-green-400 to-green-700 text-white font-semibold">
-        <Image
-          src={"/assets/images/portrait.jpg"}
-          alt="Portrait"
-          width={120}
-          height={120}
-          className="rounded-full pt-4 pl-2"
-        />
-        <p className="desc">
-          Hi, I&apos;m Craig - Aspiring to Shape the Future with Code.<br /><br />
-
-          Fueled by a decade-long passion for technology, starting from the days of Xbox 360, I&apos;m now deeply immersed in JavaScript (React), Python, and Java. This site is my digital canvas, where I blend my love for gaming and tech into innovative software and web solutions. <br /><br />
-
-          Explore my work, share your thoughts, or just say hello. Together, let&apos;s make tech engaging and accessible. <br /><br />
-        </p>
-      </section>
       <section className="pt-2 pb-2 mt-2">
         <ProfileCard
           image={"/assets/images/portrait.jpg"}
           title={"Craig Climie"}
-          subtitle={"Software Developer, Web Developer"}
+          subtitle={"Aspiring to Shape the Future with Code."}
           button={profileCardButtons[0]}
           links={links}
-          aboutText="Hello there, I am Craig! I am currently proficient in React and Python
-          with some understanding of C# and Java. I am currently learning the
-          Next.js React framework, and expanding my knowledge of C#, Java and
-          Python."
+          aboutText="Fueled by a decade-long passion for technology, starting from the days of Xbox 360, I&apos;m now deeply immersed in JavaScript (React), Python, and Java. This site is my digital canvas, where I blend my love for gaming and tech into innovative software and web solutions.
+
+          Explore my work, share your thoughts, or just say hello. Together, let&apos;s make tech engaging and accessible."
         />
       </section>
       <section className="pt-10">
