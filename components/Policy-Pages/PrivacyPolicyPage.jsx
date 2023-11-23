@@ -97,9 +97,9 @@ const PrivacyPolicyPage = () => {
                 (Commission Plans: &quot;Enterprise&quot;)
               </td>
               <td className="pl-5">
-                Your Name, Your Businesses Name that you are applying on for a
+                Your Name, Your Businesses Name that you are applying for a
                 commission on behalf of, Your Email, Your Business Email, Your
-                Businesses LinkedIn Page that you are applying on for a
+                Businesses LinkedIn Page that you are applying for a
                 commission on behalf of, Your Choice of Commission Plan
                 &quot;Enterprise&quot; and The Reason for Your Commission
                 Application
