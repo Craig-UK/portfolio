@@ -164,7 +164,7 @@ const PrivacyPolicyPage = () => {
           <p className="mt-5">
             In addition, I will only share your data with third parties outside
             of the EU where appropriate safeguards are defined by Article 46 of
-            the General Data Protection Regulation &quot;GDPR&quot;.
+            the General Data Protection Regulation (&quot;GDPR&quot;).
           </p>
         </div>
         <div id="data-retention" className="mt-5">
@@ -182,16 +182,16 @@ const PrivacyPolicyPage = () => {
           <p>Under data protection law, you have rights including:</p>
           <ul className="mt-2 list-disc ml-5">
             <li>Where data processing is based on consent, you can revoke consent at any time by contacting me;</li>
-            <li>Your right of access - You have the right to ask us for copies of your personal information;</li>
-            <li>Your right to rectification - You have the right to ask us to rectify personal information you think is inaccurate. You also have the right to ask us to complete information you think is incomplete;</li>
-            <li>Your right to erasure - You have the right to ask us to erase your personal information in certain circumstances;</li>
-            <li>Your right to restriction of processing - You have the right to ask us to restrict the processing of your personal information in certain circumstances;</li>
-            <li>Your right to data portability - You have the right to ask that we transfer the personal information you gave us to another organisation, or to you, in certain circumstances.</li>
+            <li>Your right of access - You have the right to ask me for copies of your personal information;</li>
+            <li>Your right to rectification - You have the right to ask me to rectify personal information you think is inaccurate. You also have the right to ask me to complete information you think is incomplete;</li>
+            <li>Your right to erasure - You have the right to ask me to erase your personal information in certain circumstances;</li>
+            <li>Your right to restriction of processing - You have the right to ask me to restrict the processing of your personal information in certain circumstances;</li>
+            <li>Your right to data portability - You have the right to ask that I transfer the personal information you gave me to another organisation, or to you, in certain circumstances.</li>
           </ul>
           <p className="mt-5">Note: Exercising certain rights, such as data deletion, may prevent me from delivering certain services to you.</p>
-          <p className="mt-5">You are not required to pay any charge for exercising your rights. If you make a request, we have one month to respond to you.</p>
+          <p className="mt-5">You are not required to pay any charge for exercising your rights. If you make a request, I have one month to respond to you.</p>
           <p className="mt-5">You have the right to file a complaint with the Information Commissioner&apos;s Office (&quot;ICO&quot;) if you believe your rights have been violated. See <Link className="underline" href="#complaints">Section 10. How To Complain</Link> for more information and how to contact the Information Commissioner&apos;s Office (&quot;ICO&quot;).</p>
-          <p className="mt-5">Please contact us at privacy@justcraigdev.com if you wish to make a request.</p>
+          <p className="mt-5">Please contact me at privacy@justcraigdev.com if you wish to make a request.</p>
         </div>
         <div id="cookies-usage" className="mt-5">
           <h1 className="font-bold text-xl">8. Cookies & Usage Tracking</h1>
@@ -207,7 +207,7 @@ const PrivacyPolicyPage = () => {
         <div id="complaints" className="mt-5">
           <h1 className="font-bold text-xl">10. How To Complain</h1>
           <p>If you have any concerns about our use of your personal information, you can make a complaint to us at privacy@justcraigdev.com.</p>
-          <p className="mt-5">You can also complain to the ICO if you are unhappy with how we have used your data.</p>
+          <p className="mt-5">You can also complain to the ICO if you are unhappy with how I have used your data.</p>
           <p className="mt-5">The ICO&apos;s address:</p>
           <p>Information Commissioner&apos;s Office<br />
             Wycliffe House<br />
