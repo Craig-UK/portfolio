@@ -195,7 +195,7 @@ const PrivacyPolicyPage = () => {
         </div>
         <div id="cookies-usage" className="mt-5">
           <h1 className="font-bold text-xl">8. Cookies & Usage Tracking</h1>
-          <p>A cookie is a small file of letters and numbers that is downloaded on to your computer when you visit a website. Cookies are used by many websites and can do a number of things, like remembering your preferences, recording field entries and counting the number of people looking at a website.</p>
+          <p>A cookie is a small file of letters and numbers that is downloaded on to your computer when you visit a website. Cookies allow a website to recognise a user&apos;s device and store some information about the user&apos;s preferences.</p>
           <p className="mt-5">I use cookies primarily for website functionality and not for collecting personal data beyond the purposes outlined in section 3 above. Some cookies may gather anonymous usage data to improve website performance.</p>
         </div>
         <div id="privacy-policy-updates" className="mt-5">
