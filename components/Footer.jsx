@@ -45,7 +45,7 @@ const Footer = () => {
         <p>&copy; 2023 Just Craig Development. All rights reserved.</p>
 
         <div className="footer__copyrights-link">
-          <Link href="/" className="text-gray-500">
+          <Link href="/privacy-policy" className="text-gray-500">
             Privacy Policy
           </Link>
           <Link href="/" className="text-gray-500">
