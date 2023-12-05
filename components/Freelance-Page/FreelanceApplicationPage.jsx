@@ -234,6 +234,8 @@ const FreelanceApplicationPage = () => {
 
       let response;
 
+      console.log(typeof(enterprisePlanValues.uniqueNumber));
+
       if(selected.toLowerCase() !== "enterprise") {
         if (agreed == true) {
           values.agreedToPrivacyPolicyAndTerms = "Agreed";
@@ -249,6 +251,14 @@ const FreelanceApplicationPage = () => {
       }
 
       if (selected.toLowerCase() !== "enterprise") {
+        response = await fetch("/api/commissions/regular/insertrecord", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+
         response = await fetch("/api/commissions/regular", {
           method: "POST",
           headers: {
@@ -257,6 +267,14 @@ const FreelanceApplicationPage = () => {
           body: JSON.stringify(values),
         });
       } else {
+        response = await fetch("/api/commissions/enterprise/insertrecord", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(enterprisePlanValues),
+        });
+
         response = await fetch("/api/commissions/enterprise", {
           method: "POST",
           headers: {
