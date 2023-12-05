@@ -19,6 +19,42 @@ const subjects = [
     id: 2,
     name: "Projects",
   },
+  {
+    id: 3,
+    name: "Personal Blog (COMING SOON)",
+  },
+  {
+    id: 4,
+    name: "Dev Blog",
+  },
+  {
+    id: 5,
+    name: "Travel Blog",
+  },
+  {
+    id: 6,
+    name: "Commissions",
+  },
+  {
+    id: 7,
+    name: "Web Template Store (COMING SOON)",
+  },
+  {
+    id: 8,
+    name: "Dev Blog Sponsorship",
+  },
+  {
+    id: 9,
+    name: "Travel Blog Sponsorship",
+  },
+  {
+    id: 10,
+    name: "Other Sponsorship Opportunity",
+  },
+  {
+    id: 11,
+    name: "Bug/Other Issue",
+  },
 ];
 
 const ContactForm = () => {
