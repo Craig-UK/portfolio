@@ -34,7 +34,7 @@ const PrivacyPolicyPage = () => {
           <p>General Contact E-mail: contact@justcraigdev.com</p>
           <p>Privacy Complaint E-mail: privacy@justcraigdev.com</p>
           <p>Created: 22nd November 2023</p>
-          <p>Last Updated: 23rd November 2023</p>
+          <p>Last Updated: 7th December 2023</p>
         </div>
         <div id="respect-your-privacy" className="mt-5">
           <h1 className="font-bold text-xl">2. How I Respect Your Privacy</h1>
@@ -86,7 +86,7 @@ const PrivacyPolicyPage = () => {
               </td>
               <td className="pl-5">
                 Consent: You provide this data voluntarily to submit a
-                commission application for either the Basic, Premium and
+                commission application for either the Basic, Premium or
                 Advanced commission plans;<br />
                 Contract: To undertake your requested commission, if your commission application has been accepted
               </td>
