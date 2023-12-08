@@ -3,7 +3,9 @@ import React from 'react'
 
 const FreelanceApplication = () => {
   return (
-    <FreelanceApplicationPage />
+    <div className="flex flex-col w-4/6 mx-auto">
+      <FreelanceApplicationPage />
+    </div>
   )
 }
 
