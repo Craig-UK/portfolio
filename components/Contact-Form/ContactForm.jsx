@@ -53,6 +53,10 @@ const subjects = [
   },
   {
     id: 11,
+    name: "Opt out of social media marketing",
+  },
+  {
+    id: 12,
     name: "Bug/Other Issue",
   },
 ];
