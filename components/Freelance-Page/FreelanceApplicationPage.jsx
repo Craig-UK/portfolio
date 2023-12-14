@@ -86,10 +86,17 @@ const FreelanceApplicationPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
+    if(selected.toLowerCase() === "enterprise") {
+      setEnterprisePlanState((prev) => ({
+        ...prev,
+        enterprisePlanIsLoading: true,
+      }));
+    } else {
+      setState((prev) => ({
+        ...prev,
+        isLoading: true,
+      }));
+    }
 
     const validEmailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
