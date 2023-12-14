@@ -18,7 +18,17 @@ const FAQAccordion = () => {
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
                 General - General enquiries about my website. <br />
-                Projects - Enquiries about my projects that are available on my website.
+                Projects - Enquiries about my projects that are available on my website. <br />
+                Personal Blog - Enquire about a post from my Personal blog. <br />
+                Dev Blog - Enquire about a post from my Dev blog. <br />
+                Travel Blog - Enquire about a post from my Travel blog. <br />
+                Commissions - Either to enquire about your commission application or to enquire about commissions in general. <br />
+                Web Template Store - Suggest a template to include or ask about the templates already included. <br />
+                Dev Blog Sponsorship - To enquire about offering me a sponsorship to be included within my Dev blog posts. <br />
+                Travel Blog Sponsorship - To enquire about offering me a sponsorship to be included within my Travel blog posts. <br />
+                Other Sponsorship Opportunity - To enquire about offering me a sponsorship opportunity. <br />
+                Opt Out of Social Media Marketing - To opt out of social media marketing for your commission. Please include your Unique Commission Application Number. <br />
+                Bug/Other Issue - To contact me about a bug or issue you are experiencing on my website. <br />
               </Disclosure.Panel>
             </>
           )}

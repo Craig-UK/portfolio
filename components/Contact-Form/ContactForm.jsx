@@ -53,7 +53,7 @@ const subjects = [
   },
   {
     id: 11,
-    name: "Opt out of social media marketing",
+    name: "Opt Out of Social Media Marketing",
   },
   {
     id: 12,
