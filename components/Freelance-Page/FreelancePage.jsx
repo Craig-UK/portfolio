@@ -17,20 +17,8 @@ const FreelancePage = () => {
     {
       id: 2,
       name: "Premium",
-      price: "40",
+      price: "60",
       description: "Even more tools included for your website.",
-      features: [
-        "Feature 1",
-        "Feature 2",
-        "Feature 3"
-      ],
-      recommended: true
-    },
-    {
-      id: 3,
-      name: "Advanced",
-      price: "70",
-      description: "Everything you need for your website.",
       features: [
         "Feature 1",
         "Feature 2",
@@ -39,7 +27,7 @@ const FreelancePage = () => {
       recommended: false
     },
     {
-      id: 4,
+      id: 3,
       name: "Enterprise",
       price: "Custom",
       description: "Everything you need for your business.",

@@ -33,7 +33,7 @@ const FreelanceApplicationPage = () => {
     enterprisePlanValues: initEnterprisePlanValues,
   };
 
-  const subjects = ["Basic", "Premium", "Advanced"];
+  const subjects = ["Basic", "Premium"];
 
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
