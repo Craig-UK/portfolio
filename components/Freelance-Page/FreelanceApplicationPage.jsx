@@ -7,12 +7,6 @@ import PlanName from "./PlanName";
 import PrivacyPolicyAndTermsSwitch from "./PrivacyPolicyAndTermsSwitch";
 
 const FreelanceApplicationPage = () => {
-  const router = useRouter();
-  const commissionStatus = "closed";
-
-  if(commissionStatus === "closed") {
-    router.push("/freelance/closed");
-  }
   
   const initValues = {
     uniqueNumber: "",
