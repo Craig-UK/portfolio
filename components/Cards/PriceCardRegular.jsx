@@ -25,7 +25,7 @@ const PriceCardRegular = ({
         </div>
           <ul className="mt-4 space-y-2 flex flex-col">
             {features.map((feature) => (
-              <li key={feature} class="flex">
+              <li key={feature} className="flex">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -52,7 +52,7 @@ const PriceCardRegular = ({
       </div>
       <div className="mt-6">
         <button
-          class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-black to-green-500 text-white hover:bg-gradient-to-r hover:from-black/90 hover:to-green-700/90 h-10 px-4 py-2 w-full"
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-black to-green-500 text-white hover:bg-gradient-to-r hover:from-black/90 hover:to-green-700/90 h-10 px-4 py-2 w-full"
           onClick={click}
         >
           Get Started

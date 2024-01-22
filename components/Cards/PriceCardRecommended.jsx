@@ -48,7 +48,7 @@ const PriceCardRecommended = ({ planName, price, description, features, click })
         </p>
       </div>
       <div className="mt-6">
-        <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:bg-gradient-to-r hover:from-pink-700/90 hover:to-purple-700/90 h-10 px-4 py-2 w-full" onClick={click}>
+        <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:bg-gradient-to-r hover:from-pink-700/90 hover:to-purple-700/90 h-10 px-4 py-2 w-full" onClick={click}>
           Get Started
         </button>
       </div>
