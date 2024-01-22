@@ -2,10 +2,18 @@
 
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import PlanName from "./PlanName";
 import PrivacyPolicyAndTermsSwitch from "./PrivacyPolicyAndTermsSwitch";
 
 const FreelanceApplicationPage = () => {
+  const router = useRouter();
+  const commissionStatus = "closed";
+
+  if(commissionStatus === "closed") {
+    router.push("/freelance/closed");
+  }
+  
   const initValues = {
     uniqueNumber: "",
     name: "",

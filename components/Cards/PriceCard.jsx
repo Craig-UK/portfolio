@@ -7,12 +7,8 @@ import PriceCardRegular from "./PriceCardRegular";
 
 const PriceCard = ({ planName, price, description, features, recommended }) => {
   const router = useRouter();
-  const commissionStatus = "closed";
 
   const handleClick = () => {
-    if (commissionStatus === "closed") {
-      router.push("/freelance/closed");
-    } else if (commissionStatus === "open") {
       const searchParams = new URLSearchParams(window.location.search);
 
       searchParams.set("plan", planName);
@@ -22,7 +18,6 @@ const PriceCard = ({ planName, price, description, features, recommended }) => {
       }/application?${searchParams.toString()}`;
 
       router.push(newPathname);
-    }
   };
 
   return (
