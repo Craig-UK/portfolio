@@ -1,6 +1,14 @@
+'use client'
+
 import Link from "next/link";
 
 import { footerLinks } from "@constants/Constants";
+
+const getDate = () => {
+  let date = new Date();
+
+  return date.getFullYear();
+}
 
 const Footer = () => {
   return (
@@ -8,7 +16,7 @@ const Footer = () => {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
         <div className="flex flex-col justify-start items-start gap-6">
           <p className="text-base text-gray-700 font-bold">
-            &copy; 2024 Just Craig Development. All rights reserved.
+            &copy; 2023-{getDate()} Just Craig Development. All rights reserved.
           </p>
           <p className="font-semibold text-gray-700">
             <a
@@ -42,7 +50,7 @@ const Footer = () => {
       </div>
 
       <div className="flex justify-between items-center flex-wrap mt-10 border-t border gray-100 sm:px-16 px-6 py-10">
-        <p>&copy; 2023 Just Craig Development. All rights reserved.</p>
+        <p>&copy; 2023-{getDate()} Just Craig Development. All rights reserved.</p>
 
         <div className="footer__copyrights-link">
           <Link href="/privacy-policy" className="text-gray-500">
