@@ -20,9 +20,9 @@ const PriceCardRecommended = ({ planName, price, description, features, click })
         <div className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
           <span className="text-4xl font-bold">{price}</span>/ hr
         </div>
-        <ul className="mt-4 space-y-2 flex flex-col items-center">
+        <ul className="mt-4 space-y-2 flex flex-col justify-start">
           {features.map((feature) => (
-            <li key={feature} class="flex items-center">
+            <li key={feature} className="flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -30,10 +30,10 @@ const PriceCardRecommended = ({ planName, price, description, features, click })
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-white text-xs bg-green-500 rounded-full mr-2 p-1"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white bg-green-500 rounded mr-2 p-1"
               >
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
