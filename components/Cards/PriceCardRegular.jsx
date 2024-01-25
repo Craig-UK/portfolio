@@ -23,7 +23,8 @@ const PriceCardRegular = ({
         <div className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
           <span className="text-4xl font-bold">{price}</span>/ hr
         </div>
-          <ul className="mt-4 space-y-2 flex flex-col">
+        <div className={`flex flex-col items-center ${planName === "Basic" ? "-ml-10" : "ml-3"}`}>
+          <ul className="mt-4 space-y-2">
             {features.map((feature) => (
               <li key={feature} className="flex">
                 <svg
@@ -44,6 +45,7 @@ const PriceCardRegular = ({
               </li>
             ))}
           </ul>
+        </div>
       </div>
       <div className="flex flex-col items-center pt-5">
         <p>

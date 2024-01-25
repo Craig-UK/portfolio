@@ -12,7 +12,7 @@ const FreelancePage = () => {
       name: "Basic",
       price: "£25",
       description: "Essentials for your website.",
-      features: ["Simple Website", "Basic Wireframes, desktop only", "Up to 5 pages", "Responsive", "SEO Optimisation"],
+      features: ["Simple Website", "Basic Wireframes", "Up to 5 pages", "Responsive", "SEO Optimisation"],
       recommended: false,
     },
     {

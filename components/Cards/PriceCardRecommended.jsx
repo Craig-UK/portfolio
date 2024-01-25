@@ -20,27 +20,29 @@ const PriceCardRecommended = ({ planName, price, description, features, click })
         <div className="mt-4 text-center text-zinc-600 dark:text-zinc-400">
           <span className="text-4xl font-bold">{price}</span>/ hr
         </div>
-        <ul className="mt-4 space-y-2 flex flex-col justify-start">
-          {features.map((feature) => (
-            <li key={feature} className="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white bg-green-500 rounded mr-2 p-1"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col items-center ml-3">
+          <ul className="mt-4 space-y-2">
+            {features.map((feature) => (
+              <li key={feature} className="flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-white text-xs bg-green-500 rounded mr-2 p-1"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="flex flex-col items-center pt-5">
         <p>
