@@ -34,7 +34,7 @@ const PrivacyPolicyPage = () => {
           <p>General Contact E-mail: contact@justcraigdev.com</p>
           <p>Privacy Complaint E-mail: privacy@justcraigdev.com</p>
           <p>Created: 22nd November 2023</p>
-          <p>Last Updated: 7th December 2023</p>
+          <p>Last Updated: 26th January 2024</p>
         </div>
         <div id="respect-your-privacy" className="mt-5">
           <h1 className="font-bold text-xl">2. How I Respect Your Privacy</h1>
@@ -78,16 +78,14 @@ const PrivacyPolicyPage = () => {
             <tr>
               <td>
                 Submitting the Regular Commission Application Form (Commission
-                Plans: &quot;Basic, Premium and Advanced&quot;)
+                Plans: &quot;Basic and Premium&quot;)
               </td>
               <td className="pl-5">
-                Name, Email, Your Choice of Commission Plan &quot;Basic, Premium
-                or Advanced&quot; and The Reason for Your Commission Application
+                Name, Email, Your Choice of Commission Plan &quot;Basic and Premium&quot; and The Reason for Your Commission Application
               </td>
               <td className="pl-5">
                 Consent: You provide this data voluntarily to submit a
-                commission application for either the Basic, Premium or
-                Advanced commission plans;<br />
+                commission application for either the Basic and Premium commission plans;<br />
                 Contract: To undertake your requested commission, if your commission application has been accepted
               </td>
             </tr>
@@ -142,8 +140,7 @@ const PrivacyPolicyPage = () => {
             <li>Respond to enquiries you send;</li>
             <li>
               Respond to commission applications that you send (includes
-              applications for all commission plans: &quot;Basic, Premium,
-              Advanced and Enterprise&quot;);
+              applications for all commission plans: &quot;Basic, Premium and Enterprise&quot;);
             </li>
             <li>
               To handle technical issues, feedback, partnership opportunities,
