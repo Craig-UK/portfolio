@@ -18,7 +18,7 @@ const FreelancePage = () => {
     {
       id: 2,
       name: "Premium",
-      price: "£60",
+      price: "£45",
       description: "Even more tools for your website.",
       features: ["More Advanced Website", "Better Wireframes", "Up to 10 pages", "Responsive", "SEO Optimisation"],
       recommended: true,
