@@ -6,8 +6,7 @@ const CookiePolicyPage = () => {
     <>
       <h1 className="text-2xl font-bold">Cookies Policy</h1>
       <p>
-        This cookies policy explains what cookies I, Craig Climie (trading as
-        Just Craig Development), use on my website.
+        This cookies policy explains the cookies that Just Craig Development Ltd use on this website.
       </p>
       <section className="flex flex-col mt-5">
         <Link href="#what-are-cookies">What are cookies?</Link>
