@@ -5,7 +5,7 @@ const PrivacyPolicyPage = () => {
   return (
     <div>
       <h1 className="font-bold text-2xl">
-        Craig Climie, trading as Just Craig Development Privacy Policy
+        Just Craig Development Ltd Privacy Policy
       </h1>
       <div className="flex flex-col mt-5">
         <Link href="#contact-details">1. Contact Details</Link>
@@ -30,17 +30,16 @@ const PrivacyPolicyPage = () => {
       <div className="mt-5">
         <div id="contact-details">
           <h1 className="font-bold text-xl">1. Contact Details</h1>
-          <p>Name: Craig Climie, trading as Just Craig Development</p>
+          <p>Company Name: Just Craig Development Ltd</p>
           <p>General Contact E-mail: contact@justcraigdev.com</p>
           <p>Privacy Complaint E-mail: privacy@justcraigdev.com</p>
           <p>Created: 22nd November 2023</p>
-          <p>Last Updated: 26th January 2024</p>
+          <p>Last Updated: 31st January 2024</p>
         </div>
         <div id="respect-your-privacy" className="mt-5">
           <h1 className="font-bold text-xl">2. How I Respect Your Privacy</h1>
           <p>
-            This Privacy Policy applies to information I, Craig Climie (trading
-            as Just Craig Development) collect about individuals who interact
+            This Privacy Policy applies to information Just Craig Development Ltd collects about individuals who interact
             with me through my website. It explains what personal information I
             collect and how I use it.
           </p>
