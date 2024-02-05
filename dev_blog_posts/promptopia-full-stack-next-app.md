@@ -1,10 +1,10 @@
 ---
 title: 'Full Stack Next App called "Promptopia"'
 date: '2023-05-29'
-last-updated: '2023-07-19'
+last-updated: '2023-11-20'
 author: 'Craig Climie'
 image: '/assets/images/2023/may/promptopia/logo.svg'
-summary: 'An application developed using Next.js 13 that allows user to post AI "Prompts".'
+summary: 'An application developed using Next.js 13 that allows the user to post AI "Prompts".'
 ---
 
 ***PLEASE NOTE: PLEASE DO NOT ATTEMPT TO LOGIN TO THIS WEB APPLICATION WITH YOUR GOOGLE ACCOUNT***
@@ -20,6 +20,16 @@ Thanks to JavaScript Mastery for this project (find the links below)
 After using Next.js since around version 12, I finally saw this tutorial by JavaScript Mastery that used Next.js version 13 along with the new App router. Aswell as Next.js 13, I finally got to try out TailwindCSS which I have been really eager to try out. This tutorial also made use of MongoDB and demonstrated how to integrate MongoDB with Next.js 13 and the App router.
 
 So, all in all, from this tutorial, I learned alot about how to integrate multiple systems and frameworks (mostly CSS frameworks) with the new Next.js 13 App router and API routes. This tutorial also demonstrated how to use Google's OAuth authentication to allow users to sign in to their Google account's and post their recommended AI prompts found through systems such as ChatGPT, etc.
+
+## Key Features
+
+- User-friendly Post Feed for sharing and viewing AI prompts.
+
+- Simplified prompt sharing with copy-to-clipboard functionality.
+
+- Personalized user profiles showcasing individual contributions.
+
+- Role & Contribution: Developed as a solo project following the "Next.js 13 Full Course 2023" by JavaScript Mastery, focusing on integrating various systems and frameworks.
 
 ***!!!PLEASE DO NOT ATTEMPT TO LOGIN TO YOUR GOOGLE ACCOUNT, I AM GOING TO DISABLE THIS FEATURE. IT WAS MAINLY FOR TESTING OUT GOOGLE'S OAUTH AUTHENTICATION INTEGRATION!!!***
 
@@ -89,6 +99,32 @@ Thank you all for reading my Dev Blog about this project. If you have read this 
 thank you and I hope you enjoyed. What would you like to know more about or what could I improve about my dev blogs in the future?
 
 I appreciate your feedback, feel free to contact me with your answers through my "Contact" form or through my Twitter or Instagram pages. You can also feel free to contact me through email by [emailing me](mailto:contact@justcraigdev.com).
+
+## Project Limitations
+
+The 'sign in' feature is currently disabled and serves primarily as a testament to my learning experience with Google OAuth2 integration in a Next.js 13 application.
+
+## Results, Learnings, Thoughts, Reflections and Future Improvements
+
+- The project advanced my skills in system integration and understanding of user authentication processes.
+
+- Challenges Overcome: One of the primary challenges I faced was integrating multiple systems within Next.js 13, particularly blending CSS frameworks with the new App router and API routes. Navigating through these complexities not only honed my technical skills but also sharpened my problem-solving abilities.
+
+- Skill Development: This project was a significant leap in my understanding of system integration, especially with Next.js 13 and Google's OAuth authentication. I delved deep into the nuances of modern web application development, gaining a comprehensive understanding of React's latest features and MongoDB's database management.
+
+- Project Management and Planning: Managing the development lifecycle of this project required meticulous planning and time management. Balancing the learning curve of new technologies with effective implementation was a rewarding challenge that taught me the importance of agile project management in software development.
+
+- Collaboration and Feedback Integration: While this project was a solo venture, the learning process involved engaging with the JavaScript Mastery community. This interaction offered valuable insights and alternative perspectives, reinforcing the importance of community feedback in refining my work.
+
+- Key Takeaways: My biggest takeaway is the importance of continuous learning in technology. This project not only improved my technical skills but also gave me a deeper appreciation for the ever-evolving nature of web development, highlighting the need to stay updated with the latest trends and tools.
+
+- Future Application of Skills: The skills and knowledge acquired from this project have prepared me to tackle more complex full-stack development tasks in the future. I am excited to apply these learnings to build more integrated, user-centric web applications.
+
+- Personal Growth: This project was a journey of personal and professional growth. It pushed me out of my comfort zone, challenging me to integrate various technologies and embrace a more holistic approach to software development.
+
+- Aspirations and Next Steps: Moving forward, I aspire to leverage my experience from this project to contribute to larger, more complex web applications. My goal is to continuously improve user experience and functionality in the software I develop, ultimately making a meaningful impact in the tech world.
+
+## Links
 
 Next.js 13 Full Course 2023 by JavaScript Mastery: [watch it here.](https://www.youtube.com/watch?v=wm5gMKuwSYk)
 

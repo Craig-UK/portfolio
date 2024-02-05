@@ -28,6 +28,12 @@ const ProjectsSchema = new Schema({
   },
   limitations: {
     type: String
+  },
+  badges: {
+    type: Array
+  },
+  courseOrTutorialLink: {
+    type: String
   }
 })
 

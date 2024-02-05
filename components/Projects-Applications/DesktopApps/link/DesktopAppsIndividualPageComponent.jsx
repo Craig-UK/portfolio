@@ -29,6 +29,8 @@ const DesktopAppsIndividualPageComponent = ({ params }) => {
           desc={proj.description}
           limits={proj.limitations}
           images={proj.images}
+          badges={proj.badges}
+          courseOrTutorialLink={proj.courseOrTutorialLink}
         />
       ))}
     </div>

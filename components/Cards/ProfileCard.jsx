@@ -4,7 +4,7 @@ import React from "react";
 
 const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
   return (
-    <div className="profile_card">
+    <div className="profile_card text-white bg-gradient-to-r from-black to-green-500">
       {image && (
         <>
           <div className="flex items-center justify-center">

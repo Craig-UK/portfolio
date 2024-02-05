@@ -1,47 +1,74 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Carousel } from 'react-responsive-carousel'
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import Image from "next/image";
+import Link from "next/link";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const SingleWebProject = ({ title, github, deployed, images, desc, limits }) => {
+const SingleWebProject = ({
+  title,
+  github,
+  deployed,
+  images,
+  desc,
+  limits,
+  badges,
+  courseOrTutorialLink
+}) => {
   return (
-    <div className='font-satoshi'>
-       <h1 className='text-4xl font-bold'>{title}</h1>
-       <div className='flex justify-start gap-5'>
-        <Link href={github}>{github}</Link>
+    <div className="font-satoshi">
+      <h1 className="text-4xl font-bold">{title}</h1>
+      <div className="flex justify-start gap-5">
+        <Link href={github} className="hover:underline">
+          Projects GitHub Repository can be viewed here
+        </Link>
         {deployed === "Not Deployed" ? (
           <p>Not Deployed</p>
-        ): (
-          <Link href={deployed}>{deployed}</Link>
+        ) : (
+          <Link href={deployed} className="hover:underline">
+            Deployed Project can be viewed here
+          </Link>
         )}
-       </div>
-       <div className='flex justify-center mt-5'>
-          <Carousel className='w-2/6'>
-          {images?.map(img => (
-          <div key={img}>
-              <Image 
+      </div>
+      <div className="flex justify-center mt-5">
+        <Carousel className="w-2/6">
+          {images?.map((img) => (
+            <div key={img}>
+              <Image
                 src={img}
-                alt='Image on Single Web Project Page'
+                alt="Image on Single Web Project Page"
                 width={220}
                 height={220}
-                className='object-top'
+                className="object-top"
               />
-          </div>
-        ))}
+            </div>
+          ))}
         </Carousel>
-       </div>
-       <div>
-        <h1 className='text-3xl font-bold font-satoshi'>Project Description</h1>
+      </div>
+      <div>
+        <h1 className="text-3xl font-bold font-satoshi">Project Description</h1>
         {desc?.map((description, i) => (
-          <p key={description} className='mt-5 font-satoshi'>
-              {description}
+          <p key={description} className="mt-5 font-satoshi">
+            {description}
           </p>
         ))}
-        <h1 className='text-3xl font-bold font-satoshi mt-10'>Project Limitations</h1>
-        <p className='mt-5'>{limits}</p> 
-       </div>
+        <h1 className="text-3xl font-bold font-satoshi mt-10">
+          Project Limitations
+        </h1>
+        <p className="mt-5">{limits}</p>
+        {Object.entries(badges)[0]?.map && badges[0].tutorial && courseOrTutorialLink && (
+          <div className="mt-5">
+            <h1 className="text-3xl font-bold font-satoshi">Tutorial Used</h1>
+            <p>A tutorial was used to develop this project. The tutorial used to develop this project can be seen <Link href={courseOrTutorialLink} className="hover:underline">here</Link>.</p>
+          </div>
+        )}
+        {Object.entries(badges)[0]?.map && badges[0].course && courseOrTutorialLink && (
+          <div className="mt-5">
+            <h1 className="text-3xl font-bold font-satoshi">Course Used</h1>
+            <p>This project was developed while following and completing a course. The course being completed that was used to develop this project can be seen <Link href={courseOrTutorialLink} className="hover:underline">here</Link>.</p>
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SingleWebProject
+export default SingleWebProject;

@@ -1,27 +1,34 @@
-import nodemailer from 'nodemailer'
-import { google } from 'googleapis'
-import { NextResponse } from 'next/server'
+import nodemailer from "nodemailer";
+import { google } from "googleapis";
+import { NextResponse } from "next/server";
 
-export async function POST (request) {
-  const data = await request.json()
-  const OAuth2 = google.auth.OAuth2
+export async function POST(request) {
+  const data = await request.json();
+  const OAuth2 = google.auth.OAuth2;
 
   const CONTACT_MESSAGE_FIELDS = {
-    name: 'Name',
-    email: 'Email',
-    phone: 'Phone',
-    linkedin: 'LinkedIn',
-    message: 'Message'
-  }
+    name: "Name",
+    email: "Email",
+    phone: "Phone",
+    linkedin: "LinkedIn",
+    subject: "Subject",
+    message: "Message",
+    agreedToPrivacyPolicy: "Agreed to privacy policy"
+  };
 
   const generateEmailContent = (data) => {
+    const stringData = Object.entries(data).reduce(
+      (str, [key, val]) =>
+        (str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${val} \n \n`),
+      ""
+    );
 
-    const stringData = Object.entries(data).reduce((str, [key, val]) =>
-      str += `${CONTACT_MESSAGE_FIELDS[key]}: \n${val} \n \n`, '')
+    const htmlData = Object.entries(data).reduce(
+      (str, [key, val]) =>
+        (str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`),
+      ""
+    );
 
-    const htmlData = Object.entries(data).reduce((str, [key, val]) =>
-      str += `<h1 class="form-heading" align="left">${CONTACT_MESSAGE_FIELDS[key]}</h1><p class="form-answer" align="left">${val}</p>`, '')
-    
     return {
       text: stringData,
       html: `<!DOCTYPE html>
@@ -158,12 +165,25 @@ export async function POST (request) {
             </tr>
           </table>
         </body>
-      </html>`
-    }
-  }
+        <footer>
+          Website: https://www.justcraigdev.com <br />
+          Enquiries/contact: contact@justcraigdev.com <br />
+          ------------------------------------------------------------------------------------------------------ <br />
+          Just Craig Development Ltd is a company registered in Scotland with company number SC797157. <br /> <br />
+          
+          Confidential information may be included within this message, if you are not the legally intended addressee(s) included within this message (or if you are not responsible for the delivery of this message to such person), you may not copy, forward or deliver this message to anyone. In such a case, you should destroy/delete this message and notify me immediately. <br /> <br />
+          
+          Please Note: Despite using the latest virus protection software, neither my employer nor I accept any responsibility for viruses and it is your responsibility to scan any attachments included within this message (if any).
+        </footer>
+      </html>`,
+    };
+  };
 
   if (!data.name || !data.email || !data.message) {
-    return NextResponse.json({ status: 400, message: 'No name, email or message provided.' })
+    return NextResponse.json({
+      status: 400,
+      message: "No name, email or message provided.",
+    });
   }
 
   const createTransporter = async () => {
@@ -171,54 +191,67 @@ export async function POST (request) {
       process.env.CLIENT_ID,
       process.env.CLIENT_SECRET,
       process.env.REQUEST_URI
-    )
+    );
     try {
       oauth2Client.setCredentials({
-        refresh_token: process.env.REFRESH_TOKEN
-      })
+        refresh_token: process.env.REFRESH_TOKEN,
+      });
     } catch (e) {
-      return NextResponse.json({ status: 401, message: 'Something went wrong while setting credentials.' })
+      return NextResponse.json({
+        status: 401,
+        message: "Something went wrong while setting credentials.",
+      });
     }
 
-    const accessToken = await oauth2Client.getAccessToken()
+    const accessToken = await oauth2Client.getAccessToken();
 
     try {
       const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: "smtp.gmail.com",
         port: 465,
         secure: true,
         auth: {
-          type: 'OAuth2',
+          type: "OAuth2",
           user: process.env.CONTACT_EMAIL,
           accessToken,
           clientId: process.env.CLIENT_ID,
           clientSecret: process.env.CLIENT_SECRET,
-          refreshToken: process.env.REFRESH_TOKEN
-        }
-      })
+          refreshToken: process.env.REFRESH_TOKEN,
+        },
+      });
 
-      return transporter
+      return transporter;
     } catch (e) {
-      return NextResponse.json({ status: 403, message: 'Something went wrong while creating the email.' })
+      return NextResponse.json({
+        status: 403,
+        message: "Something went wrong while creating the email.",
+      });
     }
-  }
+  };
 
   const sendEmail = async (emailOptions) => {
-    const emailTransporter = await createTransporter()
-    await emailTransporter.sendMail(emailOptions)
-  }
+    const emailTransporter = await createTransporter();
+    await emailTransporter.sendMail(emailOptions);
+  };
 
   try {
     await sendEmail({
       ...generateEmailContent(data),
-      subject: 'From: ' + data.name + '\nEmail: ' + data.email,
+      subject: data.subject,
       replyTo: process.env.REPLY_TO_EMAIL,
       to: process.env.EMAIL,
-      from: `${data.name} - Portfolio Contact <${process.env.REPLY_TO_EMAIL}>`
-    })
+      from: `${data.name} - Portfolio Contact <${process.env.REPLY_TO_EMAIL}>`,
+    });
 
-    return NextResponse.json({ status: 200, message: 'Success', success: true })
+    return NextResponse.json({
+      status: 200,
+      message: "Success",
+      success: true,
+    });
   } catch (e) {
-    return NextResponse.json({ status: 403, message: 'Something went wrong while sending the email.' })
+    return NextResponse.json({
+      status: 403,
+      message: "Something went wrong while sending the email.",
+    });
   }
 }

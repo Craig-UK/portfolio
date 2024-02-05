@@ -38,7 +38,7 @@ const ProjectAppsLayout = ({ children }) => {
     <div>
       {children}
 
-      <section className="w-full pt-10 flex-start flex-row justify-between gap-2">
+      <section className="w-full pt-10 flex-start sm:flex-row flex-col justify-between gap-2">
         <OtherPagesCard
           pageTitle="GitHub"
           cardTitle="Check out my GitHub"
@@ -55,7 +55,7 @@ const ProjectAppsLayout = ({ children }) => {
           button={DevTravelBlogButton}
         />
       </section>
-      <section className="w-4/6 pt-10 m-auto">
+      <section className="sm:w-4/6 pt-10 m-auto">
         <OtherPagesCard
           pageTitle="Contact Me"
           cardTitle="Contact Me about my projects"

@@ -1,10 +1,14 @@
 "use client";
 
+import CourseBadge from "@components/Badges/CourseBadge";
+import FeaturedBadge from "@components/Badges/FeaturedBadge";
+import PersonalBadge from "@components/Badges/PersonalProjectBadge";
+import TutorialBadge from "@components/Badges/TutorialBadge";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-const FeatureCard = ({
+const ProjectCard = ({
   id,
   title,
   featured,
@@ -12,6 +16,8 @@ const FeatureCard = ({
   languagesLogos,
   summary,
   projectLink,
+  badges,
+  courseOrTutorialLink
 }) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -28,32 +34,35 @@ const FeatureCard = ({
   return (
     <section className="break-inside-avoid rounded-lg border border-gray-300 bg-white/20 pb-1 backdrop-blur-lg backdrop-filter w-full h-fit">
       <section className="flex">
-        <h1 className="font-bold font-satoshi text-lg m-1 ml-2">{title}</h1>
-        {featured && (
-          <div className="bg-purple-500 rounded-full px-2 py-0 my-1">
-            <p className="text-gray-200 font-semibold">Featured</p>
-          </div>
+        <h1 className="font-bold font-satoshi text-lg m-1 ml-2 sm:ml-2">{title}</h1>
+          {Object.entries(badges)[0].map && badges[0].featured && (
+            <FeaturedBadge />
+          )}
+      </section>
+      <section className="flex ml-2 justify-start gap-2">
+        {Object.entries(badges)[0].map && badges[0].course && courseOrTutorialLink && (
+            <CourseBadge link={courseOrTutorialLink} />
+        )}
+        {Object.entries(badges)[0].map && badges[0].tutorial && courseOrTutorialLink && (
+            <TutorialBadge link={courseOrTutorialLink} />
+        )}
+        {Object.entries(badges)[0].map && badges[0].personal && (
+            <PersonalBadge />
         )}
       </section>
       <Link
         href={githubLink}
-        className="font-light text-sm font-satoshi m-0 p-0 ml-2"
+        className="font-light text-sm font-satoshi m-0 p-0 ml-2 hover:underline"
       >
-        {githubLink}
+        Projects GitHub Repository can be viewed here
       </Link>
-      <section className="flex">
+      <section className="sm:ml-2 ml-2 pt-2">
+        Programming Languages/Frameworks used:
         {languagesLogos?.map((logo) => (
-            <Image
-                key={logo}
-                src={logo}
-                alt="Programming Language/Framework Logo"
-                width={50}
-                height={50}
-                className="m-1 ml-2"
-            />
+            <p key={logo}>{logo}</p>
         ))}
       </section>
-      <p className="mt-5 ml-2">{summary}</p>
+      <p className="sm:mt-5 sm:ml-2 pb-2 ml-2">{summary}</p>
       <section className="flex justify-center">
         <button
           className="blog_view_post_btn"
@@ -66,4 +75,4 @@ const FeatureCard = ({
   );
 };
 
-export default FeatureCard;
+export default ProjectCard;

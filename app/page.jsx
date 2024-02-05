@@ -3,85 +3,65 @@ import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'Craig\'s Portfolio - Home'
-}
+  title: "Craig's Portfolio - Home",
+};
 
 const Home = () => {
   const links = [
     {
-      id: '1',
+      id: "1",
       name: "Projects",
       image: "/assets/icons/file-solid.svg",
       href: "/projects",
     },
     {
-      id: '2',
+      id: "2",
       name: "Dev Blog",
       image: "/assets/icons/file-lines-solid.svg",
-      href: "/devblog"
+      href: "/devblog",
     },
     {
-      id: '3',
+      id: "3",
       name: "Travel Blog",
       image: "/assets/icons/file-image-solid.svg",
-      href: "/travelblog"
-    }
+      href: "/travelblog",
+    },
   ];
 
   const profileCardButtons = [
     {
-      id: '1',
+      id: "1",
       name: "Contact Me",
-      href: "/contact"
-    }
+      href: "/contact",
+    },
   ];
 
   const otherPagesCardButtons = [
     {
-      id: '1',
+      id: "1",
       name: "Projects",
-      href: "/projects"
-    }
+      href: "/projects",
+    },
   ];
 
   return (
     <div>
-      <section className="w-full flex-start flex-row">
-        <Image
-          src={"/assets/images/portrait.jpg"}
-          alt="Portrait"
-          width={120}
-          height={120}
-          className="rounded-full pt-4"
-        />
-        <p className="desc">
-          Hello there! My name is Craig and I aspire to be a software/web
-          developer! My favourite coding languages include JavaScript
-          (specifically React), Python and Java. I am really passionate about
-          Technology and have been passionate about the Tech industry since I
-          first played the Xbox 360 around a decade ago. My favourite games
-          include God of War, Minecraft, and more! Thank you for visiting my
-          portfolio, please feel free to contact me if you have any issues with
-          my website or if you would like to learn more about me!
-        </p>
-      </section>
-      <section className="pt-10">
+      <section className="pt-2 pb-2 mt-2">
         <ProfileCard
           image={"/assets/images/portrait.jpg"}
           title={"Craig Climie"}
-          subtitle={"Software Developer, Web Developer"}
+          subtitle={"Aspiring to Shape the Future with Code."}
           button={profileCardButtons[0]}
           links={links}
-          aboutText="Hello there, I am Craig! I am currently proficient in React and Python
-          with some understanding of C# and Java. I am currently learning the
-          Next.js React framework, and expanding my knowledge of C#, Java and
-          Python."
+          aboutText="Fueled by a decade-long passion for technology, starting from the days of Xbox 360, I&apos;m now deeply immersed in JavaScript (React), Python, and Java. This site is my digital canvas, where I blend my love for gaming and tech into innovative software and web solutions.
+
+          Explore my work, share your thoughts, or just say hello. Together, let&apos;s make tech engaging and accessible."
         />
       </section>
       <section className="pt-10">
         <OtherPagesCard
-          pageTitle='Projects'
-          cardTitle='Check out some of my projects!'
+          pageTitle="Projects"
+          cardTitle="Check out some of my projects!"
           cardText="Currently proficient in React and Python with some understanding of C# and Java. Also, currently learning the Next.js React framework along with expanding my understanding of C#, Java and Python! Check out some of the projects that I have completed in my personal free-time or
           University projects that I completed for University classes!"
           button={otherPagesCardButtons}
