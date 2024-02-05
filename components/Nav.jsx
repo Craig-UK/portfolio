@@ -19,7 +19,7 @@ const Nav = () => {
     { name: 'About', href: '/about', current: false },
     { name: 'Dev Blog', href: '/devblog', current: false },
     { name: 'Travel Blog', href: '/travelblog', current: false },
-    {name: 'Freelance', href: '/freelance', current: false},
+    // {name: 'Freelance', href: '/freelance', current: false},
     { name: 'Contact', href: '/contact', current: false },
   ]
 
