@@ -600,7 +600,7 @@ const FreelanceApplicationPage = () => {
               >
                 {enterprisePlanIsLoading ? (
                   <>
-                    <span className="ml-2">Sending...</span>{" "}
+                    <span className="ml-1">Sending</span>{" "}
                   </>
                 ) : (
                   <>

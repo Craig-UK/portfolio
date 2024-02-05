@@ -20,8 +20,8 @@ const Footer = () => {
             reserved.
           </p>
           <p>
-            Just Craig Development Ltd is a company registered in Scotland <br /> 
-            with company number SC797157.
+            Just Craig Development Ltd is a company registered in Scotland <br />
+            with Company Number: SC797157.
           </p>
         </div>
 

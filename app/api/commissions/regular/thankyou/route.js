@@ -167,6 +167,17 @@ export async function POST(request) {
                 </td>
               </tr>
             </table>
+            <footer>
+              noreply@justcraigdev.com is an unmonitored email. Emails sent to the noreply@justcraigdev.com email address will not be seen. Reply to sales@justcraigdev.com instead. <br />
+              Website: https://www.justcraigdev.com <br />
+              Enquiries/contact: contact@justcraigdev.com <br />
+              ------------------------------------------------------------------------------------------------------ <br />
+              Just Craig Development Ltd is a company registered in Scotland with company number SC797157. <br /> <br />
+              
+              Confidential information may be included within this message, if you are not the legally intended addressee(s) included within this message (or if you are not responsible for the delivery of this message to such person), you may not copy, forward or deliver this message to anyone. In such a case, you should destroy/delete this message and notify me immediately. <br /> <br />
+              
+              Please Note: Despite using the latest virus protection software, neither my employer nor I accept any responsibility for viruses and it is your responsibility to scan any attachments included within this message (if any).
+            </footer>
           </body>
         </html>`,
     };

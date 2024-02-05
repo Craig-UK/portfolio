@@ -13,7 +13,7 @@ export async function POST(request) {
     linkedin: "LinkedIn",
     subject: "Subject",
     message: "Message",
-    agreedToPrivacyPolicy: "Agreed to privacy policy"
+    agreedToPrivacyPolicy: "Agreed to privacy policy",
   };
 
   const generateNoReplyEmailContent = (data) => {
@@ -25,7 +25,7 @@ export async function POST(request) {
       ""
     );
 
-    const htmlData = `Thank you for contacting me, ${data.name}. I will reply to your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my <a href="https://justcraigdev.com/projects">projects</a>, <a href="https://github.com/Craig-UK">github</a> or have a read of one of my <a href="https://justcraigdev.com/travelblog">Travel</a> or <a href="https://justcraigdev.com/devblog">Dev</a> blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`
+    const htmlData = `Thank you for contacting me, ${data.name}. I will reply to your email as soon as possible. I will email you back on ${data.email}. Please feel free to have a look at my <a href="https://justcraigdev.com/projects">projects</a>, <a href="https://github.com/Craig-UK">github</a> or have a read of one of my <a href="https://justcraigdev.com/travelblog">Travel</a> or <a href="https://justcraigdev.com/devblog">Dev</a> blog posts while you wait on my email. If the email address listed above is incorrect then send an email to contact@justcraigdev.com.`;
 
     return {
       text: stringData,
@@ -166,6 +166,16 @@ export async function POST(request) {
               </td>
             </tr>
           </table>
+            noreply@justcraigdev.com is an unmonitored email. Emails sent to the noreply@justcraigdev.com email address will not be seen. Reply to contact@justcraigdev.com instead. <br />
+            Website: https://www.justcraigdev.com <br />
+            Enquiries/contact: contact@justcraigdev.com <br />
+            ------------------------------------------------------------------------------------------------------ <br />
+            Just Craig Development Ltd is a company registered in Scotland with company number SC797157. <br /> <br />
+            
+            Confidential information may be included within this message, if you are not the legally intended addressee(s) included within this message (or if you are not responsible for the delivery of this message to such person), you may not copy, forward or deliver this message to anyone. In such a case, you should destroy/delete this message and notify me immediately. <br /> <br />
+            
+            Please Note: Despite using the latest virus protection software, neither my employer nor I accept any responsibility for viruses and it is your responsibility to scan any attachments included within this message (if any).
+          </footer>
         </body>
       </html>`,
     };

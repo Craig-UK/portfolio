@@ -331,7 +331,7 @@ const ContactForm = () => {
           >
             {isLoading ? (
               <>
-                <span className="ml-2">Sending...</span>{" "}
+                <span className="ml-1">Sending</span>{" "}
               </>
             ) : (
               <>

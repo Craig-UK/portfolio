@@ -92,7 +92,7 @@ const Nav = () => {
           )}
         </Disclosure>
       </div>
-      <WorkInProgressBanner />
+      {/* <WorkInProgressBanner /> */}
       <CommissionStatusBanner />
     </>
   );
