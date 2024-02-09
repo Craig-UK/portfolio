@@ -19,9 +19,9 @@ const Footer = () => {
             &copy; 2023-{getDate()} Just Craig Development Ltd. All rights
             reserved.
           </p>
-          <p>
-            Just Craig Development Ltd is a company registered in Scotland <br />
-            with Company Number: SC797157.
+          <p className="w-96">
+            Just Craig Development Ltd is a company registered in Scotland with
+            Company Number: SC797157.
           </p>
         </div>
 
