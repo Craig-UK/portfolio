@@ -89,8 +89,8 @@ const CookiePolicyPage = () => {
           Most web browsers allow some control of most cookies through the
           browser settings. To find out more about cookies, including how to see
           what cookies have been set, visit{" "}
-          <a href="https://www.aboutcookies.org">www.aboutcookies.org</a> or
-          <a href="https://www.allaboutcookies.org"> www.allaboutcookies.org</a>.
+          <a className="hover:underline text-blue-600" href="https://www.aboutcookies.org" target="_blank">www.aboutcookies.org</a> or
+          <a className="hover:underline text-blue-600" href="https://www.allaboutcookies.org" target="_blank"> www.allaboutcookies.org</a>.
         </p>
         <p className="mt-5">
           Find out how to manage cookies on popular browsers:
