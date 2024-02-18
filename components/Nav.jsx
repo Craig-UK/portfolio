@@ -55,6 +55,9 @@ const Nav = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="flex items-end">
+                      <Link className="text-white border-gray-500 px-3 bg-gray-500 rounded-xl" href={'/freelance/application?plan=Basic'}>ENQUIRE NOW</Link>
+                  </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
                     <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
