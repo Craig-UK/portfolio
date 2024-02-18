@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import WorkInProgressBanner from "./Banners/WorkInProgressBanner";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import CommissionStatusBanner from "./Banners/CommissionStatusBanner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -19,7 +17,7 @@ const Nav = () => {
     { name: 'About', href: '/about', current: false },
     { name: 'Dev Blog', href: '/devblog', current: false },
     { name: 'Travel Blog', href: '/travelblog', current: false },
-    // {name: 'Freelance', href: '/freelance', current: false},
+    {name: 'Freelance', href: '/freelance', current: false},
     { name: 'Contact', href: '/contact', current: false },
   ]
 
@@ -54,6 +52,9 @@ const Nav = () => {
                         ))}
                       </div>
                     </div>
+                  </div>
+                  <div className="flex items-end">
+                      <Link className="text-white border-gray-500 px-3 bg-gray-500 rounded-xl" href={'/freelance/application?plan=Basic'}>ENQUIRE NOW</Link>
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
@@ -92,8 +93,6 @@ const Nav = () => {
           )}
         </Disclosure>
       </div>
-      {/* <WorkInProgressBanner /> */}
-      <CommissionStatusBanner />
     </>
   );
 };
