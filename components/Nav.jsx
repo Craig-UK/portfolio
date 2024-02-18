@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import WorkInProgressBanner from "./Banners/WorkInProgressBanner";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import CommissionStatusBanner from "./Banners/CommissionStatusBanner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -95,8 +93,6 @@ const Nav = () => {
           )}
         </Disclosure>
       </div>
-      {/* <WorkInProgressBanner /> */}
-      <CommissionStatusBanner />
     </>
   );
 };
