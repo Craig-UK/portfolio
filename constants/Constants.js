@@ -12,10 +12,13 @@ export const footerLinks = [
   {
     title: 'Socials',
     links: [
-      { title: 'Follow me on Twitter', url: 'https://twitter.com/CraigDevUK', target: '_blank' },
-      { title: 'Follow me on Instagram', url: 'https://instagram.com/CraigDevUK', target: '_blank' },
-      { title: 'Take a look at my GitHub profile', url: 'https://github.com/Craig-UK', target: '_blank' },
-      { title: 'Join my Discord Server', url: 'https://discord.gg/TnnsgFJ8gn', target: '_blank' },
+      { title: 'Follow me on Twitter', url: '/twitter', target: '_blank' },
+      { title: 'Follow me on Instagram', url: '/instagram', target: '_blank' },
+      { title: 'Take a look at my GitHub profile', url: '/github', target: '_blank' },
+      { title: 'Join my Discord Server', url: '/discord', target: '_blank' },
+      { title: 'Follow me on LinkedIn', url: '/linkedin', target: '_blank' },
+      { title: 'Follow my Facebook Page', url: '/facebook', target: '_blank' },
+      { title: 'Follow me on Threads', url: '/threads', target: '_blank' }
     ]
   }
 ]
