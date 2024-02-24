@@ -27,11 +27,11 @@ const Nav = () => {
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl px-5 sm:px-2 lg:px-5">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 text-white">
-                      <Link href={'/'}>Just Craig Development</Link>
+                      <Link href={'/'}>Just Craig Development Ltd</Link>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex justify-end space-x-4">
