@@ -3,7 +3,7 @@ import ProfileCard from "@components/Cards/ProfileCard";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Craig's Portfolio - Home",
+  title: "Just Craig Development Ltd - Home",
 };
 
 const Home = () => {
