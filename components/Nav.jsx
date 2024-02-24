@@ -54,7 +54,10 @@ const Nav = () => {
                     </div>
                   </div>
                   <div className="flex items-end">
-                      <Link className="text-white border-gray-500 px-3 bg-gray-500 rounded-xl" href={'/freelance/application?plan=Basic'}>ENQUIRE NOW</Link>
+                      <Link className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50" href={'/freelance/application?plan=Basic'}>ENQUIRE NOW</Link>
+                  </div>
+                  <div className="flex items-end">
+                      <a className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50" href={'/survey'} target="_blank">SHARE YOUR THOUGHTS</a>
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
