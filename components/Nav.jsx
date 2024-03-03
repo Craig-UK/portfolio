@@ -2,24 +2,24 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 const Nav = () => {
   const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Projects', href: '/projects', current: false },
-    { name: 'About', href: '/about', current: false },
-    { name: 'Dev Blog', href: '/devblog', current: false },
-    { name: 'Travel Blog', href: '/travelblog', current: false },
-    {name: 'Freelance', href: '/freelance', current: false},
-    { name: 'Contact', href: '/contact', current: false },
-  ]
+    { name: "Home", href: "/", current: false },
+    { name: "Projects", href: "/projects", current: false },
+    { name: "About", href: "/about", current: false },
+    { name: "Dev Blog", href: "/devblog", current: false },
+    { name: "Travel Blog", href: "/travelblog", current: false },
+    { name: "Freelance", href: "/freelance", current: false },
+    { name: "Contact", href: "/contact", current: false },
+  ];
 
   return (
     <>
@@ -31,7 +31,7 @@ const Nav = () => {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 text-white">
-                      <Link href={'/'}>Just Craig Development Ltd</Link>
+                      <Link href={"/"}>Just Craig Development Ltd</Link>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex justify-end space-x-4">
@@ -41,11 +41,11 @@ const Nav = () => {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                              'rounded-md px-3 py-2 text-sm font-medium'
+                                ? "bg-gray-900 text-white"
+                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                              "rounded-md px-3 py-2 text-sm font-medium"
                             )}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
                           </a>
@@ -53,11 +53,22 @@ const Nav = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-end">
-                      <Link className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50" href={'/freelance/application?plan=Basic'}>ENQUIRE NOW</Link>
+                  <div className="md:flex items-end hidden">
+                    <Link
+                      className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50"
+                      href={"/freelance/application?plan=Basic"}
+                    >
+                      ENQUIRE NOW
+                    </Link>
                   </div>
-                  <div className="flex items-end">
-                      <a className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50" href={'/survey'} target="_blank">SHARE YOUR THOUGHTS</a>
+                  <div className="md:flex items-end hidden">
+                    <a
+                      className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50"
+                      href={"/survey"}
+                      target="_blank"
+                    >
+                      SHARE YOUR THOUGHTS
+                    </a>
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
@@ -65,9 +76,15 @@ const Nav = () => {
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
-                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        <XMarkIcon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
                       ) : (
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
                       )}
                     </Disclosure.Button>
                   </div>
@@ -82,14 +99,33 @@ const Nav = () => {
                       as="a"
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
                     </Disclosure.Button>
                   ))}
+                </div>
+                <div className="flex items-end ml-4">
+                  <Link
+                    className="text-white border-[#00c389] px-3 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50"
+                    href={"/freelance/application?plan=Basic"}
+                  >
+                    ENQUIRE NOW
+                  </Link>
+                </div>
+                <div className="flex items-end ml-4 my-3">
+                  <a
+                    className="text-white border-[#00c389] px-3 mb-4 bg-[#00c389] rounded-xl font-bold hover:bg-[#00c389]/50"
+                    href={"/survey"}
+                    target="_blank"
+                  >
+                    SHARE YOUR THOUGHTS
+                  </a>
                 </div>
               </Disclosure.Panel>
             </>
