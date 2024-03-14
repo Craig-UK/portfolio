@@ -10,10 +10,10 @@ const ProfileCard = ({ image, title, subtitle, links, aboutText, button }) => {
           <div className="flex items-center justify-center">
             <Image
                 src={image}
-                height={100}
+                height={150}
                 width={150}
                 alt="Image"
-                className="rounded-full"
+                className="rounded-3xl"
               />
           </div>
           <div className="border-between-items"></div>
